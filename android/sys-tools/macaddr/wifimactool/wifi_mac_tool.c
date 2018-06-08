@@ -1,0 +1,190 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <fcntl.h>
+
+#include <sys/mman.h>
+
+#include <unistd.h>
+
+#include <cutils/properties.h>
+#define WIFI_MAC_FILE "/persist/wlan_mac.txt"
+
+void usage(void)
+{
+	printf("Usage:\n");
+	printf("wifimactool -w 00:11:22:33:44:55    (write mac)\n");
+	printf("wifimactool -r                      (read  mac)\n");
+	printf("wifimactool -g                      (generate mac)\n");
+	printf("wifimactool -h                      (show help)\n");
+}
+
+int check_mac_valid(char *mac)
+{
+	int i;
+
+	if (strlen(mac) != 17)
+	{
+		return -1;
+	}
+
+	for (i=0; i<17; i++) {
+		switch (mac[i]) {
+			case '0':
+			case '1':
+			case '2':
+			case '3':
+			case '4':
+			case '5':
+			case '6':
+			case '7':
+			case '8':
+			case '9':
+			case 'a':
+			case 'A':
+			case 'b':
+			case 'B':
+			case 'c':
+			case 'C':
+			case 'd':
+			case 'D':
+			case 'e':
+			case 'E':
+			case 'f':
+			case 'F':
+			case ':':
+				break;
+			default:
+				return -1;
+		}
+	}
+
+	return 0;
+}
+
+void write_mac(int argc, char *argv[])
+{
+	char *file = WIFI_MAC_FILE;
+	FILE *fp;
+
+	if (check_mac_valid(argv[2]) < 0)
+	{
+		printf("Invalid mac %s, exit\n", argv[2]);
+		exit(1);
+	}
+
+	fp = fopen(file, "w");
+
+	if (fp == NULL)
+	{
+		printf("Failed to write file");
+		return;
+	}
+
+	fprintf(fp,	"sta=%s\n", argv[2]);
+
+	fclose(fp);
+}
+
+void read_mac(void)
+{
+	char *file = WIFI_MAC_FILE;
+	FILE *fp;
+	char buf[255], *pt;
+
+	if (access(file, 0) != 0)
+	{
+		printf("Wlan mac file does not exist\n");
+		return ;
+	}
+
+	fp = fopen(file, "r");
+
+	if (fp == NULL)
+	{
+		printf("Failed to read file");
+		return;
+	}
+
+	fread(buf, sizeof(buf), 1, fp);
+	pt = strstr(buf, "sta=") + strlen("sta=");
+	printf("%s", pt);
+
+	fclose(fp);
+}
+
+int get_serialno(char mac[9])
+{
+	char value[PROPERTY_VALUE_MAX];
+
+	property_get("ro.serialno", value, "");
+
+	strncpy(mac, value, strlen(mac));
+
+	return 0;
+}
+
+void generate_mac(void)
+{
+	char *file = WIFI_MAC_FILE;
+	FILE *fp;
+	char mac[9] = "00000000";
+
+	if (access(file, 0) == 0)
+		return ;
+
+	if (get_serialno(mac) < 0)
+		return ;
+
+	fp = fopen(file, "w");
+
+	if (fp == NULL)
+	{
+		printf("Failed to generate file");
+		return;
+	}
+
+	fprintf(fp,	"sta=00:00:%c%c:%c%c:%c%c:%c%c\n",
+	 mac[0], mac[1], mac[2], mac[3], mac[4], mac[5], mac[6], mac[7]);
+
+	fclose(fp);
+
+	printf("Generate wlan mac by [ro.serialno]\n");
+}
+
+int main(int argc, char *argv[])
+{
+	if (argc < 2 || (argc >= 2 && strlen(argv[1]) != 2))
+	{
+		usage();
+		exit(1);
+	}
+
+	if (strcmp("-h", argv[1]) == 0)
+	{
+		usage();
+		return 0;
+	}
+	else if (strcmp("-w", argv[1]) == 0)
+	{
+		write_mac(argc, argv);
+	}
+	else if (strcmp("-r", argv[1]) == 0)
+	{
+		read_mac();
+	}
+	else if (strcmp("-g", argv[1]) == 0)
+	{
+		generate_mac();
+	}
+	else
+	{
+		usage();
+		exit(1);
+	}
+
+	return 0;
+}

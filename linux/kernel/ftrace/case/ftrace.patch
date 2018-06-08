@@ -1,0 +1,73 @@
+diff --git a/arch/arm64/configs/android-perf-debug_defconfig b/arch/arm64/configs/android-perf-debug_defconfig
+index 43e15ef..83aecfc 100755
+--- a/arch/arm64/configs/android-perf-debug_defconfig
++++ b/arch/arm64/configs/android-perf-debug_defconfig
+@@ -663,3 +663,8 @@ CONFIG_DEBUG_ATOMIC_SLEEP=y
+ CONFIG_PANIC_ON_DATA_CORRUPTION=y
+ CONFIG_FAIL_PAGE_ALLOC=y
+ CONFIG_DETECT_HUNG_TASK=y
++
++CONFIG_FTRACE=y
++CONFIG_TRACING=y
++CONFIG_SCHED_TRACER=y
++CONFIG_FTRACE_SYSCALLS=y
+diff --git a/arch/arm64/configs/android-perf_defconfig b/arch/arm64/configs/android-perf_defconfig
+index 4967e53..7059cc7 100755
+--- a/arch/arm64/configs/android-perf_defconfig
++++ b/arch/arm64/configs/android-perf_defconfig
+@@ -645,3 +645,8 @@ CONFIG_FINGERPRINT_FPC=y
+ CONFIG_FRONTSWAP=y
+ CONFIG_ZSWAP=y
+ CONFIG_VNSWAP=y
++
++CONFIG_FTRACE=y
++CONFIG_TRACING=y
++CONFIG_SCHED_TRACER=y
++CONFIG_FTRACE_SYSCALLS=y
+diff --git a/arch/arm64/configs/android_defconfig b/arch/arm64/configs/android_defconfig
+index f51e08b..42c31b8 100755
+--- a/arch/arm64/configs/android_defconfig
++++ b/arch/arm64/configs/android_defconfig
+@@ -701,3 +701,8 @@ CONFIG_COREDUMP=y
+ CONFIG_FRONTSWAP=y
+ CONFIG_ZSWAP=y
+ CONFIG_VNSWAP=y
++
++CONFIG_FTRACE=y
++CONFIG_TRACING=y
++CONFIG_SCHED_TRACER=y
++CONFIG_FTRACE_SYSCALLS=y
+diff --git a/fs/namei.c b/fs/namei.c
+index 2f54a41..3d15488 100755
+--- a/fs/namei.c
++++ b/fs/namei.c
+@@ -4386,6 +4386,10 @@ exit:
+ SYSCALL_DEFINE4(renameat, int, olddfd, const char __user *, oldname,
+ 		int, newdfd, const char __user *, newname)
+ {
++    char buf[1024];
++    int ret;
++    ret = copy_from_user(buf, oldname, sizeof(buf));
++    printk("DEBUG: rename %s to new name, pid %d, task:%s\n", buf, current->pid, current->comm);
+ 	return sys_renameat2(olddfd, oldname, newdfd, newname, 0);
+ }
+ 
+diff --git a/fs/open.c b/fs/open.c
+index 4a8a355..b12f2dc 100644
+--- a/fs/open.c
++++ b/fs/open.c
+@@ -325,8 +325,13 @@ SYSCALL_DEFINE3(faccessat, int, dfd, const char __user *, filename, int, mode)
+ 	int res;
+ 	unsigned int lookup_flags = LOOKUP_FOLLOW;
+ 
+-	if (mode & ~S_IRWXO)	/* where's F_OK, X_OK, W_OK, R_OK? */
++    char buf[1024];
++	
++    if (mode & ~S_IRWXO)	/* where's F_OK, X_OK, W_OK, R_OK? */
+ 		return -EINVAL;
++   
++    res = copy_from_user(buf, filename, sizeof(buf));
++    printk("DEBUG: access %s, pid %d, name %s\n", buf, current->pid, current->comm);
+ 
+ 	override_cred = prepare_creds();
+ 	if (!override_cred)

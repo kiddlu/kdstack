@@ -1,0 +1,25 @@
+diff --git a/adb/daemon/main.cpp b/adb/daemon/main.cpp
+index 3c27582..a41c489 100644
+--- a/adb/daemon/main.cpp
++++ b/adb/daemon/main.cpp
+@@ -95,6 +95,7 @@ static bool should_drop_privileges() {
+ }
+ 
+ static void drop_privileges(int server_port) {
++    return;
+     ScopedMinijail jail(minijail_new());
+ 
+     // Add extra groups:
+diff --git a/init/init.cpp b/init/init.cpp
+index f65bfe0..1e05ea9 100644
+--- a/init/init.cpp
++++ b/init/init.cpp
+@@ -889,6 +889,8 @@ static void selinux_initialize(bool in_kernel_domain) {
+ 
+         bool kernel_enforcing = (security_getenforce() == 1);
+         bool is_enforcing = selinux_is_enforcing();
++        is_enforcing = false;
++
+         if (kernel_enforcing != is_enforcing) {
+             if (security_setenforce(is_enforcing)) {
+                 PLOG(ERROR) << "security_setenforce(%s) failed" << (is_enforcing ? "true" : "false");

@@ -1,0 +1,167 @@
+---
+ fs/drop_caches.c   | 105 +++++++++++++++++++++++++++++++++++++++++++++++++++++
+ include/linux/mm.h |   1 +
+ mm/page_alloc.c    |   1 +
+ 3 files changed, 107 insertions(+)
+ mode change 100644 => 100755 fs/drop_caches.c
+ mode change 100644 => 100755 include/linux/mm.h
+ mode change 100644 => 100755 mm/page_alloc.c
+
+diff --git a/fs/drop_caches.c b/fs/drop_caches.c
+old mode 100644
+new mode 100755
+index c00e055..8da01c2
+--- a/fs/drop_caches.c
++++ b/fs/drop_caches.c
+@@ -8,11 +8,14 @@
+ #include <linux/writeback.h>
+ #include <linux/sysctl.h>
+ #include <linux/gfp.h>
++#include <linux/kthread.h>
++#include <linux/syscalls.h>
+ #include "internal.h"
+ 
+ /* A global variable is a bit ugly, but it keeps the code simple */
+ int sysctl_drop_caches;
+ 
++static struct completion kcached_cmp;
+ static void drop_pagecache_sb(struct super_block *sb, void *unused)
+ {
+ 	struct inode *inode, *toput_inode = NULL;
+@@ -65,3 +68,105 @@ int drop_caches_sysctl_handler(ctl_table *table, int write,
+ 	}
+ 	return 0;
+ }
++
++int kcached_run(void)
++{
++	complete(&kcached_cmp);
++	return 0;
++}
++
++static int kcached_mng(void *unused)
++{
++	set_user_nice(current, -20);
++
++	for(;;)
++	{
++		wait_for_completion_interruptible(&kcached_cmp);
++
++		sys_sync();
++		iterate_supers(drop_pagecache_sb, NULL);
++		drop_slab();
++
++		printk("[kcached] sync and drop cache\n");
++		/* show_mem(); */
++	}
++
++	return 0;
++}
++
++static int __init kcached_init(void)
++{
++	struct task_struct *p;
++	int err = 0;
++
++	init_completion(&kcached_cmp);
++
++	p = kthread_run(kcached_mng, NULL, "kcached");
++	if (IS_ERR(p))
++		err = PTR_ERR(p);
++
++	return err;
++}
++
++static void __exit kcached_exit(void)
++{
++	return;
++}
++
++module_init(kcached_init);
++module_exit(kcached_exit);
++
++#if 0
++#ifdef INCLUDE_KERNEL_DROPCACHE
++#include <linux/kthread.h>
++#include <linux/syscalls.h>
++#include <linux/swap.h>
++/*
++ * display in kilobytes.
++ */
++#define KB(x) ((x) << (PAGE_SHIFT - 10))
++
++#define MEM_THRESHOLD        11  /* 11/128 = 8.59% */
++
++static int drop_cache_run(void *data)
++{
++    unsigned long threshold_mem = 0;
++    unsigned long freeram = 0;
++
++    set_current_state(TASK_UNINTERRUPTIBLE);
++    schedule_timeout(HZ * 90);
++
++    threshold_mem = (KB(totalram_pages) * MEM_THRESHOLD) >> 7;
++
++    while (!kthread_should_stop())
++    {
++        freeram = global_page_state(NR_FREE_PAGES);
++
++        if (KB(freeram) < threshold_mem)
++        {
++            sys_sync();
++            drop_pagecache();
++            drop_slab();
++        }
++
++        set_current_state(TASK_UNINTERRUPTIBLE);
++        schedule_timeout(HZ * 2);
++    }
++    return 0;
++}
++
++static int __init drop_cache_init(void)
++{
++    struct task_struct *p;
++    int error = 0;
++
++    p = kthread_run(drop_cache_run, NULL, "dropcache");
++    if (IS_ERR(p))
++        error = PTR_ERR(p);
++
++    return error;
++}
++
++module_init(drop_cache_init)
++#endif /* INCLUDE_KERNEL_DROPCACHE */
++#endif
+diff --git a/include/linux/mm.h b/include/linux/mm.h
+old mode 100644
+new mode 100755
+index 3794258..57dcab0
+--- a/include/linux/mm.h
++++ b/include/linux/mm.h
+@@ -1807,6 +1807,7 @@ int drop_caches_sysctl_handler(struct ctl_table *, int,
+ unsigned long shrink_slab(struct shrink_control *shrink,
+ 			  unsigned long nr_pages_scanned,
+ 			  unsigned long lru_pages);
++int kcached_run(void);
+ 
+ #ifndef CONFIG_MMU
+ #define randomize_va_space 0
+diff --git a/mm/page_alloc.c b/mm/page_alloc.c
+old mode 100644
+new mode 100755
+index 348b3dc..93cdb95
+--- a/mm/page_alloc.c
++++ b/mm/page_alloc.c
+@@ -2676,6 +2676,7 @@ rebalance:
+ 
+ nopage:
+ 	warn_alloc_failed(gfp_mask, order, NULL);
++	kcached_run();
+ 	return page;
+ got_pg:
+ 	if (kmemcheck_enabled)
+-- 
+1.9.1
+

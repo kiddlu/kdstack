@@ -1,0 +1,1 @@
+fio.exe --runtime=60 --time_based --clocksource=clock_gettime --name=randread --numjobs=1 --rw=randread --random_distribution=pareto:0.9 --bs=8k --size 5g --filename=fio.tmp

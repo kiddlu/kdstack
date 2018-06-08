@@ -1,0 +1,87 @@
+# tracer: nop
+#
+# entries-in-buffer/entries-written: 21523/21523   #P:4
+#
+#                              _-----=> irqs-off
+#                             / _----=> need-resched
+#                            | / _---=> hardirq/softirq
+#                            || / _--=> preempt-depth
+#                            ||| /     delay
+#           TASK-PID   CPU#  ||||    TIMESTAMP  FUNCTION
+#              | |       |   ||||       |         |
+        testcase-1545  [002] ...1   474.218863: ext4_sync_file_enter: dev 179,7 ino 3609 parent 3393 datasync 0
+        testcase-1545  [002] ...1   474.218866: ext4_writepages: dev 179,7 ino 3609 nr_to_write 2147483647 pages_skipped 0 range_start 0 range_end 9223372036854775807 sync_mode 1 for_kupdate 0 range_cyclic 0 writeback_index 2
+        testcase-1545  [002] ...1   474.218871: ext4_journal_start: dev 179,7 blocks, 8 rsv_blocks, 0 caller ext4_writepages+0x4ac/0x76c
+        testcase-1545  [002] ...1   474.218873: jbd2_handle_start: dev 179,7 tid 317 type 2 line_no 2512 requested_blocks 8
+        testcase-1545  [002] ...1   474.218875: ext4_da_write_pages: dev 179,7 ino 3609 first_page 0 nr_to_write 2147483647 sync_mode 1
+        testcase-1545  [002] ...1   474.218886: jbd2_handle_stats: dev 179,7 tid 317 type 2 line_no 2512 interval 0 sync 0 requested_blocks 8 dirtied_blocks 0
+        testcase-1545  [002] ...1   474.218890: block_bio_remap: 179,0 WS 4233248 + 16 <- (179,7) 1081376
+        testcase-1545  [002] ...1   474.218891: block_bio_queue: 179,0 WS 4233248 + 16 [testcase]
+        testcase-1545  [002] ...1   474.218897: block_getrq: 179,0 WS 4233248 + 16 [testcase]
+        testcase-1545  [002] ...1   474.218900: block_plug: [testcase]
+        testcase-1545  [002] d..2   474.218904: block_rq_insert: 179,0 WS 0 () 4233248 + 16 [testcase]
+        testcase-1545  [002] d..2   474.218911: block_unplug: [testcase] 1
+        testcase-1545  [002] ...1   474.218913: ext4_writepages_result: dev 179,7 ino 3609 ret 0 pages_written 2 pages_skipped 0 sync_mode 1 writeback_index 2
+         mmcqd/0-89    [000] d..2   474.218923: block_rq_issue: 179,0 WS 0 () 4233248 + 16 [mmcqd/0]
+         mmcqd/0-89    [000] ...1   474.218973: mmc_request_start: mmc0: start struct mmc_request[c669d834]: cmd_opcode=25 cmd_arg=0x409820 cmd_flags=0xb5 cmd_retries=0 stop_opcode=12 stop_arg=0x0 stop_flags=0x49d stop_retries=0 sbc_opcode=23 sbc_arg=0x10 sbc_flags=0x15 sbc_retires=0 blocks=16 block_size=512 data_flags=0x100 can_retune=0 doing_retune=0 retune_now=0 need_retune=0 hold_retune=1 retune_period=0
+          <idle>-0     [000] ..s2   474.220769: mmc_request_done: mmc0: end struct mmc_request[c669d834]: cmd_opcode=25 cmd_err=0 cmd_resp=0x900 0x0 0x0 0x0 cmd_retries=0 stop_opcode=12 stop_err=0 stop_resp=0x0 0x0 0x0 0x0 stop_retries=0 sbc_opcode=23 sbc_err=0 sbc_resp=0x0 0x0 0x0 0x0 sbc_retries=0 bytes_xfered=8192 data_err=0 can_retune=0 doing_retune=0 retune_now=0 need_retune=0 hold_retune=1 retune_period=0
+         mmcqd/0-89    [000] ...1   474.220789: mmc_request_start: mmc0: start struct mmc_request[c66d5cc8]: cmd_opcode=13 cmd_arg=0x10000 cmd_flags=0x195 cmd_retries=5 stop_opcode=0 stop_arg=0x0 stop_flags=0x0 stop_retries=0 sbc_opcode=0 sbc_arg=0x0 sbc_flags=0x0 sbc_retires=0 blocks=0 block_size=0 data_flags=0x0 can_retune=0 doing_retune=0 retune_now=0 need_retune=0 hold_retune=2 retune_period=0
+          <idle>-0     [000] ..s3   474.220809: mmc_request_done: mmc0: end struct mmc_request[c66d5cc8]: cmd_opcode=13 cmd_err=0 cmd_resp=0x900 0x0 0x0 0x0 cmd_retries=5 stop_opcode=0 stop_err=0 stop_resp=0x0 0x0 0x0 0x0 stop_retries=0 sbc_opcode=0 sbc_err=0 sbc_resp=0x0 0x0 0x0 0x0 sbc_retries=0 bytes_xfered=0 data_err=0 can_retune=0 doing_retune=0 retune_now=0 need_retune=0 hold_retune=2 retune_period=0
+         mmcqd/0-89    [000] ...1   474.220822: block_rq_complete: 179,0 WS () 4233248 + 16 [0]
+ jbd2/mmcblk0p7--336   [001] ...1   474.220873: jbd2_start_commit: dev 179,7 transaction 317 sync 0
+ jbd2/mmcblk0p7--336   [001] ...2   474.220875: jbd2_commit_locking: dev 179,7 transaction 317 sync 0
+ jbd2/mmcblk0p7--336   [001] ...2   474.220883: jbd2_commit_flushing: dev 179,7 transaction 317 sync 0
+ jbd2/mmcblk0p7--336   [001] ...1   474.220890: jbd2_commit_logging: dev 179,7 transaction 317 sync 0
+ jbd2/mmcblk0p7--336   [001] ...1   474.220893: ext4_es_lookup_extent_enter: dev 179,7 ino 8 lblk 1201
+ jbd2/mmcblk0p7--336   [001] ...1   474.220895: ext4_es_lookup_extent_exit: dev 179,7 ino 8 found 0 [0/0) 0 
+ jbd2/mmcblk0p7--336   [001] ...1   474.220897: ext4_ext_map_blocks_enter: dev 179,7 ino 8 lblk 1201 len 1 flags 
+ jbd2/mmcblk0p7--336   [001] ...1   474.220900: ext4_ext_show_extent: dev 179,7 ino 8 lblk 0 pblk 194560 len 16384
+ jbd2/mmcblk0p7--336   [001] ...1   474.220903: ext4_ext_map_blocks_exit: dev 179,7 ino 8 flags  lblk 1201 pblk 195761 len 1 mflags M ret 1
+ jbd2/mmcblk0p7--336   [001] ...1   474.220905: ext4_es_insert_extent: dev 179,7 ino 8 es [1201/1) mapped 195761 status W
+ jbd2/mmcblk0p7--336   [001] ...1   474.220924: ext4_es_lookup_extent_enter: dev 179,7 ino 8 lblk 1202
+ jbd2/mmcblk0p7--336   [001] ...1   474.220926: ext4_es_lookup_extent_exit: dev 179,7 ino 8 found 0 [0/0) 0 
+ jbd2/mmcblk0p7--336   [001] ...1   474.220928: ext4_ext_map_blocks_enter: dev 179,7 ino 8 lblk 1202 len 1 flags 
+ jbd2/mmcblk0p7--336   [001] ...1   474.220930: ext4_ext_show_extent: dev 179,7 ino 8 lblk 0 pblk 194560 len 16384
+ jbd2/mmcblk0p7--336   [001] ...1   474.220932: ext4_ext_map_blocks_exit: dev 179,7 ino 8 flags  lblk 1202 pblk 195762 len 1 mflags M ret 1
+ jbd2/mmcblk0p7--336   [001] ...1   474.220933: ext4_es_insert_extent: dev 179,7 ino 8 es [1202/1) mapped 195762 status W
+ jbd2/mmcblk0p7--336   [001] ...1   474.220941: block_bio_remap: 179,0 WS 4717960 + 8 <- (179,7) 1566088
+ jbd2/mmcblk0p7--336   [001] ...1   474.220944: block_bio_queue: 179,0 WS 4717960 + 8 [jbd2/mmcblk0p7-]
+ jbd2/mmcblk0p7--336   [001] ...1   474.220949: block_getrq: 179,0 WS 4717960 + 8 [jbd2/mmcblk0p7-]
+ jbd2/mmcblk0p7--336   [001] ...1   474.220951: block_plug: [jbd2/mmcblk0p7-]
+ jbd2/mmcblk0p7--336   [001] ...1   474.220955: block_bio_remap: 179,0 WS 4717968 + 8 <- (179,7) 1566096
+ jbd2/mmcblk0p7--336   [001] ...1   474.220957: block_bio_queue: 179,0 WS 4717968 + 8 [jbd2/mmcblk0p7-]
+ jbd2/mmcblk0p7--336   [001] ...1   474.220959: block_bio_backmerge: 179,0 WS 4717968 + 8 [jbd2/mmcblk0p7-]
+ jbd2/mmcblk0p7--336   [001] d..2   474.220964: block_rq_insert: 179,0 WS 0 () 4717960 + 16 [jbd2/mmcblk0p7-]
+ jbd2/mmcblk0p7--336   [001] d..2   474.220974: block_unplug: [jbd2/mmcblk0p7-] 1
+         mmcqd/0-89    [000] d..2   474.220987: block_rq_issue: 179,0 WS 0 () 4717960 + 16 [mmcqd/0]
+         mmcqd/0-89    [000] ...1   474.221024: mmc_request_start: mmc0: start struct mmc_request[c669d834]: cmd_opcode=25 cmd_arg=0x47fd88 cmd_flags=0xb5 cmd_retries=0 stop_opcode=12 stop_arg=0x0 stop_flags=0x49d stop_retries=0 sbc_opcode=23 sbc_arg=0x10 sbc_flags=0x15 sbc_retires=0 blocks=16 block_size=512 data_flags=0x100 can_retune=0 doing_retune=0 retune_now=0 need_retune=0 hold_retune=1 retune_period=0
+          <idle>-0     [000] ..s2   474.222876: mmc_request_done: mmc0: end struct mmc_request[c669d834]: cmd_opcode=25 cmd_err=0 cmd_resp=0x900 0x0 0x0 0x0 cmd_retries=0 stop_opcode=12 stop_err=0 stop_resp=0x0 0x0 0x0 0x0 stop_retries=0 sbc_opcode=23 sbc_err=0 sbc_resp=0x0 0x0 0x0 0x0 sbc_retries=0 bytes_xfered=8192 data_err=0 can_retune=0 doing_retune=0 retune_now=0 need_retune=0 hold_retune=1 retune_period=0
+         mmcqd/0-89    [000] ...1   474.222897: mmc_request_start: mmc0: start struct mmc_request[c66d5cc8]: cmd_opcode=13 cmd_arg=0x10000 cmd_flags=0x195 cmd_retries=5 stop_opcode=0 stop_arg=0x0 stop_flags=0x0 stop_retries=0 sbc_opcode=0 sbc_arg=0x0 sbc_flags=0x0 sbc_retires=0 blocks=0 block_size=0 data_flags=0x0 can_retune=0 doing_retune=0 retune_now=0 need_retune=0 hold_retune=2 retune_period=0
+          <idle>-0     [000] ..s3   474.222918: mmc_request_done: mmc0: end struct mmc_request[c66d5cc8]: cmd_opcode=13 cmd_err=0 cmd_resp=0x900 0x0 0x0 0x0 cmd_retries=5 stop_opcode=0 stop_err=0 stop_resp=0x0 0x0 0x0 0x0 stop_retries=0 sbc_opcode=0 sbc_err=0 sbc_resp=0x0 0x0 0x0 0x0 sbc_retries=0 bytes_xfered=0 data_err=0 can_retune=0 doing_retune=0 retune_now=0 need_retune=0 hold_retune=2 retune_period=0
+         mmcqd/0-89    [000] ...1   474.222932: block_rq_complete: 179,0 WS () 4717960 + 16 [0]
+ jbd2/mmcblk0p7--336   [001] ...1   474.222961: ext4_es_lookup_extent_enter: dev 179,7 ino 8 lblk 1203
+ jbd2/mmcblk0p7--336   [001] ...1   474.222964: ext4_es_lookup_extent_exit: dev 179,7 ino 8 found 0 [0/0) 0 
+ jbd2/mmcblk0p7--336   [001] ...1   474.222966: ext4_ext_map_blocks_enter: dev 179,7 ino 8 lblk 1203 len 1 flags 
+ jbd2/mmcblk0p7--336   [001] ...1   474.222968: ext4_ext_show_extent: dev 179,7 ino 8 lblk 0 pblk 194560 len 16384
+ jbd2/mmcblk0p7--336   [001] ...1   474.222971: ext4_ext_map_blocks_exit: dev 179,7 ino 8 flags  lblk 1203 pblk 195763 len 1 mflags M ret 1
+ jbd2/mmcblk0p7--336   [001] ...1   474.222972: ext4_es_insert_extent: dev 179,7 ino 8 es [1203/1) mapped 195763 status W
+ jbd2/mmcblk0p7--336   [001] ...1   474.222992: block_bio_remap: 179,0 FWFS 4717976 + 8 <- (179,7) 1566104
+ jbd2/mmcblk0p7--336   [001] ...1   474.222995: block_bio_queue: 179,0 FWFS 4717976 + 8 [jbd2/mmcblk0p7-]
+ jbd2/mmcblk0p7--336   [001] ...1   474.222999: block_getrq: 179,0 FWFS 4717976 + 8 [jbd2/mmcblk0p7-]
+ jbd2/mmcblk0p7--336   [001] d..2   474.223002: block_rq_insert: 179,0 FWFS 0 () 4717976 + 8 [jbd2/mmcblk0p7-]
+         mmcqd/0-89    [000] d..2   474.223020: block_rq_issue: 179,0 FWS 0 () 18446744073709551615 + 0 [mmcqd/0]
+         mmcqd/0-89    [000] ...1   474.223026: block_rq_complete: 179,0 FWS () 18446744073709551615 + 0 [0]
+         mmcqd/0-89    [000] d..2   474.223046: block_rq_issue: 179,0 WFS 0 () 4717976 + 8 [mmcqd/0]
+         mmcqd/0-89    [000] ...1   474.223072: mmc_request_start: mmc0: start struct mmc_request[c669d954]: cmd_opcode=25 cmd_arg=0x47fd98 cmd_flags=0xb5 cmd_retries=0 stop_opcode=12 stop_arg=0x0 stop_flags=0x49d stop_retries=0 sbc_opcode=23 sbc_arg=0x80000008 sbc_flags=0x15 sbc_retires=0 blocks=8 block_size=512 data_flags=0x100 can_retune=0 doing_retune=0 retune_now=0 need_retune=0 hold_retune=1 retune_period=0
+          <idle>-0     [000] ..s2   474.492701: mmc_request_done: mmc0: end struct mmc_request[c669d954]: cmd_opcode=25 cmd_err=0 cmd_resp=0x900 0x0 0x0 0x0 cmd_retries=0 stop_opcode=12 stop_err=0 stop_resp=0x0 0x0 0x0 0x0 stop_retries=0 sbc_opcode=23 sbc_err=0 sbc_resp=0x0 0x0 0x0 0x0 sbc_retries=0 bytes_xfered=4096 data_err=0 can_retune=0 doing_retune=0 retune_now=0 need_retune=0 hold_retune=1 retune_period=0
+         mmcqd/0-89    [000] ...1   474.492727: mmc_request_start: mmc0: start struct mmc_request[c66d5cc8]: cmd_opcode=13 cmd_arg=0x10000 cmd_flags=0x195 cmd_retries=5 stop_opcode=0 stop_arg=0x0 stop_flags=0x0 stop_retries=0 sbc_opcode=0 sbc_arg=0x0 sbc_flags=0x0 sbc_retires=0 blocks=0 block_size=0 data_flags=0x0 can_retune=0 doing_retune=0 retune_now=0 need_retune=0 hold_retune=2 retune_period=0
+          <idle>-0     [000] ..s3   474.492750: mmc_request_done: mmc0: end struct mmc_request[c66d5cc8]: cmd_opcode=13 cmd_err=0 cmd_resp=0x900 0x0 0x0 0x0 cmd_retries=5 stop_opcode=0 stop_err=0 stop_resp=0x0 0x0 0x0 0x0 stop_retries=0 sbc_opcode=0 sbc_err=0 sbc_resp=0x0 0x0 0x0 0x0 sbc_retries=0 bytes_xfered=0 data_err=0 can_retune=0 doing_retune=0 retune_now=0 need_retune=0 hold_retune=2 retune_period=0
+         mmcqd/0-89    [000] ...1   474.492764: block_rq_complete: 179,0 WFS () 4717976 + 8 [0]
+         mmcqd/0-89    [000] d..2   474.492769: block_rq_complete: 179,0 WFS () 4717976 + 0 [0]
+ jbd2/mmcblk0p7--336   [001] ...3   474.492795: jbd2_checkpoint_stats: dev 179,7 tid 316 chp_time 0 forced_to_close 0 written 0 dropped 1
+ jbd2/mmcblk0p7--336   [001] ...3   474.492798: jbd2_drop_transaction: dev 179,7 transaction 316 sync 0
+ jbd2/mmcblk0p7--336   [001] ...3   474.492802: block_dirty_buffer: 179,7 sector=393 size=4096
+ jbd2/mmcblk0p7--336   [001] ...2   474.492805: jbd2_run_stats: dev 179,7 tid 317 wait 0 request_delay 0 running 10 locked 0 flushing 0 logging 270 handle_count 10 blocks 1 blocks_logged 2
+ jbd2/mmcblk0p7--336   [001] ...1   474.492808: jbd2_end_commit: dev 179,7 transaction 317 sync 0 head 88
+        testcase-1545  [001] ...1   474.492824: ext4_sync_file_exit: dev 179,7 ino 3609 ret 0
+

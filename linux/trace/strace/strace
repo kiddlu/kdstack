@@ -1,0 +1,8 @@
+#!/bin/bash
+
+strace -tttT dd if=/dev/urandom of=/dev/null bs=1GB count=1
+
+strace -c dd if=/dev/zero of=/dev/null bs=512 count=1024k
+
+time dd if=/dev/zero of=/dev/null bs=512 count=1024k
+time strace -c dd if=/dev/zero of=/dev/null bs=512 count=1024k

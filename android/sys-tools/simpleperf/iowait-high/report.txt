@@ -1,0 +1,295 @@
+Cmdline: /system/xbin/simpleperf record -g am start com.mediatek.camera -o lauchcamera.data
+Samples: 3637 of event 'cpu-cycles'
+Event count: 853191335
+
+Overhead  Command          Pid   Tid   Shared Object                               Symbol
+25.92%    app_process      2885  2885  [kernel.kallsyms]                           unknown
+13.68%    main             2885  2885  [kernel.kallsyms]                           unknown
+12.26%    app_process      2885  2885  /system/bin/linker                          [linker]soinfo::gnu_lookup(SymbolName&, version_info const*, unsigned int*) const
+6.11%     am               2885  2885  [kernel.kallsyms]                           unknown
+5.18%     Shutdown thread  2885  2885  [kernel.kallsyms]                           unknown
+3.79%     app_process      2885  2885  /system/bin/linker                          [linker]soinfo::find_symbol_by_name(SymbolName&, version_info const*, elf32_sym const**) const
+2.43%     app_process      2885  2885  /system/bin/linker                          [linker]soinfo_do_lookup(soinfo*, char const*, version_info const*, soinfo**, LinkedList<soinfo, SoinfoListAllocator> const&, LinkedList<soinfo, SoinfoListAllocator> const&, elf32_sym const**)
+1.94%     app_process      2885  2885  /system/bin/linker                          [linker]soinfo::elf_lookup(SymbolName&, version_info const*, unsigned int*) const
+1.83%     app_process      2885  2885  /system/bin/linker                          [linker]strcmp
+1.76%     main             2885  2885  unknown                                     unknown
+1.13%     app_process      2885  2885  unknown                                     unknown
+1.04%     app_process      2885  2885  /system/bin/linker                          [linker].udivsi3_skip_div0_test
+0.99%     am               2885  2885  /system/bin/linker                          [linker]soinfo::gnu_lookup(SymbolName&, version_info const*, unsigned int*) const
+0.91%     app_process      2885  2885  /system/bin/linker                          [linker]soinfo::get_string(unsigned int) const
+0.79%     main             2885  2885  /system/framework/arm/boot.oat              unknown
+0.65%     am               2885  2885  /system/bin/linker                          [linker]strcmp
+0.51%     main             2885  2885  /system/lib/libart.so                       art::InternTable::Table::AddTableFromMemory(unsigned char const*)
+0.50%     app_process      2885  2885  /system/bin/linker                          [linker]realpath_fd(int, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >*)
+0.49%     app_process      2885  2885  /system/bin/linker                          [linker]SymbolName::elf_hash()
+0.48%     am               2885  2885  /system/bin/linker                          [linker]soinfo::elf_lookup(SymbolName&, version_info const*, unsigned int*) const
+0.46%     app_process      2885  2885  /system/bin/linker                          [linker]bool soinfo::relocate<packed_reloc_iterator<sleb128_decoder> >(VersionTracker const&, packed_reloc_iterator<sleb128_decoder>&&, LinkedList<soinfo, SoinfoListAllocator> const&, LinkedList<soinfo, SoinfoListAllocator> const&)
+0.44%     main             2885  2885  /system/lib/libart.so                       art::JNI::RegisterNativeMethods(_JNIEnv*, _jclass*, JNINativeMethod const*, int, bool)
+0.41%     main             2885  2885  /system/bin/linker                          [linker]soinfo::gnu_lookup(SymbolName&, version_info const*, unsigned int*) const
+0.39%     app_process      2885  2885  /system/bin/linker                          [linker]find_loaded_library_by_soname(android_namespace_t*, char const*, soinfo**)
+0.32%     app_process      2885  2885  /system/bin/linker                          [linker]memset
+0.28%     app_process      2885  2885  /system/bin/linker                          [linker]__aeabi_uidivmod
+0.28%     app_process      2885  2885  /system/bin/linker                          [linker]soinfo* LinkedList<soinfo, SoinfoListAllocator>::find_if<load_library(android_namespace_t*, LoadTask*, std::__1::vector<LoadTask*, std::__1::allocator<LoadTask*> >*, int, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&)::$_12>(load_library(android_namespace_t*, LoadTask*, std::__1::vector<LoadTask*, std::__1::allocator<LoadTask*> >*, int, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&)::$_12) const
+0.25%     main             2885  2885  /system/lib/libart.so                       art::mirror::Class::DescriptorEquals(char const*)
+0.25%     main             2885  2885  /system/bin/linker                          [linker]find_libraries(android_namespace_t*, soinfo*, char const* const*, unsigned int, soinfo**, std::__1::vector<soinfo*, std::__1::allocator<soinfo*> >*, unsigned int, int, android_dlextinfo const*, bool)
+0.25%     main             2885  2885  /system/bin/linker                          [linker]memset
+0.24%     FinalizerDaemon  2885  3090  [kernel.kallsyms]                           unknown
+0.23%     am               2885  2885  /system/bin/linker                          [linker]soinfo::find_symbol_by_name(SymbolName&, version_info const*, elf32_sym const**) const
+0.22%     app_process      2885  2885  /system/bin/linker                          [linker]soinfo::find_verdef_version_index(version_info const*, unsigned short*) const
+0.21%     main             2885  2885  /system/lib/libart.so                       art::MemoryRegion::Subregion(unsigned int, unsigned int) const
+0.20%     am               2885  2885  /system/bin/linker                          [linker]soinfo::get_string(unsigned int) const
+0.19%     app_process      2885  2885  /system/bin/linker                          [linker]bool soinfo::relocate<plain_reloc_iterator>(VersionTracker const&, plain_reloc_iterator&&, LinkedList<soinfo, SoinfoListAllocator> const&, LinkedList<soinfo, SoinfoListAllocator> const&)
+0.19%     main             2885  2885  /system/lib/libopenjdk.so                   unknown
+0.19%     Binder:2885_2    2885  3133  [kernel.kallsyms]                           unknown
+0.18%     main             2885  2885  /system/lib/libart.so                       art::ClassLinker::InitializeClass(art::Thread*, art::Handle<art::mirror::Class>, bool, bool)
+0.17%     main             2885  2885  /system/bin/linker                          [linker]find_loaded_library_by_soname(android_namespace_t*, char const*, soinfo**)
+0.17%     HeapTaskDaemon   2885  3092  [kernel.kallsyms]                           unknown
+0.16%     Shutdown thread  2885  2885  unknown                                     unknown
+0.15%     main             2885  3079  [kernel.kallsyms]                           unknown
+0.14%     main             2885  2885  /system/lib/libart.so                       art::JNI::FindClass(_JNIEnv*, char const*)
+0.14%     main             2885  2885  /system/lib/libart.so                       unknown
+0.14%     am               2885  2885  /system/bin/linker                          [linker]bool soinfo::relocate<plain_reloc_iterator>(VersionTracker const&, plain_reloc_iterator&&, LinkedList<soinfo, SoinfoListAllocator> const&, LinkedList<soinfo, SoinfoListAllocator> const&)
+0.14%     main             2885  2885  /system/lib/libart.so                       art::Signature::operator==(art::StringPiece const&) const
+0.14%     main             2885  2885  /system/lib/libart.so                       art::mirror::Class::FindDeclaredVirtualMethod(art::StringPiece const&, art::StringPiece const&, unsigned int)
+0.13%     ReferenceQueueD  2885  3089  [kernel.kallsyms]                           unknown
+0.13%     app_process      2885  2885  /system/bin/linker                          [linker]void out_vformat<BufferOutputStream>(BufferOutputStream&, char const*, std::__va_list)
+0.12%     main             2885  2885  /system/lib/libart.so                       artAllocArrayFromCodeRosAlloc
+0.12%     app_process      2885  2885  /system/bin/linker                          [linker]packed_reloc_iterator<sleb128_decoder>::next()
+0.12%     am               2885  2885  /system/bin/linker                          [linker]memset
+0.12%     am               2885  2885  /system/bin/linker                          [linker]soinfo_do_lookup(soinfo*, char const*, version_info const*, soinfo**, LinkedList<soinfo, SoinfoListAllocator> const&, LinkedList<soinfo, SoinfoListAllocator> const&, elf32_sym const**)
+0.12%     am               2885  2885  /system/bin/linker                          [linker]bool soinfo::relocate<packed_reloc_iterator<sleb128_decoder> >(VersionTracker const&, packed_reloc_iterator<sleb128_decoder>&&, LinkedList<soinfo, SoinfoListAllocator> const&, LinkedList<soinfo, SoinfoListAllocator> const&)
+0.11%     main             2885  2885  /system/lib/libart.so                       art::CodeInfo::GetStackMapForNativePcOffset(unsigned int, art::CodeInfoEncoding const&) const
+0.11%     app_process      2885  2885  /system/bin/linker                          [linker]sleb128_decoder::pop_front()
+0.11%     main             2885  2885  /system/vendor/lib/libudf.so                free
+0.11%     main             2885  3132  [kernel.kallsyms]                           unknown
+0.11%     main             2885  2885  /system/lib/libart.so                       art::mirror::FindFieldByNameAndType(art::LengthPrefixedArray<art::ArtField>*, art::StringPiece const&, art::StringPiece const&)
+0.11%     am               2885  2885  /system/bin/linker                          [linker]memchr
+0.11%     main             2885  2885  /system/bin/linker                          [linker]strcmp
+0.11%     app_process      2885  2885  /system/bin/linker                          [linker]find_libraries(android_namespace_t*, soinfo*, char const* const*, unsigned int, soinfo**, std::__1::vector<soinfo*, std::__1::allocator<soinfo*> >*, unsigned int, int, android_dlextinfo const*, bool)
+0.11%     main             2885  2885  /system/bin/linker                          [linker]soinfo_do_lookup(soinfo*, char const*, version_info const*, soinfo**, LinkedList<soinfo, SoinfoListAllocator> const&, LinkedList<soinfo, SoinfoListAllocator> const&, elf32_sym const**)
+0.10%     main             2885  2885  /system/lib/libart.so                       art::IndirectReferenceTable::GetChecked(void*) const
+0.10%     app_process      2885  2885  /system/bin/linker                          [linker]memcpy
+0.10%     main             2885  2885  /system/lib/libart.so                       artQuickResolutionTrampoline
+0.09%     Jit thread pool  2885  3079  [kernel.kallsyms]                           unknown
+0.09%     am               2885  2885  /system/bin/linker                          [linker]void out_vformat<BufferOutputStream>(BufferOutputStream&, char const*, std::__va_list)
+0.09%     main             2885  2885  /system/lib/libart.so                       art::ReaderMutexLock::~ReaderMutexLock()
+0.09%     am               2885  2885  /system/bin/linker                          [linker].udivsi3_skip_div0_test
+0.09%     am               2885  2885  /system/bin/linker                          [linker]packed_reloc_iterator<sleb128_decoder>::next()
+0.09%     main             2885  3088  [kernel.kallsyms]                           unknown
+0.09%     app_process      2885  2885  /system/lib/libart.so                       art::TokenRange::MaybeMatches(art::TokenRange const&, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&) const
+0.09%     am               2885  2885  /system/lib/libc.so                         unknown
+0.09%     main             2885  2885  /system/lib/libart.so                       art::ScopedObjectAccessUnchecked::~ScopedObjectAccessUnchecked()
+0.08%     app_process      2885  2885  /system/lib/libLLVM.so                      unknown
+0.08%     Binder:2885_1    2885  3132  [kernel.kallsyms]                           unknown
+0.08%     app_process      2885  2885  /system/bin/linker                          [linker]LinkerBlockAllocator::alloc()
+0.08%     main             2885  2885  /system/lib/libart.so                       art::FindFieldID(art::ScopedObjectAccess const&, _jclass*, char const*, char const*, bool)
+0.08%     app_process      2885  2885  /system/bin/linker                          [linker]load_library(android_namespace_t*, LoadTask*, std::__1::vector<LoadTask*, std::__1::allocator<LoadTask*> >*, int, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&)
+0.08%     am               2885  2885  /system/bin/linker                          [linker]soinfo::lookup_version_info(VersionTracker const&, unsigned int, char const*, version_info const**)
+0.08%     main             2885  2885  /system/lib/libart.so                       art::interpreter::ArtInterpreterToCompiledCodeBridge(art::Thread*, art::ArtMethod*, art::DexFile::CodeItem const*, art::ShadowFrame*, art::JValue*)
+0.08%     app_process      2885  2885  /system/bin/linker                          [linker]getdelim
+0.08%     app_process      2885  2885  /system/bin/linker                          [linker]ElfReader::ReadDynamicSection()
+0.08%     main             2885  2885  /system/bin/linker                          [linker]make_global_group(android_namespace_t*)
+0.08%     am               2885  2885  /system/bin/sh                              unknown
+0.08%     app_process      2885  2885  /system/bin/linker                          [linker]soinfo::lookup_version_info(VersionTracker const&, unsigned int, char const*, version_info const**)
+0.08%     main             2885  2885  /system/lib/libart.so                       art::Thread::DecodeJObject(_jobject*) const
+0.08%     app_process      2885  2885  /system/bin/linker                          [linker]LinkerMemoryAllocator::alloc(unsigned int)
+0.08%     main             2885  2885  /system/lib/libart.so                       art::ArtMethod::Invoke(art::Thread*, unsigned int*, unsigned int, art::JValue*, char const*)
+0.08%     main             2885  2885  /system/lib/libart.so                       artAllocObjectFromCodeInitializedRosAlloc
+0.06%     app_process      2885  2885  /system/bin/linker                          [linker]LinkerBlockAllocator::protect_all(int)
+0.06%     main             2885  2885  /system/bin/linker                          [linker]bool soinfo::relocate<packed_reloc_iterator<sleb128_decoder> >(VersionTracker const&, packed_reloc_iterator<sleb128_decoder>&&, LinkedList<soinfo, SoinfoListAllocator> const&, LinkedList<soinfo, SoinfoListAllocator> const&)
+0.06%     main             2885  2885  /system/lib/libart.so                       art::CodeInfoEncoding::CodeInfoEncoding(void const*)
+0.06%     main             2885  2885  /system/lib/libart.so                       art::QuickArgumentVisitor::VisitArguments()
+0.06%     main             2885  2885  /system/framework/arm/boot-core-libart.oat  unknown
+0.06%     am               2885  2885  /system/bin/linker                          [linker]LinkerMemoryAllocator::get_page_info(void*)
+0.06%     am               2885  2885  /system/lib/libc.so                         strcmp
+0.06%     am               2885  2885  /system/lib/libc.so                         isspace
+0.06%     main             2885  2885  /system/lib/libart.so                       art::ClassTable::Lookup(char const*, unsigned int)
+0.06%     app_process      2885  2885  /system/bin/linker                          [linker]_rs_stir_if_needed
+0.06%     app_process      2885  2885  /system/bin/linker                          [linker]std::__1::__hash_iterator<std::__1::__hash_node<std::__1::__hash_value_type<soinfo const*, ElfReader>, void*>*> std::__1::__hash_table<std::__1::__hash_value_type<soinfo const*, ElfReader>, std::__1::__unordered_map_hasher<soinfo const*, std::__1::__hash_value_type<soinfo const*, ElfReader>, std::__1::hash<soinfo const*>, true>, std::__1::__unordered_map_equal<soinfo const*, std::__1::__hash_value_type<soinfo const*, ElfReader>, std::__1::equal_to<soinfo const*>, true>, std::__1::allocator<std::__1::__hash_value_type<soinfo const*, ElfReader> > >::find<soinfo const*>(soinfo const* const&)
+0.06%     app_process      2885  2885  /system/bin/linker                          [linker]munmap
+0.06%     am               2885  2885  /system/bin/linker                          [linker]realpath_fd(int, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >*)
+0.06%     am               2885  2885  /system/lib/libc.so                         arena_run_reg_alloc
+0.06%     am               2885  2885  /system/bin/linker                          [linker]sleb128_decoder::pop_front()
+0.06%     am               2885  2885  /system/bin/linker                          [linker]SymbolName::elf_hash()
+0.06%     main             2885  2885  /system/lib/libart.so                       art::Thread::AssertNoPendingException() const
+0.06%     main             2885  2885  /system/bin/linker                          [linker]soinfo::find_symbol_by_name(SymbolName&, version_info const*, elf32_sym const**) const
+0.06%     app_process      2885  2885  /system/bin/linker                          [linker]strlen
+0.06%     main             2885  2885  /system/bin/linker                          [linker]bool soinfo::relocate<plain_reloc_iterator>(VersionTracker const&, plain_reloc_iterator&&, LinkedList<soinfo, SoinfoListAllocator> const&, LinkedList<soinfo, SoinfoListAllocator> const&)
+0.06%     app_process      2885  2885  /system/bin/linker                          [linker]soinfo::set_soname(char const*)
+0.06%     Binder:2885_1    2885  3132  unknown                                     unknown
+0.06%     main             2885  2885  /system/lib/libart.so                       art::BuildInternalStackTraceVisitor<false>::VisitFrame()
+0.06%     main             2885  2885  /system/lib/libart.so                       art::mirror::Class::FindDeclaredDirectMethod(art::StringPiece const&, art::StringPiece const&, unsigned int)
+0.06%     Signal Catcher   2885  3088  [kernel.kallsyms]                           unknown
+0.06%     app_process      2885  2885  /system/bin/linker                          [linker]__strchr_chk
+0.06%     am               2885  2885  /system/lib/libc.so                         je_arena_malloc_hard
+0.06%     app_process      2885  2885  /system/bin/linker                          [linker]soinfo::add_child(soinfo*)
+0.06%     main             2885  2885  /system/bin/linker                          [linker].udivsi3_skip_div0_test
+0.06%     main             2885  2885  /system/bin/linker                          [linker]mprotect
+0.06%     main             2885  2885  /system/bin/linker                          [linker]realpath_fd(int, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >*)
+0.06%     main             2885  2885  /system/lib/libart.so                       art::Monitor::MonitorExit(art::Thread*, art::mirror::Object*)
+0.06%     main             2885  2885  /system/lib/libart.so                       art::OatFile::Begin() const
+0.06%     app_process      2885  2885  /system/bin/linker                          [linker]LinkerSmallObjectAllocator::alloc()
+0.05%     app_process      2885  2885  /system/bin/linker                          [linker]BufferOutputStream::Send(char const*, int)
+0.05%     main             2885  2885  /system/lib/libart.so                       art::Monitor::MonitorEnter(art::Thread*, art::mirror::Object*)
+0.05%     main             2885  2885  /system/lib/libart.so                       art::ArtMethod::GetOatQuickMethodHeader(unsigned int)
+0.05%     app_process      2885  2885  /system/bin/linker                          [linker]soinfo::resolve_symbol_address(elf32_sym const*) const
+0.05%     main             2885  2885  /system/lib/libart.so                       bool art::interpreter::DoCall<false, false>(art::ArtMethod*, art::Thread*, art::ShadowFrame&, art::Instruction const*, unsigned short, art::JValue*)
+0.05%     app_process      2885  2885  /system/lib/libandroidfw.so                 std::__1::__hash_table<unsigned long long, std::__1::hash<unsigned long long>, std::__1::equal_to<unsigned long long>, std::__1::allocator<unsigned long long> >::__insert_unique(unsigned long long const&)
+0.05%     main             2885  2885  /system/vendor/lib/libudf.so                __udivdi3
+0.05%     app_process      2885  2885  /system/vendor/lib/libudf.so                malloc
+0.05%     Binder:2885_2    2885  3133  unknown                                     unknown
+0.05%     am               2885  2885  /system/lib/libc.so                         je_realloc
+0.05%     FinalizerWatchd  2885  3091  [kernel.kallsyms]                           unknown
+0.05%     main             2885  2885  /system/framework/arm/boot-framework.oat    unknown
+0.05%     main             2885  2885  /system/bin/linker                          [linker]ElfReader::ReserveAddressSpace(android_dlextinfo const*)
+0.05%     main             2885  2885  /system/lib/libart.so                       art::ClassLinker::FixupStaticTrampolines(art::mirror::Class*)
+0.03%     main             2885  2885  /system/lib/libart.so                       art::ClassLinker::FindClass(art::Thread*, char const*, art::Handle<art::mirror::ClassLoader>)
+0.03%     main             2885  2885  /system/lib/libart.so                       art::GetStackOverflowReservedBytes(art::InstructionSet)
+0.03%     app_process      2885  2885  /system/bin/linker                          [linker]std::__1::__murmur2_or_cityhash<unsigned int, 32u>::operator()(void const*, unsigned int)
+0.03%     main             2885  2885  /system/lib/libart.so                       art::mirror::Class::GetInterfaceTypeList()
+0.03%     main             2885  2885  /system/lib/libart.so                       art::Mutex::ExclusiveUnlock(art::Thread*)
+0.03%     am               2885  2885  /system/bin/linker                          [linker]void std::__1::vector<LoadTask*, std::__1::allocator<LoadTask*> >::__push_back_slow_path<LoadTask*>(LoadTask*&&)
+0.03%     app_process      2885  2885  /system/bin/linker                          [linker]soinfo::soinfo(android_namespace_t*, char const*, stat const*, long long, int)
+0.03%     am               2885  2885  /system/bin/linker                          [linker]soinfo::generate_handle()
+0.03%     app_process      2885  2885  /system/lib/libart.so                       art::MemMap::MemMap(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, unsigned char*, unsigned int, void*, unsigned int, int, bool, unsigned int)
+0.03%     am               2885  2885  /system/bin/linker                          [linker]find_libraries(android_namespace_t*, soinfo*, char const* const*, unsigned int, soinfo**, std::__1::vector<soinfo*, std::__1::allocator<soinfo*> >*, unsigned int, int, android_dlextinfo const*, bool)
+0.03%     am               2885  2885  /system/bin/linker                          [linker]MappedFileFragment::~MappedFileFragment()
+0.03%     main             2885  2885  /system/lib/libart.so                       art_quick_alloc_object_rosalloc
+0.03%     main             2885  2885  /system/lib/libc++.so                       operator new(unsigned int)
+0.03%     main             2885  2885  /system/lib/libart.so                       art::gc::allocator::RosAlloc::AllocFromRun(art::Thread*, unsigned int, unsigned int*, unsigned int*, unsigned int*)
+0.03%     am               2885  2885  /system/bin/linker                          [linker]__aeabi_memclr_impl
+0.03%     main             2885  2885  /system/lib/libart.so                       art::ClassLinker::EnsureResolved(art::Thread*, char const*, art::mirror::Class*)
+0.03%     main             2885  2885  /system/bin/linker                          [linker]__strchr_chk
+0.03%     app_process      2885  2885  /system/bin/linker                          [linker]strstr
+0.03%     am               2885  2885  /system/bin/linker                          [linker]safe_add(long long*, long long, unsigned int)
+0.03%     app_process      2885  2885  /system/bin/linker                          [linker]phdr_table_protect_gnu_relro(elf32_phdr const*, unsigned int, unsigned int)
+0.03%     am               2885  2885  /system/bin/linker                          [linker]___close
+0.03%     am               2885  2885  /system/lib/libc.so                         memcpy
+0.03%     main             2885  2885  /system/bin/linker                          [linker]__aeabi_uidivmod
+0.03%     am               2885  2885  /system/lib/libc.so                         malloc
+0.03%     main             2885  2885  /system/bin/linker                          [linker]soinfo::find_verdef_version_index(version_info const*, unsigned short*) const
+0.03%     main             2885  2885  /system/lib/libart.so                       art::mirror::PrimitiveArray<unsigned short>::Alloc(art::Thread*, unsigned int)
+0.03%     main             2885  2885  /system/lib/libart.so                       art::DexFile::FindClassDef(char const*, unsigned int) const
+0.03%     am               2885  2885  /system/bin/linker                          [linker]is_symbol_global_and_defined(soinfo const*, elf32_sym const*)
+0.03%     am               2885  2885  /system/bin/linker                          [linker]LinkerSmallObjectAllocator::alloc()
+0.03%     main             2885  2885  /system/lib/libart.so                       art::StackVisitor::StackVisitor(art::Thread*, art::Context*, art::StackVisitor::StackWalkKind)
+0.03%     am               2885  2885  /system/lib/libc.so                         memchr
+0.03%     main             2885  2885  /system/lib/libart.so                       art::ClassLinker::IsQuickResolutionStub(void const*) const
+0.03%     main             2885  2885  /system/lib/libart.so                       art::CacheClass(_JNIEnv*, char const*)
+0.03%     app_process      2885  2885  /system/bin/linker                          [linker]format_integer(char*, unsigned int, unsigned long long, char)
+0.03%     app_process      2885  2885  /system/bin/linker                          [linker]mprotect
+0.03%     main             2885  2885  /system/bin/linker                          [linker]ElfReader::ReadDynamicSection()
+0.03%     main             2885  2885  /system/lib/libart.so                       art::LinkFieldsComparator::operator()(art::ArtField*, art::ArtField*)
+0.03%     am               2885  2885  /system/bin/linker                          [linker]soinfo::find_verdef_version_index(version_info const*, unsigned short*) const
+0.03%     app_process      2885  2885  /system/vendor/lib/libudf.so                __aeabi_llsl
+0.03%     app_process      2885  2885  /system/lib/libart.so                       art::DlOpenOatFile::PreSetup(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&)::dl_iterate_context::callback(dl_phdr_info*, unsigned int, void*)
+0.03%     main             2885  2885  /system/lib/libart.so                       art::ComputeModifiedUtf8Hash(char const*)
+0.03%     app_process      2885  2885  /system/bin/linker                          [linker]__libc_format_buffer
+0.03%     app_process      2885  2885  /system/lib/libart.so                       void std::__1::vector<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::allocator<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > > >::__push_back_slow_path<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&>(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&&&)
+0.03%     main             2885  2885  /system/vendor/lib/libudf.so                __udivsi3
+0.03%     main             2885  2885  /system/lib/libart.so                       art::gc::allocator::RosAlloc::RefillRun(art::Thread*, unsigned int)
+0.03%     main             2885  2885  /system/lib/libart.so                       art::IndirectReferenceTable::Remove(unsigned int, void*)
+0.03%     am               2885  2885  /system/bin/linker                          [linker]soinfo::protect_relro()
+0.03%     am               2885  2885  /system/bin/linker                          [linker]split_path(char const*, char const*, std::__1::vector<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::allocator<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > > >*)
+0.03%     main             2885  2885  /system/bin/linker                          [linker]soinfo::lookup_version_info(VersionTracker const&, unsigned int, char const*, version_info const**)
+0.03%     main             2885  2885  /system/lib/libart.so                       art::mirror::Object* art::gc::Heap::AllocObjectWithAllocator<true, true, art::mirror::SetLengthVisitor>(art::Thread*, art::mirror::Class*, unsigned int, art::gc::AllocatorType, art::mirror::SetLengthVisitor const&)
+0.03%     main             2885  2885  /system/lib/libart.so                       void art::JNI::GetPrimitiveArrayRegion<_jcharArray*, unsigned short, art::mirror::PrimitiveArray<unsigned short> >(_JNIEnv*, _jcharArray*, int, int, unsigned short*)
+0.03%     main             2885  3088  unknown                                     unknown
+0.03%     app_process      2885  2885  /system/bin/linker                          [linker]MappedFileFragment::MappedFileFragment()
+0.03%     main             2885  2885  /system/lib/libart.so                       art::OatFile::End() const
+0.03%     main             2885  2885  /system/lib/libart.so                       art_quick_indexof
+0.03%     Shutdown thread  2885  2885  /system/vendor/lib/libudf.so                free
+0.03%     am               2885  2885  /system/vendor/lib/libudf.so                malloc
+0.03%     main             2885  2885  /system/lib/libart.so                       art::ObjectLock<art::mirror::Class>::ObjectLock(art::Thread*, art::Handle<art::mirror::Class>)
+0.03%     app_process      2885  2885  /system/bin/linker                          [linker]soinfo_alloc(android_namespace_t*, char const*, stat*, long long, unsigned int)
+0.03%     main             2885  2885  /system/bin/linker                          [linker]LinkerMemoryAllocator::free(void*)
+0.03%     am               2885  2885  /system/lib/libc.so                         __memchr_chk
+0.03%     main             2885  2885  /system/bin/linker                          [linker]get_application_target_sdk_version()
+0.03%     Binder:2885_1    2885  3132  /system/lib/libart.so                       art::CheckMapRequest(unsigned char*, void*, unsigned int, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >*)
+0.03%     app_process      2885  2885  /system/lib/libart.so                       unix_file::FdFile::ReadFully(void*, unsigned int)
+0.03%     main             2885  2885  /system/lib/libart.so                       void std::__1::__sort<art::LinkFieldsComparator&, std::__1::__deque_iterator<art::ArtField*, art::ArtField**, art::ArtField*&, art::ArtField***, int, 1024> >(std::__1::__deque_iterator<art::ArtField*, art::ArtField**, art::ArtField*&, art::ArtField***, int, 1024>, std::__1::__deque_iterator<art::ArtField*, art::ArtField**, art::ArtField*&, art::ArtField***, int, 1024>, art::LinkFieldsComparator&)
+0.03%     main             2885  2885  /system/lib/libart.so                       art::LinkVirtualHashTable::Add(unsigned int)
+0.03%     FinalizerWatchd  2885  3091  unknown                                     unknown
+0.03%     main             2885  2885  /system/lib/libart.so                       art::JniMethodEndWithReference(_jobject*, unsigned int, art::Thread*)
+0.03%     main             2885  2885  /system/lib/libart.so                       artAllocStringFromCharsFromCodeRosAlloc
+0.03%     app_process      2885  2885  /system/bin/linker                          [linker]ElfReader::get_string(unsigned int) const
+0.03%     main             2885  2885  /system/bin/linker                          [linker]ElfReader::CheckFileRange(unsigned int, unsigned int)
+0.03%     main             2885  2885  /system/bin/linker                          [linker]LinkerSmallObjectAllocator::find_page_record(void*)
+0.03%     main             2885  2885  /system/bin/linker                          [linker]soinfo::elf_lookup(SymbolName&, version_info const*, unsigned int*) const
+0.03%     am               2885  2885  /system/bin/linker                          [linker]read_spec_entries(char*, int, ...)
+0.03%     am               2885  2885  /system/bin/linker                          [linker]strnlen
+0.03%     app_process      2885  2885  /system/bin/linker                          [linker]std::__1::__hash_table<std::__1::__hash_value_type<soinfo const*, ElfReader>, std::__1::__unordered_map_hasher<soinfo const*, std::__1::__hash_value_type<soinfo const*, ElfReader>, std::__1::hash<soinfo const*>, true>, std::__1::__unordered_map_equal<soinfo const*, std::__1::__hash_value_type<soinfo const*, ElfReader>, std::__1::equal_to<soinfo const*>, true>, std::__1::allocator<std::__1::__hash_value_type<soinfo const*, ElfReader> > >::__node_insert_unique(std::__1::__hash_node<std::__1::__hash_value_type<soinfo const*, ElfReader>, void*>*)
+0.03%     app_process      2885  2885  /system/vendor/lib/libudf.so                unknown
+0.03%     main             2885  2885  /system/lib/libart.so                       art::ClassLinker::ResolveType(art::DexFile const&, unsigned short, art::Handle<art::mirror::DexCache>, art::Handle<art::mirror::ClassLoader>)
+0.03%     main             2885  2885  /system/bin/linker                          [linker]void std::__1::vector<LoadTask*, std::__1::allocator<LoadTask*> >::__push_back_slow_path<LoadTask*>(LoadTask*&&)
+0.03%     main             2885  2885  /system/lib/libart.so                       art::jit::Jit::ShouldUsePriorityThreadWeight()
+0.03%     am               2885  2885  /system/bin/linker                          [linker]memcpy
+0.03%     app_process      2885  2885  /system/lib/libc++.so                       std::__1::ios_base::init(void*)
+0.03%     am               2885  2885  /system/bin/linker                          [linker]soinfo::link_image(LinkedList<soinfo, SoinfoListAllocator> const&, LinkedList<soinfo, SoinfoListAllocator> const&, android_dlextinfo const*)
+0.03%     main             2885  2885  /system/lib/libart.so                       art::JNI::SetStaticIntField(_JNIEnv*, _jclass*, _jfieldID*, int)
+0.03%     app_process      2885  2885  /system/bin/linker                          [linker]__strlen_chk
+0.03%     app_process      2885  2885  /system/bin/linker                          [linker]__linker_init
+0.03%     main             2885  2885  /system/lib/libart.so                       bool art::interpreter::DoFieldPut<(art::FindFieldType)5, (art::Primitive::Type)0, false, false>(art::Thread*, art::ShadowFrame const&, art::Instruction const*, unsigned short)
+0.03%     am               2885  2885  /system/bin/linker                          [linker]__aeabi_uidivmod
+0.03%     main             2885  2885  /system/lib/libart.so                       std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::append(char const*, unsigned int)
+0.03%     am               2885  2885  /system/bin/linker                          [linker]mprotect
+0.03%     main             2885  2885  /system/bin/linker                          [linker]operator delete(void*)
+0.03%     app_process      2885  2885  /system/bin/linker                          [linker]free
+0.03%     HeapTaskDaemon   2885  3092  /system/lib/libart.so                       art::Mutex::ExclusiveLock(art::Thread*)
+0.03%     HeapTaskDaemon   2885  3092  /system/lib/libart.so                       art::Thread::SetNativePriority(int)
+0.03%     ReferenceQueueD  2885  3089  /system/lib/libart.so                       art::ThreadList::Unregister(art::Thread*)
+0.03%     ReferenceQueueD  2885  3089  unknown                                     unknown
+0.03%     main             2885  3092  unknown                                     unknown
+0.03%     app_process      2885  2885  /system/vendor/lib/libudf.so                __udivsi3
+0.03%     main             2885  2885  /system/lib/libart.so                       artSet8StaticFromCode
+0.03%     app_process      2885  2885  /system/bin/linker                          [linker]open_library_on_paths(ZipArchiveCache*, char const*, long long*, std::__1::vector<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::allocator<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > > > const&, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >*)
+0.03%     main             2885  2885  /system/lib/libart.so                       art::ClassLinker::LinkCode(art::ArtMethod*, art::OatFile::OatClass const*, unsigned int)
+0.03%     am               2885  2885  /system/bin/linker                          [linker]__pthread_mutex_lock_with_timeout(pthread_mutex_internal_t*, bool, timespec const*)
+0.03%     main             2885  2885  /system/lib/libart.so                       art::BuildInternalStackTraceVisitor<false>::Init(int)
+0.03%     app_process      2885  2885  /system/bin/linker                          [linker]std::__1::__hash_iterator<std::__1::__hash_node<std::__1::__hash_value_type<unsigned int, soinfo*>, void*>*> std::__1::__hash_table<std::__1::__hash_value_type<unsigned int, soinfo*>, std::__1::__unordered_map_hasher<unsigned int, std::__1::__hash_value_type<unsigned int, soinfo*>, std::__1::hash<unsigned int>, true>, std::__1::__unordered_map_equal<unsigned int, std::__1::__hash_value_type<unsigned int, soinfo*>, std::__1::equal_to<unsigned int>, true>, std::__1::allocator<std::__1::__hash_value_type<unsigned int, soinfo*> > >::find<unsigned int>(unsigned int const&)
+0.03%     HeapTaskDaemon   2885  3092  /system/lib/libart.so                       unknown
+0.03%     app_process      2885  2885  /system/lib/libart.so                       art::gc::Heap::Heap(unsigned int, unsigned int, unsigned int, unsigned int, double, double, unsigned int, unsigned int, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, art::InstructionSet, art::gc::CollectorType, art::gc::CollectorType, art::gc::space::LargeObjectSpaceType, unsigned int, unsigned int, unsigned int, bool, unsigned int, unsigned int, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, unsigned long long)
+0.03%     am               2885  2885  /system/lib/libc.so                         __sigaction
+0.03%     am               2885  2885  /system/vendor/lib/libudf.so                free
+0.03%     main             2885  2885  /system/lib/libopenjdk.so                   JNU_GetStringPlatformChars
+0.03%     main             2885  2885  /system/bin/linker                          unknown
+0.03%     main             2885  2885  /system/lib/libart.so                       art::OatFile::OatClass::GetOatMethodOffsets(unsigned int) const
+0.03%     main             2885  2885  /system/lib/libart.so                       art::mirror::Class::GetDescriptor(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >*)
+0.03%     main             2885  2885  /system/bin/linker                          [linker]soinfo* LinkedList<soinfo, SoinfoListAllocator>::find_if<load_library(android_namespace_t*, LoadTask*, std::__1::vector<LoadTask*, std::__1::allocator<LoadTask*> >*, int, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&)::$_12>(load_library(android_namespace_t*, LoadTask*, std::__1::vector<LoadTask*, std::__1::allocator<LoadTask*> >*, int, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&)::$_12) const
+0.03%     app_process      2885  2885  /system/lib/libc++.so                       unknown
+0.03%     main             2885  2885  /system/lib/libart.so                       art::JNI::DeleteLocalRef(_JNIEnv*, _jobject*)
+0.03%     FinalizerDaemon  2885  3090  /system/lib/libart.so                       art::DexRegisterLocationCatalog::ExtractKindAtOffset(unsigned int) const
+0.03%     FinalizerDaemon  2885  3090  /system/lib/libart.so                       art::Monitor::DoNotify(art::Thread*, art::mirror::Object*, bool)
+0.03%     FinalizerDaemon  2885  3090  /system/lib/libart.so                       art::Monitor::Lock(art::Thread*)
+0.03%     app_process      2885  2885  /system/lib/libart.so                       art::OatHeader::GetStoreValueByKey(char const*) const
+0.03%     app_process      2885  2885  /system/lib/libart.so                       void std::__1::vector<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::allocator<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > > >::__push_back_slow_path<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > >(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >&&)
+0.03%     main             2885  2885  /system/bin/linker                          [linker]__mmap2
+0.03%     app_process      2885  2885  /system/bin/linker                          [linker]memchr
+0.03%     app_process      2885  2885  /system/bin/linker                          [linker]LinkerMemoryAllocator::free(void*)
+0.03%     main             2885  2885  /system/lib/libjavacore.so                  unknown
+0.03%     main             2885  2885  /system/lib/libart.so                       art::mirror::Class::GetClassDef()
+0.03%     am               2885  2885  /system/bin/linker                          [linker]isspace
+0.03%     main             2885  2885  /system/lib/libart.so                       art::mirror::Object* art::gc::Heap::AllocObjectWithAllocator<true, true, art::mirror::SetStringCountVisitor>(art::Thread*, art::mirror::Class*, unsigned int, art::gc::AllocatorType, art::mirror::SetStringCountVisitor const&)
+0.03%     app_process      2885  2885  /system/bin/linker                          [linker]read_spec_entries(char*, int, ...)
+0.03%     Binder:2885_1    2885  3133  [kernel.kallsyms]                           unknown
+0.03%     Binder:2885_2    2885  3133  /system/lib/libart.so                       art::Thread::InstallImplicitProtection()
+0.03%     main             2885  2885  /system/lib/libart.so                       art::mirror::String::ToCharArray(art::Thread*)
+0.03%     am               2885  2885  /system/bin/linker                          [linker]LinkerSmallObjectAllocator::find_page_record(void*)
+0.03%     app_process      2885  2885  /system/bin/linker                          [linker]isspace
+0.03%     FinalizerWatchd  2885  3091  /system/lib/libc++.so                       unknown
+0.03%     Shutdown thread  2885  2885  /system/lib/libLLVM.so                      unknown
+0.03%     app_process      2885  2885  /system/bin/linker                          [linker]__udivdi3
+0.03%     app_process      2885  2885  /system/bin/linker                          [linker]LinkerSmallObjectAllocator::free_page(std::__1::__wrap_iter<small_object_page_record*>)
+0.02%     app_process      2885  2885  /system/bin/linker                          [linker]LinkerSmallObjectAllocator::free(void*)
+0.02%     app_process      2885  2885  /system/bin/linker                          [linker]LinkerSmallObjectAllocator::find_page_record(void*)
+0.02%     main             2885  2885  /system/lib/libart.so                       artGetObjStaticFromCode
+0.02%     app_process      2885  2885  /system/bin/linker                          [linker]soinfo::call_function(char const*, void (*)())
+0.02%     main             2885  2885  /system/bin/linker                          [linker]LinkerBlockAllocator::free(void*)
+0.02%     app_process      2885  2885  /system/bin/linker                          [linker]__aeabi_uldivmod
+0.02%     app_process      2885  2885  /system/bin/linker                          [linker]android_namespace_t::is_accessible(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&)
+0.02%     main             2885  2885  /system/lib/libart.so                       art::ClassLinker::ResolveFieldJLS(art::DexFile const&, unsigned int, art::Handle<art::mirror::DexCache>, art::Handle<art::mirror::ClassLoader>)
+0.02%     main             2885  2885  /system/lib/libart.so                       art::ArtMethod::RegisterNative(void const*, bool)
+0.02%     main             2885  2885  /system/lib/libart.so                       MterpNewInstance
+0.02%     main             2885  2885  /system/lib/libart.so                       art::IndirectReferenceTable::Add(unsigned int, art::mirror::Object*)
+0.02%     main             2885  2885  /system/lib/libandroid_runtime.so           unknown
+0.00%     simpleperf       2885  2885  [kernel.kallsyms]                           unknown

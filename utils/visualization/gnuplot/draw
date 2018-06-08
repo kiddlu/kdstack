@@ -1,0 +1,6 @@
+#!/bin/bash
+set -x
+
+out=vmstat.png
+
+vmstat 2 10 | awk 'NR > 2 {print NR, $13}' | gnuplot -e "set terminal png;set output \"$out\";plot '-' u 1:2 t 'cpu' w linespoints;"

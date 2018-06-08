@@ -1,0 +1,4 @@
+#!/bin/bash
+
+# Very useful process breakdowns:
+pidstat -d 1 3

@@ -1,0 +1,34 @@
+
+diff --git a/net/ipv4/tcp.c b/net/ipv4/tcp.c
+old mode 100644
+new mode 100755
+index 454a20f..8ebfe8e
+--- a/net/ipv4/tcp.c
++++ b/net/ipv4/tcp.c
+@@ -866,8 +866,10 @@
+ 		gso_size = max_t(u32, gso_size,
+ 				 sysctl_tcp_min_tso_segs * mss_now);
+ 
++/* For_WiFi_Throughput_enhancement
+ 		xmit_size_goal = min_t(u32, gso_size,
+ 				       sk->sk_gso_max_size - 1 - hlen);
++*/
+ 
+ 		xmit_size_goal = tcp_bound_to_half_wnd(tp, xmit_size_goal);
+ 
+diff --git a/net/ipv4/tcp_output.c b/net/ipv4/tcp_output.c
+old mode 100644
+new mode 100755
+index 7b80091..fa79540
+--- a/net/ipv4/tcp_output.c
++++ b/net/ipv4/tcp_output.c
+@@ -51,7 +51,8 @@
+ int sysctl_tcp_workaround_signed_windows __read_mostly = 0;
+ 
+ /* Default TSQ limit of four TSO segments */
+-int sysctl_tcp_limit_output_bytes __read_mostly = 262144;
++//int sysctl_tcp_limit_output_bytes __read_mostly = 262144;     //default 256KB
++int sysctl_tcp_limit_output_bytes __read_mostly = 4194304;     // 4MB, For_WiFi_Throughput_enhancement
+ 
+ /* This limits the percentage of the congestion window which we
+  * will allow a single TSO frame to consume.  Building TSO frames

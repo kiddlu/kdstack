@@ -1,0 +1,11 @@
+#!/bin/bash
+
+#sudo apt-get install systemtap -y
+
+sudo stap -ve '
+  probe begin
+  {
+    log("hello systemtap!")
+    exit()
+  }
+'

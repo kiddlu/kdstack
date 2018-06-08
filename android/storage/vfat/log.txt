@@ -1,0 +1,30 @@
+/sys/kernel/debug/tracing # cat trace
+# tracer: nop
+#
+# entries-in-buffer/entries-written: 583/583   #P:2
+# enabled events: syscalls:sys_exit_mkdirat syscalls:sys_enter_mkdirat
+# kernel time now:  8008.123456
+# UTC time:     2017-10-31 20:37:58.885398
+# android time: 2017-11-01 02:07:58.885398
+#
+#                              _-----=> irqs-off
+#                             / _----=> need-resched
+#                            | / _---=> hardirq/softirq
+#                            || / _--=> preempt-depth
+#                            ||| /     delay
+#           TASK-PID   CPU#  ||||    TIMESTAMP  FUNCTION
+#              | |       |   ||||       |         |
+            main-26385 [000] ...1  7995.122044: sys_mkdirat(dfd: ffffff9c, pathname: 7ff124c157, mode: 1e8)
+            main-26385 [000] ...1  7995.122097: sys_mkdirat -> 0xffffffffffffffef
+            main-26385 [000] ...1  7995.122145: sys_mkdirat(dfd: ffffff9c, pathname: 7ff124c157, mode: 1e8)
+            main-26385 [000] ...1  7995.122786: sys_mkdirat -> 0x0
+  viders.calenda-26402 [000] ...1  8000.249321: sys_mkdirat(dfd: ffffff9c, pathname: 7ff124c157, mode: 1e8)
+  viders.calenda-26402 [000] ...1  8000.249365: sys_mkdirat -> 0xffffffffffffffef
+  viders.calenda-26402 [000] ...1  8000.249411: sys_mkdirat(dfd: ffffff9c, pathname: 7ff124c157, mode: 1e8)
+  viders.calenda-26402 [000] ...1  8000.250061: sys_mkdirat -> 0x0
+       Thread-96-26420 [002] ...1  8000.862012: sys_mkdirat(dfd: ffffff9c, pathname: 7154de18a0, mode: 1ff)
+       Thread-96-26420 [000] ...1  8003.189299: sys_mkdirat -> 0x0
+/sys/kernel/debug/tracing #
+
+0xffffffffffffffef -> -17 "File exists"
+mode:1ff  -> mkdir -m 777

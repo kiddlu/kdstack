@@ -1,0 +1,20 @@
+#!/bin/bash
+
+# useful as a clue, not for investigate!
+
+echo "uptime -s"
+uptime -s
+
+echo ""
+echo "uptime -p"
+uptime -p
+
+# System load averages is the average number of processes that are either in a runnable or uninterruptable state.  A process in a runnable  state  is
+# either using the CPU or waiting to use the CPU.  A process in uninterruptable state is waiting for some I/O access, eg waiting for disk.  The aver‐
+# ages are taken over the three time intervals.  Load averages are not normalized for the number of CPUs in a system, so a load average of 1 means  a
+# single CPU system is loaded all the time while on a 4 CPU system it means it was idle 75% of the time.
+
+
+echo ""
+echo "uptime                                        5min 10min 15min"
+uptime

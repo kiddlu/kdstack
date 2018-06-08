@@ -1,0 +1,13 @@
+   o  Initial IV client to server: HASH(K || H || "A" || session_id)
+      (Here K is encoded as mpint and "A" as byte and session_id as raw
+      data.  "A" means the single character A, ASCII 65).
+
+   o  Initial IV server to client: HASH(K || H || "B" || session_id)
+
+   o  Encryption key client to server: HASH(K || H || "C" || session_id)
+
+   o  Encryption key server to client: HASH(K || H || "D" || session_id)
+
+   o  Integrity key client to server: HASH(K || H || "E" || session_id)
+
+   o  Integrity key server to client: HASH(K || H || "F" || session_id)

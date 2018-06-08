@@ -1,0 +1,22 @@
+diff --git a/tools/releasetools/add_img_to_target_files.py b/tools/releasetools/add_img_to_target_files.py
+index fa22284..479903c 100755
+--- a/tools/releasetools/add_img_to_target_files.py
++++ b/tools/releasetools/add_img_to_target_files.py
+@@ -227,6 +227,16 @@
+   assert succ, "build userdata.img image failed"
+ 
+   common.CheckSize(img.name, "userdata.img", OPTIONS.info_dict)
++
++  #[PPD] add xiaolu.huang f2fs start
++  #empty_img
++  if fstab["/data"].fs_type == "f2fs":
++    empty_img = open(img.name, 'wb')
++    empty_img.seek(32*1024*1024 - 1)
++    empty_img.write('\0')
++    empty_img.close()
++  #[PPD] add xiaolu.huang f2fs end
++
+   common.ZipWrite(output_zip, img.name, prefix + "userdata.img")
+   img.close()
+   shutil.rmtree(temp_dir)
+

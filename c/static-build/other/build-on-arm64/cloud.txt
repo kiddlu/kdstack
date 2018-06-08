@@ -1,0 +1,7 @@
+#cloud-config
+      password: passw0rd
+      chpasswd: { expire: False }
+      ssh_pwauth: True
+      sudo: ['ALL=(ALL) NOPASSWD:ALL']
+      groups: sudo
+      shell: /bin/bash

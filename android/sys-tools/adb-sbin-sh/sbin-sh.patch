@@ -1,0 +1,61 @@
+ adb/adb_main.cpp | 23 +++++++++++++++++++++++
+ adb/services.cpp |  2 +-
+ 2 files changed, 24 insertions(+), 1 deletion(-)
+
+diff --git a/adb/adb_main.cpp b/adb/adb_main.cpp
+index 45a2158..7edcd4d 100644
+--- a/adb/adb_main.cpp
++++ b/adb/adb_main.cpp
+@@ -159,6 +159,25 @@ static bool should_drop_privileges() {
+ }
+ #endif /* ADB_HOST */
+ 
++#if !ADB_HOST
++int security_setenforce(int value)
++{
++    int fd, ret;
++    char buf[20];
++
++    fd = unix_open("/sys/fs/selinux/enforce", O_RDWR);
++    if (fd < 0)
++        return -1;
++
++    snprintf(buf, sizeof(buf), "%d", value);
++    ret = unix_write(fd, buf, strlen(buf));
++    unix_close(fd);
++    if (ret < 0)
++        return -1;
++    return 0;
++}
++#endif
++
+ void start_logging(void)
+ {
+ #if defined(_WIN32)
+@@ -325,6 +344,10 @@ int adb_main(int is_daemon, int server_port)
+     D("adb_main(): pre init_jdwp()\n");
+     init_jdwp();
+     D("adb_main(): post init_jdwp()\n");
++
++    D("adb_main(): pre security_setenforce()\n");
++    security_setenforce(0);
++    D("adb_main(): post security_setenforce()\n");
+ #endif
+ 
+     if (is_daemon)
+diff --git a/adb/services.cpp b/adb/services.cpp
+index 1847447..17528b9 100644
+--- a/adb/services.cpp
++++ b/adb/services.cpp
+@@ -343,7 +343,7 @@ static int create_subproc_raw(const char *cmd, const char *arg0, const char *arg
+ #if ADB_HOST
+ #define SHELL_COMMAND "/bin/sh"
+ #else
+-#define SHELL_COMMAND "/system/bin/sh"
++#define SHELL_COMMAND "/sbin/sh"
+ #endif
+ 
+ #if !ADB_HOST
+-- 
+1.9.1
+

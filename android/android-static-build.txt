@@ -1,0 +1,5 @@
+android static 
+
+LOCAL_STATIC_LIBRARIES := ...
+
+LOCAL_FORCE_STATIC_EXECUTABLE := true

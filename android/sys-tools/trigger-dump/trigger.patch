@@ -1,0 +1,25 @@
+diff --git a/init/signal_handler.c b/init/signal_handler.c
+index 66ed7ed..4da353a 100644
+--- a/init/signal_handler.c
++++ b/init/signal_handler.c
+@@ -71,6 +71,20 @@ static int wait_for_one_process(int block)
+ 
+     ERROR("process '%s', pid %d exited\n", svc->name, pid);
+ 
++    //trigger dump for zygote SIGSEGV
++    if((strstr(svc->name, "zygote") != NULL) && (status == 11)){
++      FILE *fp = fopen("/proc/sysrq-trigger", "w");
++      if (fp != NULL) {
++          if (fprintf(fp, "c") < 0) {
++              ERROR("Trigger crash dump: %s\n", strerror(errno));
++          }
++          fclose(fp);
++       } else {
++          ERROR("Trigger crash dump: %s\n", strerror(errno));
++       }
++
++    }
++
+     if (!(svc->flags & SVC_ONESHOT) || (svc->flags & SVC_RESTART)) {
+         ERROR("process '%s' prepare killing any children in process group\n", svc->name);
+         kill(-pid, SIGKILL);

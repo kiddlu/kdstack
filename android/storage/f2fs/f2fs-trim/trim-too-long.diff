@@ -1,0 +1,14 @@
+diff --git a/fs/f2fs/segment.c b/fs/f2fs/segment.c
+index f77b325..9e3514a 100644
+--- a/fs/f2fs/segment.c
++++ b/fs/f2fs/segment.c
+@@ -1166,6 +1166,8 @@
+ 		mutex_lock(&sbi->gc_mutex);
+ 		write_checkpoint(sbi, &cpc);
+ 		mutex_unlock(&sbi->gc_mutex);
++
++		schedule();
+ 	}
+ out:
+ 	range->len = F2FS_BLK_TO_BYTES(cpc.trimmed);
+

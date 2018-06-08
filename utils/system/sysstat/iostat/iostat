@@ -1,0 +1,4 @@
+#!/bin/bash
+
+# Disk I/O statistics. 1st output is summary since boot.
+iostat -xkdz 1 3

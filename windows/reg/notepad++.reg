@@ -1,0 +1,7 @@
+Windows Registry Editor Version 5.00
+ 
+[HKEY_CLASSES_ROOT\*\shell\Notepad++]
+@="Edit with Notepad++"
+ 
+[HKEY_CLASSES_ROOT\*\shell\Notepad++\Command]
+@="D:\\MyWinix\\Notepad++\\notepad++.exe \"%1\""

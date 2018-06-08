@@ -1,0 +1,5 @@
+#!/bin/bash
+
+#Check for hot threads, unbalanced workloads
+mpstat -P ALL 1 3
+

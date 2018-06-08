@@ -1,0 +1,48 @@
+使用event trace跟踪IO相关的内核事件，具体步骤如下
+
+cd /sys/kernel/debug/tracing
+#打开IO相关子系统trace
+echo 1 > events/block/enable
+echo 1 > events/ext4/enable
+echo 1 > events/jbd2/enable
+echo 1 > events/mmc/enable
+
+#关闭IO无关子系统trace
+echo 0 > events/irq/enable
+echo 0 > events/mtk_events/enable
+echo 0 > events/ipi/enable
+echo 0 > events/kmem/enable
+echo 0 > events/sched/enable
+echo 0 > events/workqueue/enable
+echo 0 > events/power/enable
+
+#清空之前的记录
+echo 0 > tracing_on
+echo 0 > trace
+
+#打开trace
+echo 1 > tracing_on
+
+#操作手机，打开相机App拍照五张，然后退出，打开Google play，facebook等应用，得到的trace.log
+cat trace > /data/trace
+
+分析log，得到mmc rw的数据，好的手机在执行24块的读操作时，平均耗时大约是0.0004~0.0005秒
+         Line 565:          mmcqd/0-128   [001] ...1  7056.585742: mmc_blk_rw_start: cmd=18,addr=0x0073e888,size=0x00000018
+         Line 567:           <idle>-0     [001] d.h2  7056.586127: mmc_blk_rw_end: cmd=18,addr=0x0073e888,size=0x00000018
+
+卡顿手机同一操作的耗时，不是很固定，但是都比好的手机高出1到2个数量级
+         Line 46:          mmcqd/0-128   [000] ...1  1664.229658: mmc_blk_rw_start: cmd=18,addr=0x0015e548,size=0x00000018
+         Line 74:           <idle>-0     [000] d.h2  1664.231455: mmc_blk_rw_end: cmd=18,addr=0x0015e548,size=0x00000018
+
+         Line 236:          mmcqd/0-128   [003] ...1  1664.347817: mmc_blk_rw_start: cmd=18,addr=0x000b2158,size=0x00000018
+         Line 261:           <idle>-0     [002] d.h2  1664.351234: mmc_blk_rw_end: cmd=18,addr=0x000b2158,size=0x00000018
+
+
+而且，好的手机mmc_blk_rw_start和mmc_blk_rw_end是成对出现的，在实验过程中都出现了459次。
+而卡顿手机并非成对出现，测试过程中，mmc_blk_rw_start出现了63，mmc_blk_rw_end仅仅出现了40次。说明MMC控制器往下，有IO请求没有得响应。
+
+之前已经有实验和相关数据说明系统没有流氓进程进行疯狂IO，也没有频繁中断占用系统时间。
+
+
+所以目前的结论是，至少是MMC控制器以下的操作导致系统缓慢，至于是MMC控制器还是eMMC芯片，还没能确定。
+

@@ -1,0 +1,17 @@
+#!/bin/bash
+
+
+#-a --all
+#-s --statistics
+#-i --interfaces
+#-t tcp
+#-u udp
+#-n port num
+#-l --listening
+#-p --program pid
+
+netstat -i
+
+netstat -s
+
+netstat -atunlp

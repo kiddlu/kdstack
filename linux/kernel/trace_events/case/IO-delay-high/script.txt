@@ -1,0 +1,25 @@
+cd /sys/kernel/debug/tracing
+#打开IO相关子系统trace
+echo 1 > events/block/enable
+echo 1 > events/ext4/enable
+echo 1 > events/jbd2/enable
+echo 1 > events/mmc/enable
+
+#关闭IO无关子系统trace
+echo 0 > events/irq/enable
+echo 0 > events/mtk_events/enable
+echo 0 > events/ipi/enable
+echo 0 > events/kmem/enable
+echo 0 > events/sched/enable
+echo 0 > events/workqueue/enable
+echo 0 > events/power/enable
+
+#清空之前的记录
+echo 0 > tracing_on
+echo 0 > trace
+
+#打开trace
+echo 1 > tracing_on
+
+#操作手机相机App并拍照三张后
+cat trace > /data/trace

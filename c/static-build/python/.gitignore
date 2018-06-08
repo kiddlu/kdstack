@@ -1,0 +1,5 @@
+*
+*/*
+!build.sh
+!cmake.sh
+!.gitignore

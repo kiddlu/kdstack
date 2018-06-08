@@ -1,0 +1,1135 @@
+01-03 05:11:01.026925     0     0 I KERNEL  : [    0.000000] Initializing cgroup subsys cpuacct
+01-03 05:11:01.026925     0     0 I KERNEL  : [    0.000000] Linux version 3.18.31-g605cf79 (smartcm@softci8) (gcc version 4.9 20150123 (prerelease) (GCC) ) #1 SMP PREEMPT Fri Nov 25 00:34:41 CST 2016
+01-03 05:11:01.026925     0     0 W KERNEL  : [    0.000000] CPU: AArch64 Processor [410fd034] revision 4
+01-03 05:11:01.026925     0     0 I KERNEL  : [    0.000000] alternatives: enabling workaround for ARM erratum 845719
+01-03 05:11:01.026925     0     0 I KERNEL  : [    0.000000] Machine: Qualcomm Technologies, Inc. MSM8953 ODIN
+01-03 05:11:01.026925     0     0 I KERNEL  : [    0.000000] Early serial console at I/O port 0x0 (options '')
+01-03 05:11:01.026925     0     0 I KERNEL  : [    0.000000] bootconsole [uart0] enabled
+01-03 05:11:01.026925     0     0 I KERNEL  : [    0.000000] efi: Getting EFI parameters from FDT:
+01-03 05:11:01.026925     0     0 I KERNEL  : [    0.000000] efi: UEFI not found.
+01-03 05:11:01.026925     0     0 I KERNEL  : [    0.000000] Reserved memory: reserved region for node 'other_ext_region@0': base 0x0000000084a00000, size 30 MiB
+01-03 05:11:01.026925     0     0 I KERNEL  : [    0.000000] Reserved memory: reserved region for node 'modem_region@0': base 0x0000000086c00000, size 106 MiB
+01-03 05:11:01.026925     0     0 I KERNEL  : [    0.000000] Reserved memory: reserved region for node 'reloc_region@0': base 0x000000008d600000, size 24 MiB
+01-03 05:11:01.026925     0     0 I KERNEL  : [    0.000000] Reserved memory: reserved region for node 'dfps_data_mem@90000000': base 0x0000000090000000, size 0 MiB
+01-03 05:11:01.026925     0     0 I KERNEL  : [    0.000000] Reserved memory: reserved region for node 'splash_region@0x90001000': base 0x0000000090001000, size 19 MiB
+01-03 05:11:01.026925     0     0 I KERNEL  : [    0.000000] Removed memory: created DMA memory pool at 0x0000000084a00000, size 30 MiB
+01-03 05:11:01.026925     0     0 I KERNEL  : [    0.000000] Reserved memory: initialized node other_ext_region@0, compatible id removed-dma-pool
+01-03 05:11:01.026925     0     0 I KERNEL  : [    0.000000] Removed memory: created DMA memory pool at 0x0000000086c00000, size 106 MiB
+01-03 05:11:01.026925     0     0 I KERNEL  : [    0.000000] Reserved memory: initialized node modem_region@0, compatible id removed-dma-pool
+01-03 05:11:01.026925     0     0 I KERNEL  : [    0.000000] Removed memory: created DMA memory pool at 0x000000008d600000, size 24 MiB
+01-03 05:11:01.026925     0     0 I KERNEL  : [    0.000000] Reserved memory: initialized node reloc_region@0, compatible id removed-dma-pool
+01-03 05:11:01.026925     0     0 I KERNEL  : [    0.000000] Reserved memory: allocated memory for 'venus_region@0' node: base 0x000000008f800000, size 8 MiB
+01-03 05:11:01.026925     0     0 I KERNEL  : [    0.000000] Reserved memory: created CMA memory pool at 0x000000008f800000, size 8 MiB
+01-03 05:11:01.026925     0     0 I KERNEL  : [    0.000000] Reserved memory: initialized node venus_region@0, compatible id shared-dma-pool
+01-03 05:11:01.026925     0     0 I KERNEL  : [    0.000000] Reserved memory: allocated memory for 'secure_region@0' node: base 0x00000000f6800000, size 152 MiB
+01-03 05:11:01.026925     0     0 I KERNEL  : [    0.000000] Reserved memory: created CMA memory pool at 0x00000000f6800000, size 152 MiB
+01-03 05:11:01.026925     0     0 I KERNEL  : [    0.000000] Reserved memory: initialized node secure_region@0, compatible id shared-dma-pool
+01-03 05:11:01.026925     0     0 I KERNEL  : [    0.000000] Reserved memory: allocated memory for 'qseecom_region@0' node: base 0x00000000f5800000, size 16 MiB
+01-03 05:11:01.026925     0     0 I KERNEL  : [    0.000000] Reserved memory: created CMA memory pool at 0x00000000f5800000, size 16 MiB
+01-03 05:11:01.026925     0     0 I KERNEL  : [    0.000000] Reserved memory: initialized node qseecom_region@0, compatible id shared-dma-pool
+01-03 05:11:01.026925     0     0 I KERNEL  : [    0.000000] Reserved memory: allocated memory for 'adsp_region@0' node: base 0x00000000f5400000, size 4 MiB
+01-03 05:11:01.026925     0     0 I KERNEL  : [    0.000000] Reserved memory: created CMA memory pool at 0x00000000f5400000, size 4 MiB
+01-03 05:11:01.026925     0     0 I KERNEL  : [    0.000000] Reserved memory: initialized node adsp_region@0, compatible id shared-dma-pool
+01-03 05:11:01.026925     0     0 I KERNEL  : [    0.000000] Reserved memory: allocated memory for 'gpu_region@0' node: base 0x000000008f000000, size 8 MiB
+01-03 05:11:01.026925     0     0 I KERNEL  : [    0.000000] Reserved memory: created CMA memory pool at 0x000000008f000000, size 8 MiB
+01-03 05:11:01.026925     0     0 I KERNEL  : [    0.000000] Reserved memory: initialized node gpu_region@0, compatible id shared-dma-pool
+01-03 05:11:01.026925     0     0 I KERNEL  : [    0.000000] cma: Reserved 40 MiB at 0x00000000f2c00000
+01-03 05:11:01.026925     0     0 D KERNEL  : [    0.000000] On node 0 totalpages: 969216
+01-03 05:11:01.026925     0     0 D KERNEL  : [    0.000000] DMA zone: 42240 pages used for memmap
+01-03 05:11:01.026925     0     0 D KERNEL  : [    0.000000] DMA zone: 0 pages reserved
+01-03 05:11:01.026925     0     0 D KERNEL  : [    0.000000] DMA zone: 969216 pages, LIFO batch:31
+01-03 05:11:01.026925     0     0 I KERNEL  : [    0.000000] psci: probing for conduit method from DT.
+01-03 05:11:01.026925     0     0 I KERNEL  : [    0.000000] psci: PSCIv1.0 detected in firmware.
+01-03 05:11:01.026925     0     0 I KERNEL  : [    0.000000] psci: Using standard PSCI v0.2 function IDs
+01-03 05:11:01.026925     0     0 I KERNEL  : [    0.000000] psci: Initializing psci_cpu_init
+01-03 05:11:01.026925     0     0 I KERNEL  : [    0.000000] psci: Initializing psci_cpu_init
+01-03 05:11:01.026925     0     0 I KERNEL  : [    0.000000] psci: Initializing psci_cpu_init
+01-03 05:11:01.026925     0     0 I KERNEL  : [    0.000000] psci: Initializing psci_cpu_init
+01-03 05:11:01.026925     0     0 I KERNEL  : [    0.000000] psci: Initializing psci_cpu_init
+01-03 05:11:01.026925     0     0 I KERNEL  : [    0.000000] psci: Initializing psci_cpu_init
+01-03 05:11:01.026925     0     0 I KERNEL  : [    0.000000] psci: Initializing psci_cpu_init
+01-03 05:11:01.026925     0     0 I KERNEL  : [    0.000000] PERCPU: Embedded 15 pages/cpu @ffffffc0e22ca000 s23808 r8192 d29440 u61440
+01-03 05:11:01.026925     0     0 D KERNEL  : [    0.000000] pcpu-alloc: s23808 r8192 d29440 u61440 alloc=15*4096
+01-03 05:11:01.026925     0     0 D KERNEL  : [    0.000000] pcpu-alloc: [0] 0 [0] 1 [0] 2 [0] 3 [0] 4 [0] 5 [0] 6 [0] 7
+01-03 05:11:01.026925     0     0 W KERNEL  : [    0.000000] Built 1 zonelists in Zone order, mobility grouping on.  Total pages: 926976
+01-03 05:11:01.026925     0     0 I KERNEL  : [    0.000000] Kernel command line: sched_enable_hmp=1 sched_enable_power_aware=1 console=ttyHSL0,115200,n8 androidboot.console=ttyHSL0 androidboot.hardware=qcom msm_rtb.filter=0x237 ehci-hcd.park=3 lpm_levels.sleep_disabled=1 androidboot.bootdevice=7824900.sdhci earlycon=msm_hsl_uart,0x78af000 androidboot.selinux=permissive androidboot.emmc=true androidboot.verifiedbootstate=orange androidboot.veritymode=enforcing androidboot.keymaster=1 androidboot.serialno=840eacd3 androidboot.fingerprint.id=goodix androidboot.baseband=msm mdss_mdp.panel=1:dsi:0:qcom,mdss_dsi_ft8716_1080p_video:1:none:cfg:single_dsi
+01-03 05:11:01.026925     0     0 W KERNEL  : [    0.000000] kernel detect wujian fingerprint_id = *goodix*
+01-03 05:11:01.026925     0     0 I KERNEL  : [    0.000000] PID hash table entries: 4096 (order: 3, 32768 bytes)
+01-03 05:11:01.026925     0     0 I KERNEL  : [    0.000000] Dentry cache hash table entries: 524288 (order: 10, 4194304 bytes)
+01-03 05:11:01.026925     0     0 I KERNEL  : [    0.000000] Inode-cache hash table entries: 262144 (order: 9, 2097152 bytes)
+01-03 05:11:01.026925     0     0 W KERNEL  : [    0.000000] Memory: 3285060K/3876864K available (14532K kernel code, 2811K rwdata, 7732K rodata, 1180K init, 4858K bss, 591804K reserved)
+01-03 05:11:01.026925     0     0 I KERNEL  : [    0.000000] Virtual kernel memory layout:
+01-03 05:11:01.026925     0     0 I KERNEL  : [    0.000000] vmalloc :0xffffff8000000000 - 0xffffffba3fff0000   (   232 GB)
+01-03 05:11:01.026925     0     0 I KERNEL  : [    0.000000] vmemmap :0xffffffba40000000 - 0xffffffbfc0000000   (    22 GB maximum)
+01-03 05:11:01.026925     0     0 I KERNEL  : [    0.000000] 0xffffffba40b00000 - 0xffffffba4b000000   (   165 MB actual)
+01-03 05:11:01.026925     0     0 I KERNEL  : [    0.000000] PCI I0xffffffbffa000000 - 0xffffffbffb000000   (    16 MB)
+01-03 05:11:01.026925     0     0 I KERNEL  : [    0.000000] fixed  0xffffffbffbdfd000 - 0xffffffbffbdff000   (     8 KB)
+01-03 05:11:01.026925     0     0 I KERNEL  : [    0.000000] modules :0xffffffbffc000000 - 0xffffffc000000000   (    64 MB)
+01-03 05:11:01.026925     0     0 I KERNEL  : [    0.000000] memory  0xffffffc000000000 - 0xffffffc0f0000000   (  3840 MB)
+01-03 05:11:01.026925     0     0 I KERNEL  : [    0.000000] .init :0xffffffc001641000 - 0xffffffc001768000   (  1180 KB)
+01-03 05:11:01.026925     0     0 I KERNEL  : [    0.000000] .text :0xffffffc000080000 - 0xffffffc0016402c4   ( 22273 KB)
+01-03 05:11:01.026925     0     0 I KERNEL  : [    0.000000] .data :0xffffffc001785000 - 0xffffffc001a43c00   (  2811 KB)
+01-03 05:11:01.026925     0     0 I KERNEL  : [    0.000000] SLUB: HWalign=64, Order=0-3, MinObjects=0, CPUs=8, Nodes=1
+01-03 05:11:01.026925     0     0 I KERNEL  : [    0.000000] HMP scheduling enabled.
+01-03 05:11:01.026925     0     0 I KERNEL  : [    0.000000] Preemptible hierarchical RCU implementation.
+01-03 05:11:01.026925     0     0 I KERNEL  : [    0.000000] RCU dyntick-idle grace-period acceleration is enabled.
+01-03 05:11:01.026925     0     0 I KERNEL  : [    0.000000] NR_IRQS:664 nr_irqs:64 0
+01-03 05:11:01.026925     0     0 W KERNEL  : [    0.000000] mpm_init_irq_domain(): Cannot find irq controller for qcom,gpio-parent
+01-03 05:11:01.026925     0     0 E KERNEL  : [    0.000000] MPM 1 irq mapping errored -517
+01-03 05:11:01.026925     0     0 I KERNEL  : [    0.000000] Offload RCU callbacks from all CPUs
+01-03 05:11:01.026925     0     0 I KERNEL  : [    0.000000] Offload RCU callbacks from CPUs: 0-7.
+01-03 05:11:01.026925     0     0 I KERNEL  : [    0.000000] Architected cp15 and mmio timer(s) running at 19.20MHz (virt/virt).
+01-03 05:11:01.026931     0     0 I KERNEL  : [    0.000006] sched_clock: 56 bits at 19MHz, resolution 52ns, wraps every 3579139424256ns
+01-03 05:11:01.034918     0     0 I KERNEL  : [    0.007993] Switched to clocksource arch_sys_counter
+01-03 05:11:01.040904     0     0 I KERNEL  : [    0.013979] kmemleak: Kernel memory leak detector disabled
+01-03 05:11:01.045381     0     0 I KERNEL  : [    0.018456] Calibrating delay loop (skipped), value calculated using timer frequency.. 38.40 BogoMIPS (lpj=192000)
+01-03 05:11:01.055708     0     0 I KERNEL  : [    0.028783] pid_max: default: 32768 minimum: 301
+01-03 05:11:01.060828     0     0 I KERNEL  : [    0.033903] Security Framework initialized
+01-03 05:11:01.064382     0     0 I KERNEL  : [    0.037457] SELinux: Initializing.
+01-03 05:11:01.068030     0     0 D KERNEL  : [    0.041105] SELinux: Starting in permissive mode
+01-03 05:11:01.068357     0     0 I KERNEL  : [    0.041432] Mount-cache hash table entries: 8192 (order: 4, 65536 bytes)
+01-03 05:11:01.074614     0     0 I KERNEL  : [    0.047689] Mountpoint-cache hash table entries: 8192 (order: 4, 65536 bytes)
+01-03 05:11:01.084885     0     0 I KERNEL  : [    0.057960] Initializing cgroup subsys freezer
+01-03 05:11:01.088445     0     0 I KERNEL  : [    0.061520] Initializing cgroup subsys debug
+01-03 05:11:01.094166     0     0 E KERNEL  : [    0.067241] /cpus/cpu@0: Missing clock-frequency property
+01-03 05:11:01.098580     0     0 E KERNEL  : [    0.071655] /cpus/cpu@1: Missing clock-frequency property
+01-03 05:11:01.103916     0     0 E KERNEL  : [    0.076991] /cpus/cpu@2: Missing clock-frequency property
+01-03 05:11:01.109326     0     0 E KERNEL  : [    0.082401] /cpus/cpu@3: Missing clock-frequency property
+01-03 05:11:01.114685     0     0 E KERNEL  : [    0.087760] /cpus/cpu@100: Missing clock-frequency property
+01-03 05:11:01.120265     0     0 E KERNEL  : [    0.093340] /cpus/cpu@101: Missing clock-frequency property
+01-03 05:11:01.125823     0     0 E KERNEL  : [    0.098898] /cpus/cpu@102: Missing clock-frequency property
+01-03 05:11:01.131359     0     0 E KERNEL  : [    0.104434] /cpus/cpu@103: Missing clock-frequency property
+01-03 05:11:01.136987     0     0 I KERNEL  : [    0.110062] hw perfevents: enabled with arm/armv8-pmuv3 PMU driver, 7 counters available
+01-03 05:11:01.145054     0     0 I KERNEL  : [    0.118129] EFI services will not be available.
+01-03 05:11:01.149777     0     0 W KERNEL  : [    0.122852] NOHZ: local_softirq_pending 02
+01-03 05:11:01.158405     0     0 W KERNEL  : [    0.131480] **********************************************************
+01-03 05:11:01.165462     0     0 W KERNEL  : [    0.138537] **   NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE   **
+01-03 05:11:01.171882     0     0 W KERNEL  : [    0.144957] **                                                      **
+01-03 05:11:01.178416     0     0 W KERNEL  : [    0.151491] ** trace_printk() being used. Allocating extra memory.  **
+01-03 05:11:01.184903     0     0 W KERNEL  : [    0.157978] **                                                      **
+01-03 05:11:01.191435     0     0 W KERNEL  : [    0.164510] ** This means that this is a DEBUG kernel and it is     **
+01-03 05:11:01.197943     0     0 W KERNEL  : [    0.171018] ** unsafe for produciton use.                           **
+01-03 05:11:01.204434     0     0 W KERNEL  : [    0.177509] **                                                      **
+01-03 05:11:01.210966     0     0 W KERNEL  : [    0.184041] ** If you see this message and you are not debugging    **
+01-03 05:11:01.217473     0     0 W KERNEL  : [    0.190548] ** the kernel, report this immediately to your vendor!  **
+01-03 05:11:01.223965     0     0 W KERNEL  : [    0.197040] **                                                      **
+01-03 05:11:01.230496     0     0 W KERNEL  : [    0.203571] **   NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE   **
+01-03 05:11:01.237006     0     0 W KERNEL  : [    0.210081] **********************************************************
+01-03 05:11:01.275870     0     0 I KERNEL  : [    0.248945] Core Debug Lock unlocked
+01-03 05:11:01.279213     0     0 I KERNEL  : [    0.252288] MSM Memory Dump base table set up
+01-03 05:11:01.282803     0     0 I KERNEL  : [    0.255878] MSM Memory Dump apps data table set up
+01-03 05:11:01.287626     0     0 I KERNEL  : [    0.260701] Configuring XPU violations to be fatal errors
+01-03 05:11:01.295902     0     0 I KERNEL  : [    0.268977] cpu_clock_pwr_init: Power clocks configured
+01-03 05:11:01.381501     0     0 I KERNEL  : [    0.354576] Brought up 8 CPUs
+01-03 05:11:01.383435     0     0 I KERNEL  : [    0.356510] SMP: Total of 8 processors activated.
+01-03 05:11:01.388255     0     0 I KERNEL  : [    0.361330] alternatives: patching kernel code
+01-03 05:11:01.403607     0     0 I KERNEL  : [    0.376682] DMI not present or invalid.
+01-03 05:11:01.555427     0     0 I KERNEL  : [    0.528502] pinctrl core: initialized pinctrl subsystem
+01-03 05:11:01.562241     0     0 I KERNEL  : [    0.535316] regulator-dummy: no parameters
+01-03 05:11:01.982344     0     0 I KERNEL  : [    0.955419] NET: Registered protocol family 16
+01-03 05:11:01.997331     0     0 W KERNEL  : [    0.970406] ------------[ cut here ]------------
+01-03 05:11:02.000918     0     0 W KERNEL  : [    0.973993] WARNING: CPU: 1 PID: 1 at /home/smartcm/jenkins/Daily/kernel/drivers/power/qcom/pm-boot.c:45 msm_pm_boot_init+0x90/0xd0()
+01-03 05:11:02.012912     0     0 W KERNEL  : [    0.985987] Modules linked in:
+01-03 05:11:02.015934     0     0 W KERNEL  : [    0.989009] CPU: 1 PID: 1 Comm: swapper/0 Not tainted 3.18.31-g605cf79 #1
+01-03 05:11:02.022699     0     0 W KERNEL  : [    0.995774] Hardware name: Qualcomm Technologies, Inc. MSM8953 ODIN (DT)
+01-03 05:11:02.029383     0     0 F KERNEL  : [    1.002458] Call trace:
+01-03 05:11:02.031822     0     0 W KERNEL  : [    1.004897] [<ffffffc000089b14>] dump_backtrace+0x0/0x270
+01-03 05:11:02.037199     0     0 W KERNEL  : [    1.010274] [<ffffffc000089d98>] show_stack+0x14/0x1c
+01-03 05:11:02.042236     0     0 W KERNEL  : [    1.015311] [<ffffffc000e9791c>] dump_stack+0x80/0xa4
+01-03 05:11:02.047271     0     0 W KERNEL  : [    1.020346] [<ffffffc0000a3280>] warn_slowpath_common+0x8c/0xb0
+01-03 05:11:02.053172     0     0 W KERNEL  : [    1.026247] [<ffffffc0000a33bc>] warn_slowpath_null+0x18/0x20
+01-03 05:11:02.058900     0     0 W KERNEL  : [    1.031975] [<ffffffc001685290>] msm_pm_boot_init+0x90/0xd0
+01-03 05:11:02.064455     0     0 W KERNEL  : [    1.037530] [<ffffffc000082b38>] do_one_initcall+0x1a0/0x1bc
+01-03 05:11:02.070099     0     0 W KERNEL  : [    1.043174] [<ffffffc001641b38>] kernel_init_freeable+0x14c/0x1e8
+01-03 05:11:02.076176     0     0 W KERNEL  : [    1.049251] [<ffffffc000e90a58>] kernel_init+0x14/0xd8
+01-03 05:11:02.081341     0     0 W KERNEL  : [    1.054416] ---[ end trace ecaa5c7d349af7b0 ]---
+01-03 05:11:02.085946     0     0 E KERNEL  : [    1.059021] scm_call failed: func id 0x42000101, arginfo: 0x2, args: 0x1046ee50, 0x0, 0x0, 0x0, ret: -1, syscall returns: 0x0, 0x0, 0x0
+01-03 05:11:02.115044     0     0 I KERNEL  : [    1.088119] cpuidle: using governor ladder
+01-03 05:11:02.135011     0     0 I KERNEL  : [    1.108086] cpuidle: using governor menu
+01-03 05:11:02.155015     0     0 I KERNEL  : [    1.128090] cpuidle: using governor qcom
+01-03 05:11:02.160491     0     0 I KERNEL  : [    1.133566] vdso: 2 pages (1 code @ ffffffc00178d000, 1 data @ ffffffc00178c000)
+01-03 05:11:02.174329     0     0 I KERNEL  : [    1.147404] software IO TLB [mem 0xe4c00000-0xe5000000] (4MB) mapped at [ffffffc0d4c00000-ffffffc0d4ffffff]
+01-03 05:11:02.193129     0     0 I KERNEL  : [    1.166204] DMA: preallocated 256 KiB pool for atomic allocations
+01-03 05:11:02.217691     0     0 E KERNEL  : [    1.190766] IPA HW is not supported on this target
+01-03 05:11:02.221446     0     0 E KERNEL  : [    1.194521] IPA HW is not supported on this target
+01-03 05:11:02.226824     0     0 I KERNEL  : [    1.199899] ipa_usb ipa3_usb_init:22690 exit: IPA_USB init success!
+01-03 05:11:02.232383     0     0 E KERNEL  : [    1.205458] IPA HW is not supported on this target
+01-03 05:11:02.237180     0     0 E KERNEL  : [    1.210255] IPA HW is not supported on this target
+01-03 05:11:02.254526     0     0 W KERNEL  : [    1.227601] __of_mpm_init(): MPM driver mapping exists
+01-03 05:11:02.267507     0     0 I KERNEL  : [    1.240582] platform soc:qqcom,kgsl-hyp: assigned reserved memory node gpu_region@0
+01-03 05:11:02.355487     0     0 E KERNEL  : [    1.328562] msm_mpm_dev_probe(): Cannot get clk resource for XO: -517
+01-03 05:11:02.375591     0     0 I KERNEL  : [    1.348666] sps:ssps is ready.
+01-03 05:11:02.382437     0     0 I KERNEL  : [    1.355512] msm_thermal:vvdd_restriction_reg_init Defer regulator vdd-dig probe
+01-03 05:11:02.388658     0     0 E KERNEL  : [    1.361733] msm_thermal:pprobe_vdd_rstr Err regulator init. err:-517. KTM continues.
+01-03 05:11:02.396289     0     0 I KERNEL  : [    1.369364] msm-thermal soc:qqcom,msm-thermal: probe_vdd_rstr:Failed reading node=/soc/qcom,msm-thermal, key=qcom,max-freq-level. err=-517. KTM continues
+01-03 05:11:02.409919     0     0 E KERNEL  : [    1.382994] msm_thermal:mmsm_thermal_dev_probe Failed reading node=/soc/qcom,msm-thermal, key=qcom,online-hotplug-core. err:-517
+01-03 05:11:02.428890     0     0 I KERNEL  : [    1.401965] i2c-msm-v2 78b6000.i2c: probing driver i2c-msm-v2
+01-03 05:11:02.433849     0     0 E KERNEL  : [    1.406924] i2c-msm-v2 78b6000.i2c: error on clk_get(core_clk):-517
+01-03 05:11:02.439885     0     0 E KERNEL  : [    1.412960] i2c-msm-v2 78b6000.i2c: error probe() failed with err:-517
+01-03 05:11:02.448328     0     0 I KERNEL  : [    1.421403] i2c-msm-v2 78b7000.i2c: probing driver i2c-msm-v2
+01-03 05:11:02.453281     0     0 E KERNEL  : [    1.426356] i2c-msm-v2 78b7000.i2c: error on clk_get(core_clk):-517
+01-03 05:11:02.459320     0     0 E KERNEL  : [    1.432395] i2c-msm-v2 78b7000.i2c: error probe() failed with err:-517
+01-03 05:11:02.467765     0     0 I KERNEL  : [    1.440840] i2c-msm-v2 7af5000.i2c: probing driver i2c-msm-v2
+01-03 05:11:02.472699     0     0 E KERNEL  : [    1.445774] i2c-msm-v2 7af5000.i2c: error on clk_get(core_clk):-517
+01-03 05:11:02.478756     0     0 E KERNEL  : [    1.451831] i2c-msm-v2 7af5000.i2c: error probe() failed with err:-517
+01-03 05:11:02.487025     0     0 I KERNEL  : [    1.460100] i2c-msm-v2 7af6000.i2c: probing driver i2c-msm-v2
+01-03 05:11:02.491944     0     0 E KERNEL  : [    1.465019] i2c-msm-v2 7af6000.i2c: error on clk_get(core_clk):-517
+01-03 05:11:02.498015     0     0 E KERNEL  : [    1.471090] i2c-msm-v2 7af6000.i2c: error probe() failed with err:-517
+01-03 05:11:02.509619     0     0 I KERNEL  : [    1.482694] cpu-clock-8953 b114000.qcom,cpu-clock-8953: Speed bin: 2 PVS Version: 0
+01-03 05:11:02.516559     0     0 E KERNEL  : [    1.489634] cpu-clock-8953 b114000.qcom,cpu-clock-8953: Get vdd-mx regulator!!!
+01-03 05:11:02.527680     0     0 W KERNEL  : [    1.500755] msm_rpm_glink_dt_parse: qcom,rpm-glink compatible not matches
+01-03 05:11:02.533434     0     0 I KERNEL  : [    1.506509] msm_rpm_dev_probe: APSS-RPM communication over SMD
+01-03 05:11:02.544360     0     0 E KERNEL  : [    1.517435] smd_channel_probe_now: allocation table not initialized
+01-03 05:11:02.553293     0     0 E KERNEL  : [    1.526368] smd_channel_probe_now: allocation table not initialized
+01-03 05:11:02.561697     0     0 E KERNEL  : [    1.534772] smd_channel_probe_now: allocation table not initialized
+01-03 05:11:02.572016     0     0 I KERNEL  : [    1.545091] msm_watchdog b017000.qcom,wdt: wdog absent resource not present
+01-03 05:11:02.578877     0     0 I KERNEL  : [    1.551952] msm_watchdog b017000.qcom,wdt: MSM Watchdog Initialized
+01-03 05:11:02.588123     0     0 I KERNEL  : [    1.561198] msm-jtag-fuse a601c.jtagfuse: JTag Fuse initialized
+01-03 05:11:02.612012     0     0 I KERNEL  : [    1.585087] platform soc:qqcom,adsprpc-mem: assigned reserved memory node adsp_region@0
+01-03 05:11:02.625731     0     0 E KERNEL  : [    1.598806] spmi_pmic_arb 200f000.qcom,spmi: PMIC Arb Version-2 0x20010000
+01-03 05:11:02.644090     0     0 I KERNEL  : [    1.617165] pm8953_s5: 400 <--> 1140 mV at 870 mV normal idle
+01-03 05:11:02.650729     0     0 I KERNEL  : [    1.623804] pm8953_s5_avs_limit: 400 <--> 1140 mV
+01-03 05:11:02.655480     0     0 I KERNEL  : [    1.628555] spm_regulator_probe: name=pm8953_s5, range=LV, voltage=870000 uV, mode=AUTO, step rate=1200 uV/us
+01-03 05:11:02.682784     0     0 I KERNEL  : [    1.655859] platform 4080000.qcom,mss: assigned reserved memory node modem_region@0
+01-03 05:11:02.690655     0     0 I KERNEL  : [    1.663730] platform c200000.qcom,lpass: assigned reserved memory node reloc_region@0
+01-03 05:11:02.698285     0     0 I KERNEL  : [    1.671360] platform 1de0000.qcom,venus: assigned reserved memory node venus_region@0
+01-03 05:11:02.707412     0     0 I KERNEL  : [    1.680487] platform a21b000.qcom,pronto: assigned reserved memory node reloc_region@0
+01-03 05:11:02.721383     0     0 I KERNEL  : [    1.694458] apc_mem_acc_corner: 0 <--> 0 mV
+01-03 05:11:02.728322     0     0 I KERNEL  : [    1.701397] cpr4_msm8953_apss_read_fuse_data: apc_corner: speed bin = 2
+01-03 05:11:02.733898     0     0 I KERNEL  : [    1.706973] cpr4_msm8953_apss_read_fuse_data: apc_corner: CPR fusing revision = 3
+01-03 05:11:02.741396     0     0 I KERNEL  : [    1.714471] cpr4_msm8953_apss_read_fuse_data: apc_corner: foundry id = 2
+01-03 05:11:02.748069     0     0 I KERNEL  : [    1.721144] cpr4_msm8953_apss_read_fuse_data: apc_corner: CPR misc fuse value = 0
+01-03 05:11:02.755560     0     0 I KERNEL  : [    1.728635] cpr4_msm8953_apss_read_fuse_data: apc_corner: Voltage boost fuse config = 0 boost = disable
+01-03 05:11:02.765281     0     0 I KERNEL  : [    1.738356] cpr4_msm8953_apss_calculate_open_loop_voltages: apc_corner: fused   LowSVS: open-loop= 625000 uV
+01-03 05:11:02.774695     0     0 I KERNEL  : [    1.747770] cpr4_msm8953_apss_calculate_open_loop_voltages: apc_corner: fused      SVS: open-loop= 700000 uV
+01-03 05:11:02.784529     0     0 I KERNEL  : [    1.757604] cpr4_msm8953_apss_calculate_open_loop_voltages: apc_corner: fused      NOM: open-loop= 805000 uV
+01-03 05:11:02.794335     0     0 I KERNEL  : [    1.767410] cpr4_msm8953_apss_calculate_open_loop_voltages: apc_corner: fused TURBO_L1: open-loop= 915000 uV
+01-03 05:11:02.804282     0     0 I KERNEL  : [    1.777357] cpr4_msm8953_apss_calculate_target_quotients: apc_corner: fused   LowSVS: quot[ 7]= 546
+01-03 05:11:02.813174     0     0 I KERNEL  : [    1.786249] cpr4_msm8953_apss_calculate_target_quotients: apc_corner: fused      SVS: quot[ 7]= 675, quot_offset[ 7]= 125
+01-03 05:11:02.824109     0     0 I KERNEL  : [    1.797184] cpr4_msm8953_apss_calculate_target_quotients: apc_corner: fused      NOM: quot[ 7]= 880, quot_offset[ 7]= 200
+01-03 05:11:02.835047     0     0 I KERNEL  : [    1.808122] cpr4_msm8953_apss_calculate_target_quotients: apc_corner: fused TURBO_L1: quot[ 7]=1086, quot_offset[ 7]= 205
+01-03 05:11:02.846728     0     0 I KERNEL  : [    1.819803] cpr4_apss_init_aging: apc: sensor 6 aging init quotient diff = -1000, aging RO scale = 2800 QUOT/V
+01-03 05:11:02.856285     0     0 I KERNEL  : [    1.829360] cpr3_regulator_init_ctrl: apc: Default CPR mode = HW closed-loop
+01-03 05:11:02.863711     0     0 I KERNEL  : [    1.836786] apc_corner: 0 <--> 0 mV at 0 mV
+01-03 05:11:02.873208     0     0 I KERNEL  : [    1.846283] gfx_mem_acc_corner: 0 <--> 0 mV
+01-03 05:11:02.878543     0     0 E KERNEL  : [    1.851618] GFX_LDO: msm_gfx_ldo_parse_dt: Unable to parse CX parameters rc=-517
+01-03 05:11:02.884898     0     0 E KERNEL  : [    1.857973] GFX_LDO: msm_gfx_ldo_probe: Unable to pasrse dt rc=-517
+01-03 05:11:02.944265     0     0 E KERNEL  : [    1.917340] msm_mpm_dev_probe(): Cannot get clk resource for XO: -517
+01-03 05:11:02.951198     0     0 I KERNEL  : [    1.924273] msm_thermal:ssensor_mgr_init_threshold threshold id already initialized
+01-03 05:11:02.958018     0     0 I KERNEL  : [    1.931093] msm_thermal:vvdd_restriction_reg_init Defer regulator vdd-dig probe
+01-03 05:11:02.964958     0     0 E KERNEL  : [    1.938033] msm_thermal:pprobe_vdd_rstr Err regulator init. err:-517. KTM continues.
+01-03 05:11:02.972583     0     0 I KERNEL  : [    1.945658] msm-thermal soc:qqcom,msm-thermal: probe_vdd_rstr:Failed reading node=/soc/qcom,msm-thermal, key=qcom,max-freq-level. err=-517. KTM continues
+01-03 05:11:02.986230     0     0 E KERNEL  : [    1.959305] msm_thermal:mmsm_thermal_dev_probe Failed reading node=/soc/qcom,msm-thermal, key=qcom,online-hotplug-core. err:-517
+01-03 05:11:02.998740     0     0 I KERNEL  : [    1.971815] i2c-msm-v2 78b6000.i2c: probing driver i2c-msm-v2
+01-03 05:11:03.003717     0     0 E KERNEL  : [    1.976792] i2c-msm-v2 78b6000.i2c: error on clk_get(core_clk):-517
+01-03 05:11:03.009729     0     0 E KERNEL  : [    1.982804] i2c-msm-v2 78b6000.i2c: error probe() failed with err:-517
+01-03 05:11:03.017249     0     0 I KERNEL  : [    1.990324] i2c-msm-v2 78b7000.i2c: probing driver i2c-msm-v2
+01-03 05:11:03.022182     0     0 E KERNEL  : [    1.995257] i2c-msm-v2 78b7000.i2c: error on clk_get(core_clk):-517
+01-03 05:11:03.028236     0     0 E KERNEL  : [    2.001311] i2c-msm-v2 78b7000.i2c: error probe() failed with err:-517
+01-03 05:11:03.035756     0     0 I KERNEL  : [    2.008831] i2c-msm-v2 7af5000.i2c: probing driver i2c-msm-v2
+01-03 05:11:03.040688     0     0 E KERNEL  : [    2.013763] i2c-msm-v2 7af5000.i2c: error on clk_get(core_clk):-517
+01-03 05:11:03.046744     0     0 E KERNEL  : [    2.019819] i2c-msm-v2 7af5000.i2c: error probe() failed with err:-517
+01-03 05:11:03.054217     0     0 I KERNEL  : [    2.027292] i2c-msm-v2 7af6000.i2c: probing driver i2c-msm-v2
+01-03 05:11:03.059200     0     0 E KERNEL  : [    2.032275] i2c-msm-v2 7af6000.i2c: error on clk_get(core_clk):-517
+01-03 05:11:03.065232     0     0 E KERNEL  : [    2.038307] i2c-msm-v2 7af6000.i2c: error probe() failed with err:-517
+01-03 05:11:03.072471     0     0 I KERNEL  : [    2.045546] cpu-clock-8953 b114000.qcom,cpu-clock-8953: Speed bin: 2 PVS Version: 0
+01-03 05:11:03.079605     0     0 E KERNEL  : [    2.052680] cpu-clock-8953 b114000.qcom,cpu-clock-8953: Get vdd-mx regulator!!!
+01-03 05:11:03.086946     0     0 W KERNEL  : [    2.060021] msm_rpm_glink_dt_parse: qcom,rpm-glink compatible not matches
+01-03 05:11:03.093418     0     0 I KERNEL  : [    2.066493] msm_rpm_dev_probe: APSS-RPM communication over SMD
+01-03 05:11:03.102598     0     0 I KERNEL  : [    2.075673] pm8953_s1: 870 <--> 1156 mV at 1000 mV normal idle
+01-03 05:11:03.111270     0     0 I KERNEL  : [    2.084345] pm8953_s2_level: 0 <--> 0 mV at 0 mV normal idle
+01-03 05:11:03.118758     0     0 I KERNEL  : [    2.091833] pm8953_s2_floor_level: 0 <--> 0 mV at 0 mV normal idle
+01-03 05:11:03.126981     0     0 I KERNEL  : [    2.100056] pm8953_s2_level_ao: 0 <--> 0 mV at 0 mV normal idle
+01-03 05:11:03.135575     0     0 I KERNEL  : [    2.108650] pm8953_s3: 1225 mV normal idle
+01-03 05:11:03.142625     0     0 I KERNEL  : [    2.115700] pm8953_s4: 1900 <--> 2050 mV at 1900 mV normal idle
+01-03 05:11:03.151160     0     0 I KERNEL  : [    2.124235] pm8953_s7_level: 0 <--> 0 mV at 0 mV normal idle
+01-03 05:11:03.158875     0     0 I KERNEL  : [    2.131950] pm8953_s7_level_ao: 0 <--> 0 mV at 0 mV normal idle
+01-03 05:11:03.166568     0     0 I KERNEL  : [    2.139643] pm8953_s7_level_so: 0 <--> 0 mV at 0 mV normal idle
+01-03 05:11:03.175369     0     0 I KERNEL  : [    2.148444] pm8953_l1: 1000 mV normal idle
+01-03 05:11:03.182405     0     0 I KERNEL  : [    2.155480] pm8953_l2: 975 <--> 1225 mV at 975 mV normal idle
+01-03 05:11:03.191031     0     0 I KERNEL  : [    2.164106] pm8953_l3: 925 mV normal idle
+01-03 05:11:03.198189     0     0 I KERNEL  : [    2.171264] pm8953_l5: 1800 mV normal idle
+01-03 05:11:03.205064     0     0 I KERNEL  : [    2.178139] pm8953_l6: 1800 mV normal idle
+01-03 05:11:03.212119     0     0 I KERNEL  : [    2.185194] pm8953_l7: 1800 <--> 1900 mV at 1800 mV normal idle
+01-03 05:11:03.219834     0     0 I KERNEL  : [    2.192909] pm8953_l7_ao: 1800 <--> 1900 mV at 1800 mV normal idle
+01-03 05:11:03.228807     0     0 I KERNEL  : [    2.201882] pm8953_l8: 2950 mV normal idle
+01-03 05:11:03.235839     0     0 I KERNEL  : [    2.208914] pm8953_l9: 3000 <--> 3300 mV at 3000 mV normal idle
+01-03 05:11:03.244586     0     0 I KERNEL  : [    2.217661] pm8953_l10: 2800 mV normal idle
+01-03 05:11:03.251583     0     0 I KERNEL  : [    2.224658] pm8953_l11: 2950 mV normal idle
+01-03 05:11:03.258735     0     0 I KERNEL  : [    2.231810] pm8953_l12: 1800 <--> 2950 mV at 1800 mV normal idle
+01-03 05:11:03.267541     0     0 I KERNEL  : [    2.240616] pm8953_l13: 3125 mV normal idle
+01-03 05:11:03.274536     0     0 I KERNEL  : [    2.247611] pm8953_l16: 1800 mV normal idle
+01-03 05:11:03.281699     0     0 I KERNEL  : [    2.254774] pm8953_l17: 2800 mV normal idle
+01-03 05:11:03.288682     0     0 I KERNEL  : [    2.261757] pm8953_l19: 1200 <--> 1350 mV at 1200 mV normal idle
+01-03 05:11:03.297705     0     0 I KERNEL  : [    2.270780] pm8953_l22: 1800 mV normal idle
+01-03 05:11:03.304660     0     0 I KERNEL  : [    2.277735] pm8953_l23: 975 <--> 1225 mV at 975 mV normal idle
+01-03 05:11:03.312180     0     0 I KERNEL  : [    2.285255] GFX_LDO: msm_gfx_ldo_voltage_init: LDO corner 1: target-volt = 580000 uV
+01-03 05:11:03.318913     0     0 I KERNEL  : [    2.291988] GFX_LDO: msm_gfx_ldo_voltage_init: LDO corner 2: target-volt = 650000 uV
+01-03 05:11:03.326628     0     0 I KERNEL  : [    2.299703] GFX_LDO: msm_gfx_ldo_voltage_init: LDO corner 3: target-volt = 720000 uV
+01-03 05:11:03.334360     0     0 I KERNEL  : [    2.307435] GFX_LDO: msm_gfx_ldo_adjust_init_voltage: adjusted the open-loop voltage[1] 580000 -> 615000
+01-03 05:11:03.343815     0     0 I KERNEL  : [    2.316890] GFX_LDO: msm_gfx_ldo_adjust_init_voltage: adjusted the open-loop voltage[2] 650000 -> 675000
+01-03 05:11:03.353278     0     0 I KERNEL  : [    2.326353] GFX_LDO: msm_gfx_ldo_voltage_init: LDO-mode fuse disabled by default
+01-03 05:11:03.361928     0     0 I KERNEL  : [    2.335003] msm_gfx_ldo: 0 <--> 0 mV at 0 mV
+01-03 05:11:03.366566     0     0 E KERNEL  : [    2.339641] msm_mpm_dev_probe(): Cannot get clk resource for XO: -517
+01-03 05:11:03.373346     0     0 I KERNEL  : [    2.346421] msm_thermal:ssensor_mgr_init_threshold threshold id already initialized
+01-03 05:11:03.381290     0     0 E KERNEL  : [    2.354365] cpu0: dev_pm_opp_get_opp_count: device OPP not found (-19)
+01-03 05:11:03.387151     0     0 E KERNEL  : [    2.360226] msm_thermal:gget_cpu_freq_plan_len Error reading CPU0 freq table len. error:-19
+01-03 05:11:03.395393     0     0 E KERNEL  : [    2.368468] cpu4: dev_pm_opp_get_opp_count: device OPP not found (-19)
+01-03 05:11:03.402228     0     0 E KERNEL  : [    2.375303] msm_thermal:gget_cpu_freq_plan_len Error reading CPU4 freq table len. error:-19
+01-03 05:11:03.410491     0     0 I KERNEL  : [    2.383566] msm_thermal:vvdd_restriction_reg_init Defer vdd rstr freq init.
+01-03 05:11:03.420838     0     0 E KERNEL  : [    2.393913] cpu0: dev_pm_opp_get_opp_count: device OPP not found (-19)
+01-03 05:11:03.426701     0     0 E KERNEL  : [    2.399776] msm_thermal:gget_cpu_freq_plan_len Error reading CPU0 freq table len. error:-19
+01-03 05:11:03.427414     0     0 I KERNEL  : [    2.400489] i2c-msm-v2 78b6000.i2c: probing driver i2c-msm-v2
+01-03 05:11:03.427720     0     0 E KERNEL  : [    2.400795] i2c-msm-v2 78b6000.i2c: error on clk_get(core_clk):-517
+01-03 05:11:03.427736     0     0 E KERNEL  : [    2.400811] i2c-msm-v2 78b6000.i2c: error probe() failed with err:-517
+01-03 05:11:03.428733     0     0 I KERNEL  : [    2.401808] i2c-msm-v2 78b7000.i2c: probing driver i2c-msm-v2
+01-03 05:11:03.428979     0     0 E KERNEL  : [    2.402054] i2c-msm-v2 78b7000.i2c: error on clk_get(core_clk):-517
+01-03 05:11:03.428994     0     0 E KERNEL  : [    2.402069] i2c-msm-v2 78b7000.i2c: error probe() failed with err:-517
+01-03 05:11:03.430039     0     0 I KERNEL  : [    2.403114] i2c-msm-v2 7af5000.i2c: probing driver i2c-msm-v2
+01-03 05:11:03.430275     0     0 E KERNEL  : [    2.403350] i2c-msm-v2 7af5000.i2c: error on clk_get(core_clk):-517
+01-03 05:11:03.430290     0     0 E KERNEL  : [    2.403365] i2c-msm-v2 7af5000.i2c: error probe() failed with err:-517
+01-03 05:11:03.431313     0     0 I KERNEL  : [    2.404388] i2c-msm-v2 7af6000.i2c: probing driver i2c-msm-v2
+01-03 05:11:03.431549     0     0 E KERNEL  : [    2.404624] i2c-msm-v2 7af6000.i2c: error on clk_get(core_clk):-517
+01-03 05:11:03.431564     0     0 E KERNEL  : [    2.404639] i2c-msm-v2 7af6000.i2c: error probe() failed with err:-517
+01-03 05:11:03.508939     0     0 E KERNEL  : [    2.482014] cpu4: dev_pm_opp_get_opp_count: device OPP not found (-19)
+01-03 05:11:03.515759     0     0 E KERNEL  : [    2.488834] msm_thermal:gget_cpu_freq_plan_len Error reading CPU4 freq table len. error:-19
+01-03 05:11:03.523990     0     0 E KERNEL  : [    2.497065] cpu0: dev_pm_opp_get_opp_count: device OPP not found (-19)
+01-03 05:11:03.530864     0     0 E KERNEL  : [    2.503939] msm_thermal:gget_cpu_freq_plan_len Error reading CPU0 freq table len. error:-19
+01-03 05:11:03.533947     0     0 W KERNEL  : [    2.507022] ------------[ cut here ]------------
+01-03 05:11:03.533971     0     0 W KERNEL  : [    2.507046] WARNING: CPU: 2 PID: 6 at /home/smartcm/jenkins/Daily/kernel/drivers/clk/msm/clock-local2.c:1005 branch_clk_handoff+0xd8/0x120()
+01-03 05:11:03.533976     0     0 W KERNEL  : [    2.507051] gcc_usb_phy_cfg_ahb_clk clock is enabled in HW even though ENABLE_BIT is not set
+01-03 05:11:03.533982     0     0 W KERNEL  : [    2.507057] Modules linked in:
+01-03 05:11:03.533993     0     0 W KERNEL  : [    2.507068] CPU: 2 PID: 6 Comm: kworker/u16:0 Tainted: G        W      3.18.31-g605cf79 #1
+01-03 05:11:03.533996     0     0 W KERNEL  : [    2.507071] Hardware name: Qualcomm Technologies, Inc. MSM8953 ODIN (DT)
+01-03 05:11:03.534013     0     0 W KERNEL  : [    2.507088] Workqueue: deferwq deferred_probe_work_func
+01-03 05:11:03.534016     0     0 F KERNEL  : [    2.507091] Call trace:
+01-03 05:11:03.534028     0     0 W KERNEL  : [    2.507103] [<ffffffc000089b14>] dump_backtrace+0x0/0x270
+01-03 05:11:03.534036     0     0 W KERNEL  : [    2.507111] [<ffffffc000089d98>] show_stack+0x14/0x1c
+01-03 05:11:03.534046     0     0 W KERNEL  : [    2.507121] [<ffffffc000e9791c>] dump_stack+0x80/0xa4
+01-03 05:11:03.534056     0     0 W KERNEL  : [    2.507131] [<ffffffc0000a3280>] warn_slowpath_common+0x8c/0xb0
+01-03 05:11:03.534064     0     0 W KERNEL  : [    2.507139] [<ffffffc0000a3304>] warn_slowpath_fmt+0x60/0x80
+01-03 05:11:03.534071     0     0 W KERNEL  : [    2.507146] [<ffffffc000b272a0>] branch_clk_handoff+0xd8/0x120
+01-03 05:11:03.534081     0     0 W KERNEL  : [    2.507156] [<ffffffc000b22efc>] __handoff_clk+0xc8/0x2e8
+01-03 05:11:03.534089     0     0 W KERNEL  : [    2.507164] [<ffffffc000b232a4>] msm_clock_register+0x188/0x248
+01-03 05:11:03.534098     0     0 W KERNEL  : [    2.507173] [<ffffffc000b233ec>] of_msm_clock_register+0x88/0x98
+01-03 05:11:03.534105     0     0 W KERNEL  : [    2.507180] [<ffffffc000b36954>] msm_gcc_probe+0x178/0x26c
+01-03 05:11:03.534113     0     0 W KERNEL  : [    2.507188] [<ffffffc0005a9db0>] platform_drv_probe+0x38/0x84
+01-03 05:11:03.534121     0     0 W KERNEL  : [    2.507196] [<ffffffc0005a805c>] driver_probe_device+0x164/0x370
+01-03 05:11:03.534127     0     0 W KERNEL  : [    2.507202] [<ffffffc0005a8294>] __device_attach+0x2c/0x4c
+01-03 05:11:03.534134     0     0 W KERNEL  : [    2.507209] [<ffffffc0005a6248>] bus_for_each_drv+0x7c/0xac
+01-03 05:11:03.534140     0     0 W KERNEL  : [    2.507215] [<ffffffc0005a7e70>] device_attach+0x70/0x9c
+01-03 05:11:03.534146     0     0 W KERNEL  : [    2.507221] [<ffffffc0005a7338>] bus_probe_device+0x2c/0xa0
+01-03 05:11:03.534153     0     0 W KERNEL  : [    2.507228] [<ffffffc0005a7864>] deferred_probe_work_func+0x98/0xc8
+01-03 05:11:03.534163     0     0 W KERNEL  : [    2.507238] [<ffffffc0000ba02c>] process_one_work+0x254/0x444
+01-03 05:11:03.534171     0     0 W KERNEL  : [    2.507246] [<ffffffc0000ba7e4>] worker_thread+0x2fc/0x418
+01-03 05:11:03.534179     0     0 W KERNEL  : [    2.507254] [<ffffffc0000bea34>] kthread+0xf0/0xf8
+01-03 05:11:03.534183     0     0 W KERNEL  : [    2.507258] ---[ end trace ecaa5c7d349af7b1 ]---
+01-03 05:11:03.543557     0     0 I KERNEL  : [    2.516632] qcom,gcc-8953 1800000.qcom,gcc: Registered GCC clocks
+01-03 05:11:03.544015     0     0 I KERNEL  : [    2.517090] cpu-clock-8953 b114000.qcom,cpu-clock-8953: Speed bin: 2 PVS Version: 0
+01-03 05:11:03.552270     0     0 E KERNEL  : [    2.525345] cpu-clock-8953 b114000.qcom,cpu-clock-8953: missing qcom,dfs-sid-c0
+01-03 05:11:03.552278     0     0 E KERNEL  : [    2.525353] cpu-clock-8953 b114000.qcom,cpu-clock-8953: No DFS SID tables found for Cluster-0
+01-03 05:11:03.552287     0     0 E KERNEL  : [    2.525362] cpu-clock-8953 b114000.qcom,cpu-clock-8953: missing qcom,link-sid-c0
+01-03 05:11:03.552293     0     0 E KERNEL  : [    2.525368] cpu-clock-8953 b114000.qcom,cpu-clock-8953: No Link SID tables found for Cluster-0
+01-03 05:11:03.552302     0     0 E KERNEL  : [    2.525377] cpu-clock-8953 b114000.qcom,cpu-clock-8953: missing qcom,lmh-sid-c0
+01-03 05:11:03.552309     0     0 E KERNEL  : [    2.525384] cpu-clock-8953 b114000.qcom,cpu-clock-8953: No LMH SID tables found for Cluster-0
+01-03 05:11:03.552313     0     0 E KERNEL  : [    2.525388] ramp_lmh_sid: Use Default LMH SID
+01-03 05:11:03.552317     0     0 E KERNEL  : [    2.525392] ramp_dfs_sid: Use Default DFS SID
+01-03 05:11:03.552320     0     0 E KERNEL  : [    2.525395] ramp_link_sid: Use Default Link SID
+01-03 05:11:03.552458     0     0 E KERNEL  : [    2.525533] cpu-clock-8953 b114000.qcom,cpu-clock-8953: missing qcom,dfs-sid-c1
+01-03 05:11:03.552466     0     0 E KERNEL  : [    2.525541] cpu-clock-8953 b114000.qcom,cpu-clock-8953: No DFS SID tables found for Cluster-1
+01-03 05:11:03.552474     0     0 E KERNEL  : [    2.525549] cpu-clock-8953 b114000.qcom,cpu-clock-8953: missing qcom,link-sid-c1
+01-03 05:11:03.552481     0     0 E KERNEL  : [    2.525556] cpu-clock-8953 b114000.qcom,cpu-clock-8953: No Link SID tables found for Cluster-1
+01-03 05:11:03.552489     0     0 E KERNEL  : [    2.525564] cpu-clock-8953 b114000.qcom,cpu-clock-8953: missing qcom,lmh-sid-c1
+01-03 05:11:03.552496     0     0 E KERNEL  : [    2.525571] cpu-clock-8953 b114000.qcom,cpu-clock-8953: No LMH SID tables found for Cluster-1
+01-03 05:11:03.552499     0     0 E KERNEL  : [    2.525574] ramp_lmh_sid: Use Default LMH SID
+01-03 05:11:03.552502     0     0 E KERNEL  : [    2.525577] ramp_dfs_sid: Use Default DFS SID
+01-03 05:11:03.552505     0     0 E KERNEL  : [    2.525580] ramp_link_sid: Use Default Link SID
+01-03 05:11:03.552701     0     0 I KERNEL  : [    2.525776] clock_rcgwr_init: RCGwR  Init Completed
+01-03 05:11:03.554149     0     0 I KERNEL  : [    2.527224] populate_opp_table: clock-cpu-8953: OPP tables populated (cpu 3 and 7)
+01-03 05:11:03.554156     0     0 I KERNEL  : [    2.527231] print_opp_table: clock_cpu: a53 C0: OPP voltage for 652800000: 1
+01-03 05:11:03.554160     0     0 I KERNEL  : [    2.527235] print_opp_table: clock_cpu: a53 C0: OPP voltage for 2016000000: 7
+01-03 05:11:03.554165     0     0 I KERNEL  : [    2.527240] print_opp_table: clock_cpu: a53 C1: OPP voltage for 652800000: 1
+01-03 05:11:03.554169     0     0 I KERNEL  : [    2.527244] print_opp_table: clock_cpu: a53 C2: OPP voltage for 2016000000: 7
+01-03 05:11:03.557147     0     0 I KERNEL  : [    2.530222] i2c-msm-v2 78b6000.i2c: probing driver i2c-msm-v2
+01-03 05:11:03.557554     0     0 E KERNEL  : [    2.530629] AXI: msm_bus_scale_register_client(): msm_bus_scale_register_client: Bus driver not ready.
+01-03 05:11:03.557555     0     0 I KERNEL  : [    2.530630] i2c-msm-v2 78b6000.i2c: msm_bus_scale_register_client(mstr-id:86):0 (not a problem)
+01-03 05:11:03.560357     0     0 W KERNEL  : [    2.533432] kworker/u16:22 (92) used greatest stack depth: 13448 bytes left
+01-03 05:11:03.563009     0     0 I KERNEL  : [    2.536084] i2c-msm-v2 78b7000.i2c: probing driver i2c-msm-v2
+01-03 05:11:03.563332     0     0 E KERNEL  : [    2.536407] AXI: msm_bus_scale_register_client(): msm_bus_scale_register_client: Bus driver not ready.
+01-03 05:11:03.563333     0     0 I KERNEL  : [    2.536408] i2c-msm-v2 78b7000.i2c: msm_bus_scale_register_client(mstr-id:86):0 (not a problem)
+01-03 05:11:03.563963     0     0 I KERNEL  : [    2.537038] i2c-msm-v2 78b7000.i2c: irq:176 when no active transfer
+01-03 05:11:03.565597     0     0 W KERNEL  : [    2.538672] kworker/u16:22 (96) used greatest stack depth: 13144 bytes left
+01-03 05:11:03.569384     0     0 I KERNEL  : [    2.542459] i2c-msm-v2 7af5000.i2c: probing driver i2c-msm-v2
+01-03 05:11:03.569707     0     0 E KERNEL  : [    2.542782] AXI: msm_bus_scale_register_client(): msm_bus_scale_register_client: Bus driver not ready.
+01-03 05:11:03.569708     0     0 I KERNEL  : [    2.542783] i2c-msm-v2 7af5000.i2c: msm_bus_scale_register_client(mstr-id:84):0 (not a problem)
+01-03 05:11:03.573276     0     0 I KERNEL  : [    2.546351] i2c-msm-v2 7af6000.i2c: probing driver i2c-msm-v2
+01-03 05:11:03.573574     0     0 E KERNEL  : [    2.546649] AXI: msm_bus_scale_register_client(): msm_bus_scale_register_client: Bus driver not ready.
+01-03 05:11:03.573574     0     0 I KERNEL  : [    2.546649] i2c-msm-v2 7af6000.i2c: msm_bus_scale_register_client(mstr-id:84):0 (not a problem)
+01-03 05:11:03.580899     0     0 I KERNEL  : [    2.553974] gcc-gfx-8953 1800000.qcom,gcc-gfx: Registered GCC GFX clocks.
+01-03 05:11:04.039375     0     0 E KERNEL  : [    3.012450] qcom,qpnp-pin qpnp-pin-4: qpnp_pin_probe: no device nodes specified in topology
+01-03 05:11:04.046751     0     0 W KERNEL  : [    3.019826] qcom,qpnp-pin: probe of qpnp-pin-4 failed with error -22
+01-03 05:11:04.054381     0     0 E KERNEL  : [    3.027456] qcom,qpnp-pin qpnp-pin-17: qpnp_pin_probe: no device nodes specified in topology
+01-03 05:11:04.061834     0     0 W KERNEL  : [    3.034909] qcom,qpnp-pin: probe of qpnp-pin-17 failed with error -22
+01-03 05:11:04.068425     0     0 E KERNEL  : [    3.041500] qcom,qpnp-pin qpnp-pin-18: qpnp_pin_probe: no device nodes specified in topology
+01-03 05:11:04.076676     0     0 W KERNEL  : [    3.049751] qcom,qpnp-pin: probe of qpnp-pin-18 failed with error -22
+01-03 05:11:04.088115     0     0 I KERNEL  : [    3.061190] gladiator_error_reporting b1c0000.qcom,msm-gladiator: MSM Gladiator Error Reporting Initialized
+01-03 05:11:04.098028     0     0 E KERNEL  : [    3.071103] msm_cpuss_dump sCouldn't get memory for dumping
+01-03 05:11:04.103868     0     0 E KERNEL  : [    3.076943] msm_cpuss_dump sCouldn't get memory for dumping
+01-03 05:11:04.121549     0     0 I KERNEL  : [    3.094624] KPI: Bootloader start count = 28824
+01-03 05:11:04.125090     0     0 I KERNEL  : [    3.098165] KPI: Bootloader end count = 116928
+01-03 05:11:04.129467     0     0 I KERNEL  : [    3.102542] KPI: Bootloader display count = 77956
+01-03 05:11:04.134154     0     0 I KERNEL  : [    3.107229] KPI: Bootloader load kernel count = 1570
+01-03 05:11:04.139124     0     0 I KERNEL  : [    3.112199] KPI: Kernel MPM timestamp = 288963
+01-03 05:11:04.143529     0     0 I KERNEL  : [    3.116604] KPI: Kernel MPM Clock frequency = 32768
+01-03 05:11:04.148439     0     0 I KERNEL  : [    3.121514] socinfo_print: v0.10, id=293, ver=1.1, raw_id=70, raw_ver=1, hw_plat=8, hw_plat_ver=65536
+01-03 05:11:04.148439     0     0 I KERNEL  : [    3.121514] accessory_chip=0, hw_plat_subtype=0, pmic_model=65558, pmic_die_revision=65536 foundry_id=3 serial_number=767811391
+01-03 05:11:04.171450     0     0 I KERNEL  : [    3.144525] eldo2_8953: no parameters
+01-03 05:11:04.175208     0     0 E KERNEL  : [    3.148283] qpnp_pin_of_gpio_xlate: no such PMIC gpio 5 in device topology
+01-03 05:11:04.181783     0     0 I KERNEL  : [    3.154858] adv_vreg: no parameters
+01-03 05:11:04.186134     0     0 I KERNEL  : [    3.159209] vdd_vreg: no parameters
+01-03 05:11:04.190623     0     0 I KERNEL  : [    3.163698] vgaarb: loaded
+01-03 05:11:04.197228     0     0 I KERNEL  : [    3.170303] SCSI subsystem initialized
+01-03 05:11:04.203015     0     0 I KERNEL  : [    3.176090] usbcore: registered new interface driver usbfs
+01-03 05:11:04.207960     0     0 I KERNEL  : [    3.181035] usbcore: registered new interface driver hub
+01-03 05:11:04.213176     0     0 I KERNEL  : [    3.186251] usbcore: registered new device driver usb
+01-03 05:11:04.220134     0     0 I KERNEL  : [    3.193209] media: Linux media interface: v0.10
+01-03 05:11:04.223931     0     0 I KERNEL  : [    3.197006] Linux video capture interface: v2.00
+01-03 05:11:04.228637     0     0 I KERNEL  : [    3.201712] EDAC MC: Ver: 3.0.0
+01-03 05:11:04.265188     0     0 I KERNEL  : [    3.238263] cpufreq: driver msm up and running
+01-03 05:11:04.270070     0     0 I KERNEL  : [    3.243145] platform soc:qqcom,ion:qcom,ion-heap@8: assigned reserved memory node secure_region@0
+01-03 05:11:04.278187     0     0 I KERNEL  : [    3.251262] platform soc:qqcom,ion:qcom,ion-heap@27: assigned reserved memory node qseecom_region@0
+01-03 05:11:04.287718     0     0 I KERNEL  : [    3.260793] ION heap system created
+01-03 05:11:04.290440     0     0 I KERNEL  : [    3.263515] ION heap kmalloc created
+01-03 05:11:04.293828     0     0 I KERNEL  : [    3.266903] ION heap mm created at 0x00000000f6800000 with size 9800000
+01-03 05:11:04.300462     0     0 I KERNEL  : [    3.273537] ION heap qsecom created at 0x00000000f5800000 with size 1000000
+01-03 05:11:04.308026     0     0 E KERNEL  : [    3.281101] msm_bus_fabric_init_driver
+01-03 05:11:04.312883     0     0 W KERNEL  : [    3.285958] msm_bus_device 580000.ad-hoc-bus: Coresight support absent for bus: 2048
+01-03 05:11:04.347486     0     0 I KERNEL  : [    3.320561] qcom,qpnp-power-on qpnp-power-on-1: PMIC@SID0 Power-on reason: Triggered from PON1 (secondary PMIC) and 'warm' boot
+01-03 05:11:04.357939     0     0 I KERNEL  : [    3.331014] qcom,qpnp-power-on qpnp-power-on-1: PMIC@SID0: Unknown power-off reason
+01-03 05:11:04.366131     0     0 I KERNEL  : [    3.339206] input: qpnp_pon as /devices/virtual/input/input0
+01-03 05:11:04.372157     0     0 I KERNEL  : [    3.345232] pon_spare_reg: no parameters
+01-03 05:11:04.375406     0     0 I KERNEL  : [    3.348481] qcom,qpnp-power-on qpnp-power-on-15: No PON config. specified
+01-03 05:11:04.381915     0     0 I KERNEL  : [    3.354990] qcom,qpnp-power-on qpnp-power-on-15: PMIC@SID2 Power-on reason: Triggered from PON1 (secondary PMIC) and 'warm' boot
+01-03 05:11:04.393440     0     0 I KERNEL  : [    3.366515] qcom,qpnp-power-on qpnp-power-on-15: PMIC@SID2: Power-off reason: Triggered from PS_HOLD (PS_HOLD/MSM controlled shutdown)
+01-03 05:11:04.405832     0     0 I KERNEL  : [    3.378907] PMIC@SID0: (null) v1.0 options: 2, 2, 0, 0
+01-03 05:11:04.410755     0     0 I KERNEL  : [    3.383830] PMIC@SID2: PMI8950 v2.0 options: 0, 0, 0, 0
+01-03 05:11:04.416805     0     0 E KERNEL  : [    3.389880] ipa2_uc_state_check:2296 uC interface not initialized
+01-03 05:11:04.422151     0     0 E KERNEL  : [    3.395226] ipa ipa_sps_irq_control_all:9938 EP (2) not allocated.
+01-03 05:11:04.428238     0     0 E KERNEL  : [    3.401313] ipa ipa_sps_irq_control_all:9938 EP (5) not allocated.
+01-03 05:11:04.436818     0     0 I KERNEL  : [    3.409893] sps:BBAM 0x0000000007904000 is registered.
+01-03 05:11:04.441790     0     0 I KERNEL  : [    3.414865] sps:BBAM 0x0000000007904000 (va:0xffffff8001640000) enabled: ver:0x27, number of pipes:20
+01-03 05:11:04.487431     0     0 I KERNEL  : [    3.460506] IPA driver initialization was successful.
+01-03 05:11:04.493112     0     0 I KERNEL  : [    3.466187] gdsc_venus: no parameters
+01-03 05:11:04.496572     0     0 I KERNEL  : [    3.469647] gdsc_mdss: no parameters
+01-03 05:11:04.500245     0     0 I KERNEL  : [    3.473320] gdsc_jpeg: no parameters
+01-03 05:11:04.503832     0     0 I KERNEL  : [    3.476907] gdsc_vfe: no parameters
+01-03 05:11:04.507331     0     0 I KERNEL  : [    3.480406] gdsc_vfe1: no parameters
+01-03 05:11:04.510791     0     0 I KERNEL  : [    3.483866] gdsc_cpp: no parameters
+01-03 05:11:04.514027     0     0 I KERNEL  : [    3.487102] gdsc_oxili_gx: no parameters
+01-03 05:11:04.517428     0     0 I KERNEL  : [    3.490503] gdsc_oxili_gx: supplied by msm_gfx_ldo
+01-03 05:11:04.522970     0     0 I KERNEL  : [    3.496045] gdsc_venus_core0: fast normal
+01-03 05:11:04.526906     0     0 I KERNEL  : [    3.499981] gdsc_oxili_cx: no parameters
+01-03 05:11:04.530821     0     0 I KERNEL  : [    3.503896] gdsc_usb30: no parameters
+01-03 05:11:04.535316     0     0 I KERNEL  : [    3.508391] mdss_pll_probe: MDSS pll label = MDSS DSI 0 PLL
+01-03 05:11:04.539849     0     0 I KERNEL  : [    3.512924] mdss_pll_probe: mdss_pll_probe: label=MDSS DSI 0 PLL PLL SSC enabled
+01-03 05:11:04.549395     0     0 I KERNEL  : [    3.522470] dsi_pll_clock_register_8996: Registered DSI PLL ndx=0 clocks successfully
+01-03 05:11:04.556275     0     0 I KERNEL  : [    3.529350] mdss_pll_probe: MDSS pll label = MDSS DSI 1 PLL
+01-03 05:11:04.561740     0     0 I KERNEL  : [    3.534815] mdss_pll_probe: mdss_pll_probe: label=MDSS DSI 1 PLL PLL SSC enabled
+01-03 05:11:04.570330     0     0 E KERNEL  : [    3.543405] pll_is_pll_locked_8996: DSI PLL ndx=1 status=0 failed to Lock
+01-03 05:11:04.577846     0     0 I KERNEL  : [    3.550921] dsi_pll_clock_register_8996: Registered DSI PLL ndx=1 clocks successfully
+01-03 05:11:04.585535     0     0 I KERNEL  : [    3.558610] msm_iommu 1e00000.qcom,iommu: device apps_iommu (model: 500) mapped at ffffff8001c00000, with 21 ctx banks
+01-03 05:11:04.606285     0     0 I KERNEL  : [    3.579360] msm_iommu_ctx 1e20000.qcom,iommu-ctx: context adsp_elf using bank 0
+01-03 05:11:04.612894     0     0 I KERNEL  : [    3.585969] msm_iommu_ctx 1e21000.qcom,iommu-ctx: context adsp_sec_pixel using bank 1
+01-03 05:11:04.620697     0     0 I KERNEL  : [    3.593772] msm_iommu_ctx 1e22000.qcom,iommu-ctx: context mdp_1 using bank 2
+01-03 05:11:04.627762     0     0 I KERNEL  : [    3.600837] msm_iommu_ctx 1e23000.qcom,iommu-ctx: context venus_fw using bank 3
+01-03 05:11:04.635063     0     0 I KERNEL  : [    3.608138] msm_iommu_ctx 1e24000.qcom,iommu-ctx: context venus_sec_non_pixel using bank 4
+01-03 05:11:04.643304     0     0 I KERNEL  : [    3.616379] msm_iommu_ctx 1e25000.qcom,iommu-ctx: context venus_sec_bitstream using bank 5
+01-03 05:11:04.651564     0     0 I KERNEL  : [    3.624639] msm_iommu_ctx 1e26000.qcom,iommu-ctx: context venus_sec_pixel using bank 6
+01-03 05:11:04.659456     0     0 I KERNEL  : [    3.632531] msm_iommu_ctx 1e28000.qcom,iommu-ctx: context pronto_pil using bank 8
+01-03 05:11:04.666897     0     0 I KERNEL  : [    3.639972] msm_iommu_ctx 1e29000.qcom,iommu-ctx: context q6 using bank 9
+01-03 05:11:04.673711     0     0 I KERNEL  : [    3.646786] msm_iommu_ctx 1e2a000.qcom,iommu-ctx: context periph_rpm using bank 10
+01-03 05:11:04.681279     0     0 I KERNEL  : [    3.654354] msm_iommu_ctx 1e2b000.qcom,iommu-ctx: context lpass using bank 11
+01-03 05:11:04.688405     0     0 I KERNEL  : [    3.661480] msm_iommu_ctx 1e2f000.qcom,iommu-ctx: context adsp_io using bank 15
+01-03 05:11:04.695705     0     0 I KERNEL  : [    3.668780] msm_iommu_ctx 1e30000.qcom,iommu-ctx: context adsp_opendsp using bank 16
+01-03 05:11:04.703390     0     0 I KERNEL  : [    3.676465] msm_iommu_ctx 1e31000.qcom,iommu-ctx: context adsp_shared using bank 17
+01-03 05:11:04.711024     0     0 I KERNEL  : [    3.684099] msm_iommu_ctx 1e32000.qcom,iommu-ctx: context cpp using bank 18
+01-03 05:11:04.717986     0     0 I KERNEL  : [    3.691061] msm_iommu_ctx 1e33000.qcom,iommu-ctx: context jpeg_enc0 using bank 19
+01-03 05:11:04.725429     0     0 I KERNEL  : [    3.698504] msm_iommu_ctx 1e34000.qcom,iommu-ctx: context vfe using bank 20
+01-03 05:11:04.732399     0     0 I KERNEL  : [    3.705474] msm_iommu_ctx 1e35000.qcom,iommu-ctx: context mdp_0 using bank 21
+01-03 05:11:04.739536     0     0 I KERNEL  : [    3.712611] msm_iommu_ctx 1e36000.qcom,iommu-ctx: context venus_ns using bank 22
+01-03 05:11:04.746862     0     0 I KERNEL  : [    3.719937] msm_iommu_ctx 1e38000.qcom,iommu-ctx: context ipa using bank 24
+01-03 05:11:04.753815     0     0 I KERNEL  : [    3.726890] msm_iommu_ctx 1e37000.qcom,iommu-ctx: context access_control using bank 23
+01-03 05:11:04.764242     0     0 E KERNEL  : [    3.737317] /soc/qcom,cam_smmu/msm_cam_smmu_cb1: could not get #iommu-cells for /soc/qcom,iommu@1e00000
+01-03 05:11:04.772636     0     0 E KERNEL  : [    3.745711] /soc/qcom,cam_smmu/msm_cam_smmu_cb3: could not get #iommu-cells for /soc/qcom,iommu@1e00000
+01-03 05:11:04.781991     0     0 E KERNEL  : [    3.755066] /soc/qcom,cam_smmu/msm_cam_smmu_cb4: could not get #iommu-cells for /soc/qcom,iommu@1e00000
+01-03 05:11:04.794357     0     0 I KERNEL  : [    3.767432] Advanced Linux Sound Architecture Driver Initialized.
+01-03 05:11:04.801975     0     0 I KERNEL  : [    3.775050] Bluetooth: ffffffc07eebbd18
+01-03 05:11:04.804665     0     0 I KERNEL  : [    3.777740] NET: Registered protocol family 31
+01-03 05:11:04.809202     0     0 I KERNEL  : [    3.782277] Bluetooth: ffffffc07eebbd18
+01-03 05:11:04.812851     0     0 I KERNEL  : [    3.785926] Bluetooth: ffffffc07eebbce8Bluetooth: ffffffc07eebbcb8
+01-03 05:11:04.819094     0     0 I KERNEL  : [    3.792169] Bluetooth: ffffffc07eebbcd8
+01-03 05:11:04.823589     0     0 I KERNEL  : [    3.796664] cfg80211: Calling CRDA to update world regulatory domain
+01-03 05:11:04.829206     0     0 I KERNEL  : [    3.802281] cfg80211: World regulatory domain updated:
+01-03 05:11:04.834275     0     0 I KERNEL  : [    3.807350] cfg80211: DFS Master region: unset
+01-03 05:11:04.838636     0     0 I KERNEL  : [    3.811711] cfg80211: (start_freq - end_freq @ bandwidth), (max_antenna_gain, max_eirp), (dfs_cac_time)
+01-03 05:11:04.848351     0     0 I KERNEL  : [    3.821426] cfg80211: (2402000 KHz - 2472000 KHz @ 40000 KHz), (N/A, 2000 mBm), (N/A)
+01-03 05:11:04.856335     0     0 I KERNEL  : [    3.829410] cfg80211: (2457000 KHz - 2482000 KHz @ 40000 KHz), (N/A, 2000 mBm), (N/A)
+01-03 05:11:04.864311     0     0 I KERNEL  : [    3.837386] cfg80211: (2474000 KHz - 2494000 KHz @ 20000 KHz), (N/A, 2000 mBm), (N/A)
+01-03 05:11:04.872307     0     0 I KERNEL  : [    3.845382] cfg80211: (5170000 KHz - 5250000 KHz @ 80000 KHz), (N/A, 2000 mBm), (N/A)
+01-03 05:11:04.880292     0     0 I KERNEL  : [    3.853367] cfg80211: (5250000 KHz - 5330000 KHz @ 80000 KHz), (N/A, 2000 mBm), (N/A)
+01-03 05:11:04.888278     0     0 I KERNEL  : [    3.861353] cfg80211: (5490000 KHz - 5710000 KHz @ 80000 KHz), (N/A, 2000 mBm), (N/A)
+01-03 05:11:04.896265     0     0 I KERNEL  : [    3.869340] cfg80211: (5735000 KHz - 5835000 KHz @ 80000 KHz), (N/A, 2000 mBm), (N/A)
+01-03 05:11:04.904241     0     0 I KERNEL  : [    3.877316] cfg80211: (57240000 KHz - 63720000 KHz @ 2160000 KHz), (N/A, 0 mBm), (N/A)
+01-03 05:11:04.912735     0     0 F KERNEL  : [    3.885810] pcie:ppcie_init.
+01-03 05:11:04.922138     0     0 I KERNEL  : [    3.895213] ibb_reg: 4600 <--> 6000 mV at 5700 mV
+01-03 05:11:04.926645     0     0 I KERNEL  : [    3.899720] lab_reg: 4600 <--> 6000 mV at 5700 mV
+01-03 05:11:04.931592     0     0 I KERNEL  : [    3.904667] Switched to clocksource arch_sys_counter
+01-03 05:11:05.083541     0     0 I KERNEL  : [    4.056616] bcl_peripheral:bbcl_perph_init BCL Initialized
+01-03 05:11:05.091464     0     0 I KERNEL  : [    4.064539] NET: Registered protocol family 2
+01-03 05:11:05.096285     0     0 I KERNEL  : [    4.069360] TCP established hash table entries: 32768 (order: 6, 262144 bytes)
+01-03 05:11:05.103365     0     0 I KERNEL  : [    4.076440] TCP bind hash table entries: 32768 (order: 8, 1048576 bytes)
+01-03 05:11:05.109628     0     0 I KERNEL  : [    4.082703] TCP: Hash tables configured (established 32768 bind 32768)
+01-03 05:11:05.115888     0     0 I KERNEL  : [    4.088963] TCP: reno registered
+01-03 05:11:05.119169     0     0 I KERNEL  : [    4.092244] UDP hash table entries: 2048 (order: 5, 196608 bytes)
+01-03 05:11:05.125298     0     0 I KERNEL  : [    4.098373] UDP-Lite hash table entries: 2048 (order: 5, 196608 bytes)
+01-03 05:11:05.132109     0     0 I KERNEL  : [    4.105184] NET: Registered protocol family 1
+01-03 05:11:05.135885     0     0 D KERNEL  : [    4.108960] PCI: CLS 0 bytes, default 128
+01-03 05:11:05.140309     0     0 I KERNEL  : [    4.113384] gcc-mdss-8953 1800000.qcom,gcc-mdss: Registered GCC MDSS clocks.
+01-03 05:11:05.147336     0     0 I KERNEL  : [    4.120411] Trying to unpack rootfs image as initramfs...
+01-03 05:11:05.212817     0     0 I KERNEL  : [    4.185892] Freeing initrd memory: 1956K (ffffffc003600000 - ffffffc0037e9000)
+01-03 05:11:05.228015     0     0 I KERNEL  : [    4.201090] futex hash table entries: 2048 (order: 6, 262144 bytes)
+01-03 05:11:05.233272     0     0 I KERNEL  : [    4.206347] Initialise system trusted keyring
+01-03 05:11:05.237723     0     0 I KERNEL  : [    4.210798] audit: initializing netlink subsys (disabled)
+01-03 05:11:05.243137     0     0 I KERNEL  : [    4.216212] audit: type=2000 audit(4.199:1): initialized
+01-03 05:11:05.253245     0     0 W KERNEL  : [    4.226320] vmscan: error setting kswapd cpu affinity mask
+01-03 05:11:05.306896     0     0 I KERNEL  : [    4.279971] zbud: loaded
+01-03 05:11:05.312524     0     0 I KERNEL  : [    4.285599] VFS: Disk quotas dquot_6.5.2
+01-03 05:11:05.315999     0     0 W KERNEL  : [    4.289074] Dquot-cache hash table entries: 512 (order 0, 4096 bytes)
+01-03 05:11:05.333772     0     0 I KERNEL  : [    4.306847] exFAT: Version 1.2.9
+01-03 05:11:05.336521     0     0 I KERNEL  : [    4.309596] fuse init (API version 7.23)
+01-03 05:11:05.341183     0     0 D KERNEL  : [    4.314258] SELinux: Registering netfilter hooks
+01-03 05:11:05.345441     0     0 I KERNEL  : [    4.318516] Key type asymmetric registered
+01-03 05:11:05.348501     0     0 I KERNEL  : [    4.321576] Asymmetric key parser 'x509' registered
+01-03 05:11:05.354019     0     0 I KERNEL  : [    4.327094] Block layer SCSI generic (bsg) driver version 0.4 loaded (major 247)
+01-03 05:11:05.360779     0     0 I KERNEL  : [    4.333854] io scheduler noop registered
+01-03 05:11:05.364650     0     0 I KERNEL  : [    4.337725] io scheduler deadline registered
+01-03 05:11:05.369928     0     0 I KERNEL  : [    4.343003] io scheduler cfq registered (default)
+01-03 05:11:05.385176     0     0 E KERNEL  : [    4.358251] i2c-msm-v2 78b6000.i2c: msm_bus_scale_register_client(mstr-id:86):0x2 (ok)
+01-03 05:11:05.392192     0     0 E KERNEL  : [    4.365267] i2c-msm-v2 78b6000.i2c: NACK: slave not responding, ensure its powered: msgs(n:2 cur:0 tx) bc(rx:1 tx:1) mode:FIFO slv_addr:0x39 MSTR_STS:0x0d1300c8 OPER:0x00000010
+01-03 05:11:05.407796     0     0 E KERNEL  : [    4.380871] msm_dba_helper_i2c_read: i2c read failed
+01-03 05:11:05.412710     0     0 E KERNEL  : [    4.385785] adv7533_read: read err: addr 0x39, reg 0x0, size 0x1
+01-03 05:11:05.418711     0     0 E KERNEL  : [    4.391786] adv7533_probe: Failed to read chip rev
+01-03 05:11:05.423584     0     0 W KERNEL  : [    4.396659] adv7533: probe of 2-0039 failed with error -5
+01-03 05:11:05.429506     0     0 E KERNEL  : [    4.402581] msm_dss_get_res_byname: 'vbif_nrt_phys' resource not found
+01-03 05:11:05.435383     0     0 E KERNEL  : [    4.408458] mdss_mdp_probe+0x284/0x1420->msm_dss_ioremap_byname: 'vbif_nrt_phys' msm_dss_get_res_byname failed
+01-03 05:11:05.446096     0     0 E KERNEL  : [    4.419171] mdss_mdp_irq_clk_register: unable to get clk: lut_clk
+01-03 05:11:05.452316     0     0 E KERNEL  : [    4.425391] No change in context(0==0), skip
+01-03 05:11:05.456491     0     0 I KERNEL  : [    4.429566] mdss_mdp_pipe_addr_setup: type:0 ftchid:-1 xinid:0 num:0 rect:0 ndx:0x1 prio:0
+01-03 05:11:05.463948     0     0 I KERNEL  : [    4.437023] mdss_mdp_pipe_addr_setup: type:1 ftchid:-1 xinid:1 num:3 rect:0 ndx:0x8 prio:1
+01-03 05:11:05.472185     0     0 I KERNEL  : [    4.445260] mdss_mdp_pipe_addr_setup: type:1 ftchid:-1 xinid:5 num:4 rect:0 ndx:0x10 prio:2
+01-03 05:11:05.480533     0     0 I KERNEL  : [    4.453608] mdss_mdp_pipe_addr_setup: type:2 ftchid:-1 xinid:2 num:6 rect:0 ndx:0x40 prio:3
+01-03 05:11:05.488896     0     0 I KERNEL  : [    4.461971] mdss_mdp_pipe_addr_setup: type:3 ftchid:-1 xinid:7 num:10 rect:0 ndx:0x400 prio:0
+01-03 05:11:05.497360     0     0 E KERNEL  : [    4.470435] mdss_mdp_parse_dt_handler: Error from prop qcom,mdss-pipe-sw-reset-off : u32 array read
+01-03 05:11:05.506492     0     0 E KERNEL  : [    4.479567] mdss_mdp_parse_dt_handler: Error from prop qcom,mdss-ib-factor-overlap : u32 array read
+01-03 05:11:05.516168     0     0 I KERNEL  : [    4.489243] xlog_status: enable:0, panic:1, dump:2
+01-03 05:11:05.521644     0     0 I KERNEL  : [    4.494719] mdss_mdp_probe: mdss version = 0x10100000, bootloader display is on, num 1, intf_sel=0x00000100
+01-03 05:11:05.533696     0     0 E KERNEL  : [    4.506771] mdss_smmu_util_parse_dt_clock: clocks are not defined
+01-03 05:11:05.538849     0     0 I KERNEL  : [    4.511924] mdss_smmu_probe: iommu v2 domain[0] mapping and clk register successful!
+01-03 05:11:05.546546     0     0 E KERNEL  : [    4.519621] mdss_smmu_util_parse_dt_clock: clocks are not defined
+01-03 05:11:05.552614     0     0 I KERNEL  : [    4.525689] mdss_smmu_probe: iommu v2 domain[2] mapping and clk register successful!
+01-03 05:11:05.563693     0     0 I KERNEL  : [    4.536768] mdss_dsi_ctrl_probe: DSI Ctrl name = MDSS DSI CTRL->0
+01-03 05:11:05.569452     0     0 W KERNEL  : [    4.542527] xu mdss_dsi_find_panel_of_node
+01-03 05:11:05.572824     0     0 W KERNEL  : [    4.545899] ................mdss_dsi_pref_prim_panel: id1:0    id2:1 boardid:1.............
+01-03 05:11:05.581227     0     0 I KERNEL  : [    4.554302] mdss_dsi_panel_init: Panel Name = ft8716 1080p video mode dsi panel
+01-03 05:11:05.588554     0     0 I KERNEL  : [    4.561629] mdss_dsi_panel_timing_from_dt: found new timing "qcom,mdss_dsi_ft8716_1080p_video" (ffffffc07eebb2d8)
+01-03 05:11:05.598718     0     0 E KERNEL  : [    4.571793] mdss_dsi_parse_dcs_cmds: failed, key=qcom,mdss-dsi-post-panel-on-command
+01-03 05:11:05.606426     0     0 E KERNEL  : [    4.579501] mdss_dsi_parse_dcs_cmds: failed, key=qcom,mdss-dsi-timing-switch-command
+01-03 05:11:05.614139     0     0 W KERNEL  : [    4.587214] mdss_dsi_panel_get_dsc_cfg_np: cannot find dsc config node:
+01-03 05:11:05.620828     0     0 I KERNEL  : [    4.593903] mdss_dsi_parse_panel_features: ulps feature disabled
+01-03 05:11:05.626739     0     0 I KERNEL  : [    4.599814] mdss_dsi_parse_panel_features: ulps during suspend feature disabled
+01-03 05:11:05.633846     0     0 I KERNEL  : [    4.606921] mdss_dsi_parse_dms_config: dynamic switch feature enabled: 0
+01-03 05:11:05.640833     0     0 W KERNEL  : [    4.613908] 1a94000.qcom,mdss_dsi_ctrl0 supply vdd not found, using dummy regulator
+01-03 05:11:05.648897     0     0 E KERNEL  : [    4.621972] mdss_dsi_parse_ctrl_params:33901 Unable to read qcom,display-id, data=          (null),len=20
+01-03 05:11:05.657911     0     0 I KERNEL  : [    4.630986] mdss_dsi_parse_gpio_params: bklt_en gpio not specified
+01-03 05:11:05.664040     0     0 E KERNEL  : [    4.637115] msm_dss_get_res_byname: 'dsi_phy_regulator' resource not found
+01-03 05:11:05.670843     0     0 E KERNEL  : [    4.643918] mdss_dsi_retrieve_ctrl_resources+0x170/0x254->msm_dss_ioremap_byname: 'dsi_phy_regulator' msm_dss_get_res_byname failed
+01-03 05:11:05.682641     0     0 I KERNEL  : [    4.655716] mdss_dsi_retrieve_ctrl_resources: ctrl_base=ffffff8001672000 ctrl_size=400 phy_base=ffffff8001678400 phy_size=580
+01-03 05:11:05.694121     0     0 I KERNEL  : [    4.667196] dsi_panel_device_register: Continuous splash enabled
+01-03 05:11:05.700289     0     0 I KERNEL  : [    4.673364] mdss_register_panel: adding framebuffer device 1a94000.qcom,mdss_dsi_ctrl0
+01-03 05:11:05.723695     0     0 I KERNEL  : [    4.696770] mdss_dsi_ctrl_probe: Dsi Ctrl->0 initialized, DSI rev:0x10040002, PHY rev:0x2
+01-03 05:11:05.731088     0     0 I KERNEL  : [    4.704163] mdss_dsi_status_init: DSI status check interval:5000
+01-03 05:11:05.738481     0     0 I KERNEL  : [    4.711556] mdss_register_panel: adding framebuffer device soc:qcom,mdss_wb_panel
+01-03 05:11:05.746018     0     0 I KERNEL  : [    4.719093] mdss_fb_probe: fb0: split_mode:0 left:0 right:0
+01-03 05:11:05.753047     0     0 I KERNEL  : [    4.726122] mdss_fb_register: FrameBuffer[0] 1080x1920 registered successfully!
+01-03 05:11:05.760636     0     0 I KERNEL  : [    4.733711] mdss_fb_probe: fb1: split_mode:0 left:0 right:0
+01-03 05:11:05.765655     0     0 I KERNEL  : [    4.738730] mdss_fb_register: FrameBuffer[1] 640x640 registered successfully!
+01-03 05:11:05.772675     0     0 E KERNEL  : [    4.745750] mdss_mdp_splash_parse_dt: splash mem child node is not present
+01-03 05:11:05.781575     0     0 I KERNEL  : [    4.754650] Gladiator Error Reporting not available
+01-03 05:11:05.785898     0     0 I KERNEL  : [    4.758973] msm-dcc b3000.dcc: DCC XPU is not specified
+01-03 05:11:05.793775     0     0 I KERNEL  : [    4.766850] spcom [spcom_init]: spcom driver Ver 1.0 23-Nov-2015.
+01-03 05:11:05.802973     0     0 E KERNEL  : [    4.776048] IPC_RTR: msm_ipc_router_smd_driver_register Already driver registered IPCRTR
+01-03 05:11:05.810130     0     0 E KERNEL  : [    4.783205] IPC_RTR: msm_ipc_router_smd_driver_register Already driver registered IPCRTR
+01-03 05:11:05.829959     0     0 I KERNEL  : [    4.803034] In memshare_probe, Memshare probe success
+01-03 05:11:05.837641     0     0 I KERNEL  : [    4.810716] msm_rpm_log_probe: OK
+01-03 05:11:05.844262     0     0 I KERNEL  : [    4.817337] subsys-pil-tz soc:qqcom,kgsl-hyp: for a506_zap segments only will be dumped.
+01-03 05:11:05.854466     0     0 I KERNEL  : [    4.827541] subsys-pil-tz 1de0000.qcom,venus: for venus segments only will be dumped.
+01-03 05:11:05.867377     0     0 I KERNEL  : [    4.840452] msm_serial_hs module loaded
+01-03 05:11:05.870646     0     0 I KERNEL  : [    4.843721] msm_serial_hsl_probe: detected port #0 (ttyHSL0)
+01-03 05:11:05.875975     0     0 E KERNEL  : [    4.849050] AXI: get_pdata(): Error: Client name not found
+01-03 05:11:05.881280     0     0 E KERNEL  : [    4.854355] AXI: msm_bus_cl_get_pdata(): client has to provide missing entry for successful registration
+01-03 05:11:05.890755     0     0 E KERNEL  : [    4.863830] msm_serial_hsl_probe: Bus scaling is disabled
+01-03 05:11:05.896397     0     0 I KERNEL  : [    4.869472] 78af000.serial: ttyHSL0 at MMIO 0x78af000 (irq = 173, base_baud = 460800) is a MSM
+01-03 05:11:05.904759     0     0 I KERNEL  : [    4.877834] msm_hsl_console_setup: console setup on port #0
+01-03 05:11:05.909326     0     0 I KERNEL  : [    4.882401] console [ttyHSL0] enabled
+01-03 05:11:05.916587     0     0 I KERNEL  : [    4.889662] bootconsole [uart0] disabled
+01-03 05:11:05.925217     0     0 I KERNEL  : [    4.898292] msm_serial_hsl_init: driver initialized
+01-03 05:11:05.954652     0     0 I KERNEL  : [    4.927727] platform 1c40000.qcom,kgsl-iommu:ggfx3d_secure: assigned reserved memory node secure_region@0
+01-03 05:11:06.067097     0     0 I KERNEL  : [    5.040172] brd: module loaded
+01-03 05:11:06.078740     0     0 I KERNEL  : [    5.051815] loop: module loaded
+01-03 05:11:06.082330     0     0 I KERNEL  : [    5.055405] zram: Created 1 device(s) ...
+01-03 05:11:06.086248     0     0 I KERNEL  : [    5.059323] QSEECOM: qseecom_probe: qseecom.qsee_version = 0x1000000
+01-03 05:11:06.091687     0     0 W KERNEL  : [    5.064762] QSEECOM: qseecom_retrieve_ce_data: Device does not support PFE
+01-03 05:11:06.098328     0     0 I KERNEL  : [    5.071403] QSEECOM: qseecom_probe: qseecom clocks handled by other subsystem
+01-03 05:11:06.105615     0     0 W KERNEL  : [    5.078690] QSEECOM: qseecom_probe: qsee reentrancy support phase is not defined, setting to default 0
+01-03 05:11:06.115641     0     0 E KERNEL  : [    5.088716] scm_call failed: func id 0x70000006, arginfo: 0x8887, args: 0x0, 0xdd676200, 0x80, 0xe19fb480, ret: -1, syscall returns: 0x0, 0x0, 0x0
+01-03 05:11:06.128017     0     0 W KERNEL  : [    5.101092] QSEECOM: qseecom_probe: qseecom.whitelist_support = 0
+01-03 05:11:06.140103     0     0 E KERNEL  : [    5.113178] fusb301 6-0025: USB supply not found, deferring probe
+01-03 05:11:06.145567     0     0 W KERNEL  : [    5.118642] i2c-core: driver [tabla-i2c-core] using legacy suspend method
+01-03 05:11:06.151919     0     0 W KERNEL  : [    5.124994] i2c-core: driver [tabla-i2c-core] using legacy resume method
+01-03 05:11:06.158950     0     0 W KERNEL  : [    5.132025] i2c-core: driver [wcd9xxx-i2c-core] using legacy suspend method
+01-03 05:11:06.165558     0     0 W KERNEL  : [    5.138633] i2c-core: driver [wcd9xxx-i2c-core] using legacy resume method
+01-03 05:11:06.172767     0     0 W KERNEL  : [    5.145842] i2c-core: driver [tasha-i2c-core] using legacy suspend method
+01-03 05:11:06.179187     0     0 W KERNEL  : [    5.152262] i2c-core: driver [tasha-i2c-core] using legacy resume method
+01-03 05:11:06.186976     0     0 W KERNEL  : [    5.160051] nq-nci 5ese GPIO <OPTIONAL> error getting from OF node
+01-03 05:11:06.192838     0     0 E KERNEL  : [    5.165913] nq-nci 5nqx_probe: ese gpio not provided
+01-03 05:11:06.255290     0     0 E KERNEL  : [    5.228365] i2c-msm-v2 7af5000.i2c: msm_bus_scale_register_client(mstr-id:84):0xd (ok)
+01-03 05:11:06.262312     0     0 E KERNEL  : [    5.235387] i2c-msm-v2 7af5000.i2c: NACK: slave not responding, ensure its powered: msgs(n:1 cur:0 tx) bc(rx:0 tx:4) mode:FIFO slv_addr:0x28 MSTR_STS:0x0d1300c8 OPER:0x00000090
+01-03 05:11:06.277921     0     0 E KERNEL  : [    5.250996] nq-nci 5nfcc_hw_check: - i2c_master_send Error
+01-03 05:11:06.283948     0     0 E KERNEL  : [    5.257023] nq-nci 5nfcc_hw_check: - NFCC HW not available
+01-03 05:11:06.290189     0     0 W KERNEL  : [    5.263264] ------------[ cut here ]------------
+01-03 05:11:06.294631     0     0 W KERNEL  : [    5.267706] WARNING: CPU: 0 PID: 1 at /home/smartcm/jenkins/Daily/kernel/drivers/gpio/gpiolib.c:68 gpio_to_desc+0x2c/0x50()
+01-03 05:11:06.305777     0     0 W KERNEL  : [    5.278852] invalid GPIO -22
+01-03 05:11:06.308598     0     0 W KERNEL  : [    5.281673] Modules linked in:
+01-03 05:11:06.311641     0     0 W KERNEL  : [    5.284716] CPU: 4 PID: 1 Comm: swapper/0 Tainted: G        W      3.18.31-g605cf79 #1
+01-03 05:11:06.319537     0     0 W KERNEL  : [    5.292612] Hardware name: Qualcomm Technologies, Inc. MSM8953 ODIN (DT)
+01-03 05:11:06.326221     0     0 F KERNEL  : [    5.299296] Call trace:
+01-03 05:11:06.328656     0     0 W KERNEL  : [    5.301731] [<ffffffc000089b14>] dump_backtrace+0x0/0x270
+01-03 05:11:06.334035     0     0 W KERNEL  : [    5.307110] [<ffffffc000089d98>] show_stack+0x14/0x1c
+01-03 05:11:06.339071     0     0 W KERNEL  : [    5.312146] [<ffffffc000e9791c>] dump_stack+0x80/0xa4
+01-03 05:11:06.344106     0     0 W KERNEL  : [    5.317181] [<ffffffc0000a3280>] warn_slowpath_common+0x8c/0xb0
+01-03 05:11:06.350006     0     0 W KERNEL  : [    5.323081] [<ffffffc0000a3304>] warn_slowpath_fmt+0x60/0x80
+01-03 05:11:06.355648     0     0 W KERNEL  : [    5.328723] [<ffffffc0003757bc>] gpio_to_desc+0x2c/0x50
+01-03 05:11:06.360857     0     0 W KERNEL  : [    5.333932] [<ffffffc000377b44>] gpio_free+0xc/0x18
+01-03 05:11:06.365721     0     0 W KERNEL  : [    5.338796] [<ffffffc000605284>] nqx_probe+0x834/0x8e0
+01-03 05:11:06.370841     0     0 W KERNEL  : [    5.343916] [<ffffffc0007cf1b8>] i2c_device_probe+0xdc/0x110
+01-03 05:11:06.376484     0     0 W KERNEL  : [    5.349559] [<ffffffc0005a805c>] driver_probe_device+0x164/0x370
+01-03 05:11:06.382471     0     0 W KERNEL  : [    5.355546] [<ffffffc0005a8318>] __driver_attach+0x64/0x90
+01-03 05:11:06.387940     0     0 W KERNEL  : [    5.361015] [<ffffffc0005a6f04>] bus_for_each_dev+0x80/0xb0
+01-03 05:11:06.393496     0     0 W KERNEL  : [    5.366571] [<ffffffc0005a79e8>] driver_attach+0x20/0x28
+01-03 05:11:06.398790     0     0 W KERNEL  : [    5.371865] [<ffffffc0005a762c>] bus_add_driver+0x128/0x200
+01-03 05:11:06.404347     0     0 W KERNEL  : [    5.377422] [<ffffffc0005a8cc0>] driver_register+0x94/0xe0
+01-03 05:11:06.409815     0     0 W KERNEL  : [    5.382890] [<ffffffc0007ce354>] i2c_register_driver+0x4c/0xd0
+01-03 05:11:06.415631     0     0 W KERNEL  : [    5.388706] [<ffffffc00167cec0>] nqx_dev_init+0x18/0x20
+01-03 05:11:06.420840     0     0 W KERNEL  : [    5.393915] [<ffffffc000082b38>] do_one_initcall+0x1a0/0x1bc
+01-03 05:11:06.426483     0     0 W KERNEL  : [    5.399558] [<ffffffc001641b38>] kernel_init_freeable+0x14c/0x1e8
+01-03 05:11:06.432559     0     0 W KERNEL  : [    5.405634] [<ffffffc000e90a58>] kernel_init+0x14/0xd8
+01-03 05:11:06.437701     0     0 W KERNEL  : [    5.410776] ---[ end trace ecaa5c7d349af7b2 ]---
+01-03 05:11:06.442304     0     0 E KERNEL  : [    5.415379] nq-nci 5nqx_probe: probing nqxx failed, check hardware
+01-03 05:11:06.449742     0     0 I KERNEL  : [    5.422817] QCE50: __qce_get_device_tree_data: BAM Apps EE is not defined, setting to default 1
+01-03 05:11:06.459040     0     0 I KERNEL  : [    5.432115] 720000.qcedev: Qualcomm Crypto 5.3.3 device found @0x720000
+01-03 05:11:06.464973     0     0 I KERNEL  : [    5.438048] 720000.qcedev: CE device = 0x0
+01-03 05:11:06.464973     0     0 I KERNEL  : [    5.438048] , IO base, CE = 0xffffff8001ac0000
+01-03 05:11:06.464973     0     0 I KERNEL  : [    5.438048] , Consumer (IN) PIPE 2,    Producer (OUT) PIPE 3
+01-03 05:11:06.464973     0     0 I KERNEL  : [    5.438048] IO base BAM = 0x          (null)
+01-03 05:11:06.464973     0     0 I KERNEL  : [    5.438048] BAM IRQ 194
+01-03 05:11:06.464973     0     0 I KERNEL  : [    5.438048] Engines Availability = 0x2010853
+01-03 05:11:06.491357     0     0 I KERNEL  : [    5.464432] sps:BBAM 0x0000000000704000 is registered.
+01-03 05:11:06.495706     0     0 I KERNEL  : [    5.468781] sps:BBAM 0x0000000000704000 (va:0xffffff8001f40000) enabled: ver:0x27, number of pipes:8
+01-03 05:11:06.504956     0     0 I KERNEL  : [    5.478031] QCE50: qce_sps_init:  Qualcomm MSM CE-BAM at 0x0000000000704000 irq 194
+01-03 05:11:06.515569     0     0 I KERNEL  : [    5.488644] QCE50: __qce_get_device_tree_data: BAM Apps EE is not defined, setting to default 1
+01-03 05:11:06.525057     0     0 I KERNEL  : [    5.498132] qcrypto 720000.qcrypto: Qualcomm Crypto 5.3.3 device found @0x720000
+01-03 05:11:06.531409     0     0 I KERNEL  : [    5.504484] qcrypto 720000.qcrypto: CE device = 0x0
+01-03 05:11:06.531409     0     0 I KERNEL  : [    5.504484] , IO base, CE = 0xffffff8002000000
+01-03 05:11:06.531409     0     0 I KERNEL  : [    5.504484] , Consumer (IN) PIPE 4,    Producer (OUT) PIPE 5
+01-03 05:11:06.531409     0     0 I KERNEL  : [    5.504484] IO base BAM = 0x          (null)
+01-03 05:11:06.531409     0     0 I KERNEL  : [    5.504484] BAM IRQ 194
+01-03 05:11:06.531409     0     0 I KERNEL  : [    5.504484] Engines Availability = 0x2010853
+01-03 05:11:06.558161     0     0 I KERNEL  : [    5.531236] QCE50: qce_sps_init:  Qualcomm MSM CE-BAM at 0x0000000000704000 irq 194
+01-03 05:11:06.567067     0     0 I KERNEL  : [    5.540142] qcrypto 720000.qcrypto: qcrypto-ecb-aes
+01-03 05:11:06.571041     0     0 I KERNEL  : [    5.544116] qcrypto 720000.qcrypto: qcrypto-cbc-aes
+01-03 05:11:06.575913     0     0 I KERNEL  : [    5.548988] qcrypto 720000.qcrypto: qcrypto-ctr-aes
+01-03 05:11:06.580787     0     0 I KERNEL  : [    5.553862] qcrypto 720000.qcrypto: qcrypto-ecb-des
+01-03 05:11:06.585633     0     0 I KERNEL  : [    5.558708] qcrypto 720000.qcrypto: qcrypto-cbc-des
+01-03 05:11:06.590480     0     0 I KERNEL  : [    5.563555] qcrypto 720000.qcrypto: qcrypto-ecb-3des
+01-03 05:11:06.595441     0     0 I KERNEL  : [    5.568516] qcrypto 720000.qcrypto: qcrypto-cbc-3des
+01-03 05:11:06.600377     0     0 I KERNEL  : [    5.573452] qcrypto 720000.qcrypto: qcrypto-xts-aes
+01-03 05:11:06.605248     0     0 I KERNEL  : [    5.578323] qcrypto 720000.qcrypto: qcrypto-sha1
+01-03 05:11:06.609834     0     0 I KERNEL  : [    5.582909] qcrypto 720000.qcrypto: qcrypto-sha256
+01-03 05:11:06.614607     0     0 I KERNEL  : [    5.587682] qcrypto 720000.qcrypto: qcrypto-aead-hmac-sha1-cbc-aes
+01-03 05:11:06.620818     0     0 I KERNEL  : [    5.593893] qcrypto 720000.qcrypto: qcrypto-aead-hmac-sha1-cbc-des
+01-03 05:11:06.626951     0     0 I KERNEL  : [    5.600026] qcrypto 720000.qcrypto: qcrypto-aead-hmac-sha1-cbc-3des
+01-03 05:11:06.633206     0     0 I KERNEL  : [    5.606281] qcrypto 720000.qcrypto: qcrypto-aead-hmac-sha256-cbc-aes
+01-03 05:11:06.639538     0     0 I KERNEL  : [    5.612613] qcrypto 720000.qcrypto: qcrypto-aead-hmac-sha256-cbc-des
+01-03 05:11:06.645878     0     0 I KERNEL  : [    5.618953] qcrypto 720000.qcrypto: qcrypto-aead-hmac-sha256-cbc-3des
+01-03 05:11:06.652286     0     0 I KERNEL  : [    5.625361] qcrypto 720000.qcrypto: qcrypto-hmac-sha1
+01-03 05:11:06.657332     0     0 I KERNEL  : [    5.630407] qcrypto 720000.qcrypto: qcrypto-hmac-sha256
+01-03 05:11:06.662526     0     0 I KERNEL  : [    5.635601] qcrypto 720000.qcrypto: qcrypto-aes-ccm
+01-03 05:11:06.667404     0     0 I KERNEL  : [    5.640479] qcrypto 720000.qcrypto: qcrypto-rfc4309-aes-ccm
+01-03 05:11:06.674452     0     0 E KERNEL  : [    5.647527] qcom_ice_get_device_tree_data: No vdd-hba-supply regulator, assuming not needed
+01-03 05:11:06.682137     0     0 I KERNEL  : [    5.655212] ICE IRQ = 195
+01-03 05:11:06.686834     0     0 I KERNEL  : [    5.659909] SCSI Media Changer driver v0.25
+01-03 05:11:06.693284     0     0 I KERNEL  : [    5.666359] tun: Universal TUN/TAP device driver, 1.6
+01-03 05:11:06.697302     0     0 I KERNEL  : [    5.670377] tun: (C) 1999-2004 Max Krasnyansky <maxk@qualcomm.com>
+01-03 05:11:06.703686     0     0 I KERNEL  : [    5.676761] PPP generic driver version 2.4.2
+01-03 05:11:06.708082     0     0 I KERNEL  : [    5.681157] PPP BSD Compression module registered
+01-03 05:11:06.712402     0     0 I KERNEL  : [    5.685477] PPP Deflate Compression module registered
+01-03 05:11:06.717466     0     0 I KERNEL  : [    5.690541] PPP MPPE Compression module registered
+01-03 05:11:06.722216     0     0 I KERNEL  : [    5.695291] NET: Registered protocol family 24
+01-03 05:11:06.728003     0     0 I KERNEL  : [    5.701078] wcnss_wlan probed in built-in mode
+01-03 05:11:06.734476     0     0 I KERNEL  : [    5.707551] usbcore: registered new interface driver asix
+01-03 05:11:06.739017     0     0 I KERNEL  : [    5.712092] usbcore: registered new interface driver ax88179_178a
+01-03 05:11:06.745026     0     0 I KERNEL  : [    5.718101] usbcore: registered new interface driver cdc_ether
+01-03 05:11:06.750870     0     0 I KERNEL  : [    5.723945] usbcore: registered new interface driver net1080
+01-03 05:11:06.756527     0     0 I KERNEL  : [    5.729602] usbcore: registered new interface driver cdc_subset
+01-03 05:11:06.762403     0     0 I KERNEL  : [    5.735478] usbcore: registered new interface driver zaurus
+01-03 05:11:06.768260     0     0 I KERNEL  : [    5.741335] usbcore: registered new interface driver cdc_ncm
+01-03 05:11:06.774511     0     0 I KERNEL  : [    5.747586] msm_sharedmem: sharedmem_register_qmi: qmi init successful
+01-03 05:11:06.776587     0     0 E KERNEL  : [    5.749662] scm_call failed: func id 0x42000c16, arginfo: 0x1117, args: 0xe5b00000, 0x10, 0xdd7cbc00, 0xdd779180, ret: -1, syscall returns: 0x0, 0x0, 0x0
+01-03 05:11:06.776593     0     0 I KERNEL  : [    5.749668] hyp_assign_table: Failed to assign memory protection, ret = -5
+01-03 05:11:06.776605     0     0 E KERNEL  : [    5.749680] msm_sharedmem: setup_shared_ram_perms: hyp_assign_phys failed IPA=0x0160x00000000f3200000 size=1572864 err=-5
+01-03 05:11:06.777097     0     0 I KERNEL  : [    5.750172] msm_sharedmem: msm_sharedmem_probe: Device created for client 'rmtfs'
+01-03 05:11:06.785639     0     0 E KERNEL  : [    5.758714] msm-dwc3 7000000.ssusb: unable to get dbm device
+01-03 05:11:06.788156     0     0 I KERNEL  : [    5.761231] ehci_hcd: USB 2.0 'Enhanced' Host Controller (EHCI) Driver
+01-03 05:11:06.788589     0     0 I KERNEL  : [    5.761664] ehci-pci: EHCI PCI platform driver
+01-03 05:11:06.788773     0     0 I KERNEL  : [    5.761848] ehci-msm: Qualcomm On-Chip EHCI Host Controller
+01-03 05:11:06.789372     0     0 I KERNEL  : [    5.762447] usbcore: registered new interface driver cdc_acm
+01-03 05:11:06.789373     0     0 I KERNEL  : [    5.762448] cdc_acm: USB Abstract Control Model driver for USB modems and ISDN adapters
+01-03 05:11:06.789573     0     0 I KERNEL  : [    5.762648] usbcore: registered new interface driver usb-storage
+01-03 05:11:06.789668     0     0 I KERNEL  : [    5.762743] usbcore: registered new interface driver ums-alauda
+01-03 05:11:06.789758     0     0 I KERNEL  : [    5.762833] usbcore: registered new interface driver ums-cypress
+01-03 05:11:06.789843     0     0 I KERNEL  : [    5.762918] usbcore: registered new interface driver ums-datafab
+01-03 05:11:06.789963     0     0 I KERNEL  : [    5.763038] usbcore: registered new interface driver ums-freecom
+01-03 05:11:06.790064     0     0 I KERNEL  : [    5.763139] usbcore: registered new interface driver ums-isd200
+01-03 05:11:06.790161     0     0 I KERNEL  : [    5.763236] usbcore: registered new interface driver ums-jumpshot
+01-03 05:11:06.790254     0     0 I KERNEL  : [    5.763329] usbcore: registered new interface driver ums-karma
+01-03 05:11:06.790390     0     0 I KERNEL  : [    5.763465] usbcore: registered new interface driver ums-sddr09
+01-03 05:11:06.790501     0     0 I KERNEL  : [    5.763576] usbcore: registered new interface driver ums-sddr55
+01-03 05:11:06.790606     0     0 I KERNEL  : [    5.763681] usbcore: registered new interface driver ums-usbat
+01-03 05:11:06.790967     0     0 I KERNEL  : [    5.764042] usbcore: registered new interface driver usbserial
+01-03 05:11:06.791109     0     0 I KERNEL  : [    5.764184] usbcore: registered new interface driver usb_ehset_test
+01-03 05:11:06.792629     0     0 I KERNEL  : [    5.765704] gbridge_init: gbridge_init successs.
+01-03 05:11:06.793568     0     0 I KERNEL  : [    5.766643] mousedev: PS/2 mouse device common for all mice
+01-03 05:11:06.794278     0     0 I KERNEL  : [    5.767353] usbcore: registered new interface driver xpad
+01-03 05:11:06.796017     0     0 E KERNEL  : [    5.769092] [FTS]fts_ts_init: Enter
+01-03 05:11:06.796770     0     0 E KERNEL  : [    5.769845] [FTS]fts_ts_probe: Enter
+01-03 05:11:06.796779     0     0 E KERNEL  : [    5.769854] [FTS]fts_parse_dt: Enter
+01-03 05:11:06.796794     0     0 E KERNEL  : [    5.769869] [FTS]fts_parse_dt: Exit(1031)
+01-03 05:11:06.797449     0     0 I KERNEL  : [    5.770524] input: fts_ts as /devices/soc/78b7000.i2c/i2c-3/3-0038/input/input1
+01-03 05:11:06.797726     0     0 E KERNEL  : [    5.770801] [FTS]fts_power_source_init: Enter
+01-03 05:11:06.798082     0     0 E KERNEL  : [    5.771157] [FTS]fts_power_source_init: Exit(353)
+01-03 05:11:06.798084     0     0 E KERNEL  : [    5.771159] [FTS]fts_power_source_ctrl: Enter
+01-03 05:11:06.798720     0     0 E KERNEL  : [    5.771795] [FTS]fts_power_source_ctrl: Exit(399)
+01-03 05:11:06.825510     0     0 E KERNEL  : [    5.798585] i2c-msm-v2 78b7000.i2c: msm_bus_scale_register_client(mstr-id:86):0x10 (ok)
+01-03 05:11:06.825763     0     0 E KERNEL  : [    5.798838] [FTS][Error]Device ID = 0x0
+01-03 05:11:06.825928     0     0 E KERNEL  : [    5.799003] [FTS][UPGRADE]: chip_id = 0!!
+01-03 05:11:06.826277     0     0 E KERNEL  : [    5.799352] [FTS][Info]Create proc entry success!
+01-03 05:11:06.826388     0     0 E KERNEL  : [    5.799463] [FTS][Info]sysfs_create_group() succeeded.
+01-03 05:11:06.826441     0     0 E KERNEL  : [    5.799516] sps: BAM device 0x0000000007884000 is not registered yet.
+01-03 05:11:06.827751     0     0 I KERNEL  : [    5.800826] sps:BBAM 0x0000000007884000 is registered.
+01-03 05:11:06.827751     0     0 I KERNEL  : [    5.800826] sps:BBAM 0x0000000007884000 (va:0xffffff8001c60000) enabled: ver:0x19, number of pipes:12
+01-03 05:11:06.830196     0     0 I KERNEL  : [    5.803271] fts_ts 3Firmware version = 0.0.0
+01-03 05:11:06.830362     0     0 E KERNEL  : [    5.803437] [FTS][Info]Firmware version = 0x00.0.0, fw_vendor_id=0x00
+01-03 05:11:06.830365     0     0 W KERNEL  : [    5.803440] [FTS] fts_test_init. line: 581.  [focal] File Version of  focaltech_test.c:  V1.1.0 2016-05-19
+01-03 05:11:06.830367     0     0 W KERNEL  : [    5.803442] [FTS] fts_test_init. line: 582.
+01-03 05:11:06.830410     0     0 W KERNEL  : [    5.803485] [FTS] fts_test_init. line: 593.  [focal] fts_test_init() - sysfs_create_group() succeeded.
+01-03 05:11:06.830416     0     0 E KERNEL  : [    5.803491] [FTS]fts_ts_probe: Exit(1308)
+01-03 05:11:06.830554     0     0 E KERNEL  : [    5.803629] [FTS]fts_ts_init: Exit(1428)
+01-03 05:11:06.831283     0     0 E KERNEL  : [    5.804358] nvt_ts_probe:tthe other lcd will be selected
+01-03 05:11:06.831300     0     0 W KERNEL  : [    5.804375] NVT-ts: probe of 3-0001 failed with error -22
+01-03 05:11:06.831377     0     0 I KERNEL  : [    5.804452] nvt_driver_init: finished
+01-03 05:11:06.833612     0     0 I KERNEL  : [    5.806687] input: hbtp_vm as /devices/virtual/input/input2
+01-03 05:11:06.834689     0     0 E KERNEL  : [    5.807764] [NXU8010]nxu8010_i2c_init: Enter
+01-03 05:11:06.835697     0     0 E KERNEL  : [    5.808772] [NXU8010]nxu8010_probe: Enter
+01-03 05:11:06.835806     0     0 E KERNEL  : [    5.808881] [NXU8010]nxu8010_i2c_probe: Enter
+01-03 05:11:06.836243     0     0 E KERNEL  : [    5.809318] [NXU8010]nxu8010_i2c_probe: Exit(900)
+01-03 05:11:06.836312     0     0 E KERNEL  : [    5.809387] [NXU8010]nxu8010_probe: Exit(933)
+01-03 05:11:06.836372     0     0 E KERNEL  : [    5.809447] [NXU8010]nxu8010_i2c_init: Exit(989)
+01-03 05:11:06.837594     0     0 I KERNEL  : [    5.810669] qcom,qpnp-rtc qpnp-rtc-9: rtc core: registered qpnp_rtc as rtc0
+01-03 05:11:06.838002     0     0 I KERNEL  : [    5.811077] i2c /dev entries driver
+01-03 05:11:06.847252     0     0 E KERNEL  : [    5.820327] /soc/qcom,cam_smmu/msm_cam_smmu_cb1: could not get #iommu-cells for /soc/qcom,iommu@1e00000
+01-03 05:11:06.847966     0     0 E KERNEL  : [    5.821041] /soc/qcom,cam_smmu/msm_cam_smmu_cb3: could not get #iommu-cells for /soc/qcom,iommu@1e00000
+01-03 05:11:06.848529     0     0 E KERNEL  : [    5.821604] /soc/qcom,cam_smmu/msm_cam_smmu_cb4: could not get #iommu-cells for /soc/qcom,iommu@1e00000
+01-03 05:11:06.853131     0     0 E KERNEL  : [    5.826206] msm_camera_get_dt_vreg_data:11035 number of entries is 0 or not present in dts
+01-03 05:11:06.862800     0     0 E KERNEL  : [    5.835875] msm_camera_get_dt_vreg_data:11035 number of entries is 0 or not present in dts
+01-03 05:11:06.864219     0     0 E KERNEL  : [    5.837294] msm_camera_get_dt_vreg_data:11035 number of entries is 0 or not present in dts
+01-03 05:11:06.865598     0     0 E KERNEL  : [    5.838673] msm_camera_get_dt_vreg_data:11035 number of entries is 0 or not present in dts
+01-03 05:11:06.866978     0     0 E KERNEL  : [    5.840053] msm_camera_pinctrl_init:11197 Getting pinctrl handle failed
+01-03 05:11:06.866981     0     0 E KERNEL  : [    5.840056] msm_actuator_platform_probe:11962 ERR:msm_actuator_platform_probe: Error in reading actuator pinctrl
+01-03 05:11:06.867266     0     0 W KERNEL  : [    5.840341] qcom,actuator: probe of 1b0c000.qcom,cci:qcom,actuator@0 failed with error -22
+01-03 05:11:06.867370     0     0 E KERNEL  : [    5.840445] msm_camera_pinctrl_init:11197 Getting pinctrl handle failed
+01-03 05:11:06.867372     0     0 E KERNEL  : [    5.840447] msm_actuator_platform_probe:11962 ERR:msm_actuator_platform_probe: Error in reading actuator pinctrl
+01-03 05:11:06.867733     0     0 W KERNEL  : [    5.840808] qcom,actuator: probe of 1b0c000.qcom,cci:qcom,actuator@1 failed with error -22
+01-03 05:11:06.868480     0     0 E KERNEL  : [    5.841555] msm_eeprom_platform_probe failed 1663
+01-03 05:11:06.869035     0     0 E KERNEL  : [    5.842110] msm_eeprom_platform_probe failed 1663
+01-03 05:11:06.869613     0     0 E KERNEL  : [    5.842688] msm_eeprom_platform_probe failed 1663
+01-03 05:11:06.879812     0     0 W KERNEL  : [    5.852887] ------------[ cut here ]------------
+01-03 05:11:06.879820     0     0 W KERNEL  : [    5.852895] WARNING: CPU: 6 PID: 1 at /home/smartcm/jenkins/Daily/kernel/drivers/clk/msm/clock-local2.c:233 rcg_clk_enable+0x50/0xb4()
+01-03 05:11:06.879822     0     0 W KERNEL  : [    5.852897] Attempting to prepare camss_top_ahb_clk_src before setting its rate. Set the rate first!
+01-03 05:11:06.879824     0     0 W KERNEL  : [    5.852899] Modules linked in:
+01-03 05:11:06.879830     0     0 W KERNEL  : [    5.852905] CPU: 6 PID: 1 Comm: swapper/0 Tainted: G        W      3.18.31-g605cf79 #1
+01-03 05:11:06.879831     0     0 W KERNEL  : [    5.852906] Hardware name: Qualcomm Technologies, Inc. MSM8953 ODIN (DT)
+01-03 05:11:06.879832     0     0 F KERNEL  : [    5.852907] Call trace:
+01-03 05:11:06.879838     0     0 W KERNEL  : [    5.852913] [<ffffffc000089b14>] dump_backtrace+0x0/0x270
+01-03 05:11:06.879841     0     0 W KERNEL  : [    5.852916] [<ffffffc000089d98>] show_stack+0x14/0x1c
+01-03 05:11:06.879846     0     0 W KERNEL  : [    5.852921] [<ffffffc000e9791c>] dump_stack+0x80/0xa4
+01-03 05:11:06.879851     0     0 W KERNEL  : [    5.852926] [<ffffffc0000a3280>] warn_slowpath_common+0x8c/0xb0
+01-03 05:11:06.879854     0     0 W KERNEL  : [    5.852929] [<ffffffc0000a3304>] warn_slowpath_fmt+0x60/0x80
+01-03 05:11:06.879856     0     0 W KERNEL  : [    5.852931] [<ffffffc000b2615c>] rcg_clk_enable+0x50/0xb4
+01-03 05:11:06.879860     0     0 W KERNEL  : [    5.852935] [<ffffffc000b2212c>] clk_enable+0x13c/0x1b4
+01-03 05:11:06.879863     0     0 W KERNEL  : [    5.852938] [<ffffffc000b2208c>] clk_enable+0x9c/0x1b4
+01-03 05:11:06.879868     0     0 W KERNEL  : [    5.852943] [<ffffffc00085679c>] msm_camera_clk_enable+0x16c/0x298
+01-03 05:11:06.879872     0     0 W KERNEL  : [    5.852947] [<ffffffc00087f5c4>] cpp_init_hardware+0xe4/0x5ec
+01-03 05:11:06.879874     0     0 W KERNEL  : [    5.852949] [<ffffffc00087fe68>] cpp_probe+0x39c/0x6dc
+01-03 05:11:06.879879     0     0 W KERNEL  : [    5.852954] [<ffffffc0005a9db0>] platform_drv_probe+0x38/0x84
+01-03 05:11:06.879882     0     0 W KERNEL  : [    5.852957] [<ffffffc0005a805c>] driver_probe_device+0x164/0x370
+01-03 05:11:06.879884     0     0 W KERNEL  : [    5.852959] [<ffffffc0005a8318>] __driver_attach+0x64/0x90
+01-03 05:11:06.879887     0     0 W KERNEL  : [    5.852962] [<ffffffc0005a6f04>] bus_for_each_dev+0x80/0xb0
+01-03 05:11:06.879889     0     0 W KERNEL  : [    5.852964] [<ffffffc0005a79e8>] driver_attach+0x20/0x28
+01-03 05:11:06.879891     0     0 W KERNEL  : [    5.852966] [<ffffffc0005a762c>] bus_add_driver+0x128/0x200
+01-03 05:11:06.879894     0     0 W KERNEL  : [    5.852969] [<ffffffc0005a8cc0>] driver_register+0x94/0xe0
+01-03 05:11:06.879896     0     0 W KERNEL  : [    5.852971] [<ffffffc0005a9cf8>] __platform_driver_register+0x60/0x68
+01-03 05:11:06.879899     0     0 W KERNEL  : [    5.852974] [<ffffffc001683f78>] msm_cpp_init_module+0x18/0x20
+01-03 05:11:06.879902     0     0 W KERNEL  : [    5.852977] [<ffffffc000082b38>] do_one_initcall+0x1a0/0x1bc
+01-03 05:11:06.879906     0     0 W KERNEL  : [    5.852981] [<ffffffc001641b38>] kernel_init_freeable+0x14c/0x1e8
+01-03 05:11:06.879911     0     0 W KERNEL  : [    5.852986] [<ffffffc000e90a58>] kernel_init+0x14/0xd8
+01-03 05:11:06.879913     0     0 W KERNEL  : [    5.852988] ---[ end trace ecaa5c7d349af7b3 ]---
+01-03 05:11:06.879948     0     0 I KERNEL  : [    5.853023] MSM-CPP cpp_init_hardware:8863 CPP HW Version: 0x40030003
+01-03 05:11:06.879959     0     0 E KERNEL  : [    5.853034] MSM-CPP cpp_init_hardware:8881 stream_cnt:0
+01-03 05:11:06.899695     0     0 E KERNEL  : [    5.872770] __msm_jpeg_init:11537] Jpeg Device id 0
+01-03 05:11:06.899696     0     0 I KERNEL  : [    5.872771] SMB1351 smb1351_parallel_slave_probe: smb1351 parallel successfully probed.
+01-03 05:11:06.904660     0     0 I KERNEL  : [    5.877735] FG: fg_probe: FG Probe success - FG Revision DIG:3.1 ANA:1.2 PMIC subtype=17
+01-03 05:11:06.905383     0     0 I KERNEL  : [    5.878458] SMBCHG: smbchg_probe: USB supply not found, deferring probe
+01-03 05:11:06.906714     0     0 E KERNEL  : [    5.879789] unable to find DT imem DLOAD mode node
+01-03 05:11:06.907191     0     0 E KERNEL  : [    5.880266] unable to find DT imem EDLOAD mode node
+01-03 05:11:06.909838     0     0 W KERNEL  : [    5.882913] thermal thermal_zone1: failed to read out thermal zone 1
+01-03 05:11:06.910515     0     0 W KERNEL  : [    5.883590] thermal thermal_zone2: failed to read out thermal zone 2
+01-03 05:11:06.911246     0     0 W KERNEL  : [    5.884321] thermal thermal_zone3: failed to read out thermal zone 3
+01-03 05:11:06.912831     0     0 E KERNEL  : [    5.885906] qpnp_vadc_read: no vadc_chg_vote found
+01-03 05:11:06.912833     0     0 E KERNEL  : [    5.885908] qpnp_vadc_get_temp: VADC read error with -22
+01-03 05:11:06.912836     0     0 W KERNEL  : [    5.885911] thermal thermal_zone4: failed to read out thermal zone 4
+01-03 05:11:06.948548     0     0 I KERNEL  : [    5.921623] device-mapper: uevent: version 1.0.3
+01-03 05:11:06.949760     0     0 I KERNEL  : [    5.922835] device-mapper: ioctl: 4.28.0-ioctl (2014-09-17) initialised: dm-devel@redhat.com
+01-03 05:11:06.949987     0     0 I KERNEL  : [    5.923062] device-mapper: req-crypt: dm-req-crypt successfully initalized.
+01-03 05:11:06.951639     0     0 I KERNEL  : [    5.924714] sdhci: Secure Digital Host Controller Interface driver
+01-03 05:11:06.951640     0     0 I KERNEL  : [    5.924715] sdhci: Copyright(c) Pierre Ossman
+01-03 05:11:06.951653     0     0 I KERNEL  : [    5.924728] sdhci-pltfm: SDHCI platform and OF driver helper
+01-03 05:11:06.952946     0     0 I KERNEL  : [    5.926021] qcom_ice_get_pdevice: found ice device ffffffc0cd626200
+01-03 05:11:06.952947     0     0 I KERNEL  : [    5.926022] qcom_ice_get_pdevice: matching platform device ffffffc0d4986300
+01-03 05:11:06.958966     0     0 I KERNEL  : [    5.932041] qcom_ice 7803000.sdcc1ice: QC ICE 2.1.44 device found @0xffffff8001b60000
+01-03 05:11:06.959530     0     0 I KERNEL  : [    5.932605] sdhci_msm 7824900.sdhci: No vmmc regulator found
+01-03 05:11:06.959533     0     0 I KERNEL  : [    5.932608] sdhci_msm 7824900.sdhci: No vqmmc regulator found
+01-03 05:11:06.960313     0     0 I KERNEL  : [    5.933388] mmc0: SDHCI controller on 7824900.sdhci [7824900.sdhci] using 64-bit ADMA in CMDQ mode
+01-03 05:11:06.994327     0     0 W KERNEL  : [    5.967402] sdhci_msm 7864900.sdhci: sdhci_msm_probe: ICE device is not enabled
+01-03 05:11:07.015587     0     0 I KERNEL  : [    5.988662] sdhci_msm 7864900.sdhci: No vmmc regulator found
+01-03 05:11:07.015589     0     0 I KERNEL  : [    5.988664] sdhci_msm 7864900.sdhci: No vqmmc regulator found
+01-03 05:11:07.016361     0     0 I KERNEL  : [    5.989436] mmc1: SDHCI controller on 7864900.sdhci [7864900.sdhci] using 64-bit ADMA in legacy mode
+01-03 05:11:07.026748     0     0 I KERNEL  : [    5.999823] mmc0: Out-of-interrupt timeout is 50[ms]
+01-03 05:11:07.026750     0     0 I KERNEL  : [    5.999825] mmc0: BKOPS_EN equals 0x2
+01-03 05:11:07.026752     0     0 I KERNEL  : [    5.999827] mmc0: eMMC FW version: 0x07
+01-03 05:11:07.026754     0     0 I KERNEL  : [    5.999829] mmc0: CMDQ supported: depth: 16
+01-03 05:11:07.026755     0     0 I KERNEL  : [    5.999830] mmc0: cache barrier support 0 flush policy 0
+01-03 05:11:07.036625     0     0 I KERNEL  : [    6.009700] cmdq_host_alloc_tdl: desc_size: 768 data_sz: 253952 slot-sz: 24
+01-03 05:11:07.037490     0     0 I KERNEL  : [    6.010565] desc-base: 0xffffff8001c57000 trans-base: 0xffffff8001fc1000
+01-03 05:11:07.037490     0     0 I KERNEL  : [    6.010565] desc_dma 0xf2c6f000 trans_dma: 0xf3180000
+01-03 05:11:07.037514     0     0 I KERNEL  : [    6.010589] mmc0: CMDQ enabled on card
+01-03 05:11:07.037531     0     0 I KERNEL  : [    6.010606] mmc0: new HS400 MMC card at address 0001
+01-03 05:11:07.045051     0     0 I KERNEL  : [    6.018126] sdhci_msm_pm_qos_cpu_init (): voted for group #0 (mask=0xf) latency=2 (0xffffffc0ccf28000)
+01-03 05:11:07.045056     0     0 I KERNEL  : [    6.018131] sdhci_msm_pm_qos_cpu_init (): voted for group #1 (mask=0xf0) latency=2 (0xffffffc0ccf28008)
+01-03 05:11:07.045285     0     0 I KERNEL  : [    6.018360] mmcblk0: mmc0:0001 RX14MB 29.1 GiB
+01-03 05:11:07.045590     0     0 I KERNEL  : [    6.018665] mmcblk0rpmb: mmc0:0001 RX14MB partition 3 4.00 MiB
+01-03 05:11:07.048357     0     0 I KERNEL  : [    6.021432] mmcblk0: p1 p2 p3 p4 p5 p6 p7 p8 p9 p10 p11 p12 p13 p14 p15 p16 p17 p18 p19 p20 p21 p22 p23 p24 p25 p26 p27 p28 p29 p30 p31 p32 p33 p34 p35 p36 p37 p38 p39 p40 p41 p42 p43 p44 p45 p46 p47 p48 p49 p50 p51 p52 p53 p54 p55
+01-03 05:11:07.052241     0     0 I KERNEL  : [    6.025316] 8600720.tz-log: Hyp log service is not supported
+01-03 05:11:07.058629     0     0 I KERNEL  : [    6.031704] hidraw: raw HID events driver (C) Jiri Kosina
+01-03 05:11:07.060437     0     0 I KERNEL  : [    6.033512] usbcore: registered new interface driver usbhid
+01-03 05:11:07.060438     0     0 I KERNEL  : [    6.033513] usbhid: USB HID core driver
+01-03 05:11:07.062601     0     0 I KERNEL  : [    6.035676] ashmem: initialized
+01-03 05:11:07.063720     0     0 I KERNEL  : [    6.036795] qpnp_coincell_charger_show_state: enabled=Y, voltage=3200 mV, resistance=2100 ohm
+01-03 05:11:07.081621     0     0 I KERNEL  : [    6.054696] bimc-bwmon 408000.qcom,cpu-bwmon: BW HWmon governor registered.
+01-03 05:11:07.086239     0     0 E KERNEL  : [    6.059314] devfreq soc:qqcom,cpubw: Couldn't update frequency transition information.
+01-03 05:11:07.086800     0     0 E KERNEL  : [    6.059875] devfreq soc:qqcom,mincpubw: Couldn't update frequency transition information.
+01-03 05:11:07.090313     0     0 I KERNEL  : [    6.063388] coresight-fuse a601c.fuse: Fuse initialized
+01-03 05:11:07.108854     0     0 I KERNEL  : [    6.081929] coresight-csr 6001000.csr: CSR initialized
+01-03 05:11:07.110166     0     0 I KERNEL  : [    6.083241] coresight-tmc 6028000.tmc: Byte Counter feature enabled
+01-03 05:11:07.111849     0     0 I KERNEL  : [    6.084924] sps:BBAM 0x0000000006044000 is registered.
+01-03 05:11:07.111849     0     0 I KERNEL  : [    6.084924] coresight-tmc 6028000.tmc: TMC initialized
+01-03 05:11:07.112651     0     0 I KERNEL  : [    6.085726] coresight-tmc 6027000.tmc: TMC initialized
+01-03 05:11:07.116420     0     0 I KERNEL  : [    6.089495] nidnt boot config: 2
+01-03 05:11:07.116422     0     0 E KERNEL  : [    6.089497] NIDnT disabled, only sd mode supported.
+01-03 05:11:07.116425     0     0 I KERNEL  : [    6.089500] coresight-tpiu 6020000.tpiu: NIDnT hw support disabled
+01-03 05:11:07.116429     0     0 I KERNEL  : [    6.089504] coresight-tpiu 6020000.tpiu: NIDnT on SDCARD only mode
+01-03 05:11:07.116693     0     0 I KERNEL  : [    6.089768] coresight-tpiu 6020000.tpiu: TPIU initialized
+01-03 05:11:07.121284     0     0 I KERNEL  : [    6.094359] coresight-replicator 6026000.replicator: REPLICATOR initialized
+01-03 05:11:07.124947     0     0 I KERNEL  : [    6.098022] coresight-dbgui 6108000.dbgui: DebugUI capture enabled
+01-03 05:11:07.125308     0     0 I KERNEL  : [    6.098383] coresight-dbgui 6108000.dbgui: DebugUI initializaed
+01-03 05:11:07.126483     0     0 I KERNEL  : [    6.099558] coresight-stm 6002000.stm: STM initialized
+01-03 05:11:07.127364     0     0 I KERNEL  : [    6.100439] coresight-hwevent 6101000.hwevent: Hardware Event driver initialized
+01-03 05:11:07.129065     0     0 I KERNEL  : [    6.102140] coresight-etmv4 619c000.etm: ETMv4 initialized
+01-03 05:11:07.130216     0     0 I KERNEL  : [    6.103291] coresight-etmv4 619d000.etm: ETMv4 initialized
+01-03 05:11:07.131342     0     0 I KERNEL  : [    6.104417] coresight-etmv4 619e000.etm: ETMv4 initialized
+01-03 05:11:07.132548     0     0 I KERNEL  : [    6.105623] coresight-etmv4 619f000.etm: ETMv4 initialized
+01-03 05:11:07.133654     0     0 I KERNEL  : [    6.106729] coresight-etmv4 61bc000.etm: ETMv4 initialized
+01-03 05:11:07.143022     0     0 I KERNEL  : [    6.116097] coresight-etmv4 61bd000.etm: ETMv4 initialized
+01-03 05:11:07.144196     0     0 I KERNEL  : [    6.117271] coresight-etmv4 61be000.etm: ETMv4 initialized
+01-03 05:11:07.145415     0     0 I KERNEL  : [    6.118490] coresight-etmv4 61bf000.etm: ETMv4 initialized
+01-03 05:11:07.146981     0     0 I KERNEL  : [    6.120056] coresight-remote-etm soc:wcn_etm0: Remote ETM initialized
+01-03 05:11:07.147535     0     0 I KERNEL  : [    6.120610] coresight-remote-etm soc:rpm_etm0: Remote ETM initialized
+01-03 05:11:07.148002     0     0 I KERNEL  : [    6.121077] coresight-remote-etm soc:aaudio_etm0: Remote ETM initialized
+01-03 05:11:07.148593     0     0 I KERNEL  : [    6.121668] coresight-remote-etm soc:mmodem_etm0: Remote ETM initialized
+01-03 05:11:07.149051     0     0 I KERNEL  : [    6.122126] coresight-remote-etm soc:mmodem_etm1: Remote ETM initialized
+01-03 05:11:07.149898     0     0 W KERNEL  : [    6.122973] coresight-qpdi: probe of 1941000.qpdi failed with error -1
+01-03 05:11:07.151290     0     0 W KERNEL  : [    6.124365] gf:ggf_init, entry
+01-03 05:11:07.151292     0     0 W KERNEL  : [    6.124367] gf_init wujian fingerprint_id = *goodix*
+01-03 05:11:07.151293     0     0 W KERNEL  : [    6.124368] --------gf_init start.--------
+01-03 05:11:07.151375     0     0 W KERNEL  : [    6.124450] goodix_fp: platform_driver_register
+01-03 05:11:07.152369     0     0 W KERNEL  : [    6.125444] gf:ggf_probe, entry
+01-03 05:11:07.152371     0     0 W KERNEL  : [    6.125446] --------gf_probe start.--------
+01-03 05:11:07.152372     0     0 W KERNEL  : [    6.125447] --------gf_parse_dts start.--------
+01-03 05:11:07.152379     0     0 W KERNEL  : [    6.125454] gf_dev->reset_gpio = 140
+01-03 05:11:07.152402     0     0 I KERNEL  : [    6.125477] gf:iirq_gpio:36
+01-03 05:11:07.152415     0     0 W KERNEL  : [    6.125490] --------gf_parse_dts end---OK.--------
+01-03 05:11:07.153184     0     0 I KERNEL  : [    6.126259] input: gf3208 as /devices/virtual/input/input3
+01-03 05:11:07.153768     0     0 W KERNEL  : [    6.126843] IRQ has been disabled.
+01-03 05:11:07.153769     0     0 W KERNEL  : [    6.126844] --------gf_probe end---OK.--------
+01-03 05:11:07.154007     0     0 I KERNEL  : [    6.127082] status = 0x0
+01-03 05:11:07.154009     0     0 W KERNEL  : [    6.127084] gf:ggf_init, exit
+01-03 05:11:07.154010     0     0 W KERNEL  : [    6.127085] --------gf_init end---OK.--------
+01-03 05:11:07.154027     0     0 D KERNEL  : [    6.127102] \17: [DEBUG] /home/smartcm/jenkins/Daily/kernel/drivers/fingerprint/idex/ix_btp.c:181 ix_init
+01-03 05:11:07.154029     0     0 E KERNEL  : [    6.127104] ix_init fingerprint_id = goodix
+01-03 05:11:07.154682     0     0 I KERNEL  : [    6.127757] usbcore: registered new interface driver snd-usb-audio
+01-03 05:11:07.183276     0     0 I KERNEL  : [    6.156351] msm-pcm-lpa soc:qqcom,msm-pcm-lpa: msm_pcm_probe: dev name soc:qcom,msm-pcm-lpa
+01-03 05:11:07.194352     0     0 I KERNEL  : [    6.167427] u32 classifier
+01-03 05:11:07.194353     0     0 I KERNEL  : [    6.167428] Actions configured
+01-03 05:11:07.194433     0     0 I KERNEL  : [    6.167508] Netfilter messages via NETLINK v0.30.
+01-03 05:11:07.194566     0     0 I KERNEL  : [    6.167641] nf_conntrack version 0.5.0 (16384 buckets, 65536 max)
+01-03 05:11:07.196154     0     0 I KERNEL  : [    6.169229] ctnetlink v0.93: registering with nfnetlink.
+01-03 05:11:07.199852     0     0 I KERNEL  : [    6.172927] xt_time: kernel timezone is -0000
+01-03 05:11:07.200291     0     0 I KERNEL  : [    6.173366] ip_tables: (C) 2000-2006 Netfilter Core Team
+01-03 05:11:07.201070     0     0 I KERNEL  : [    6.174145] arp_tables: (C) 2002 David S. Miller
+01-03 05:11:07.201252     0     0 I KERNEL  : [    6.174327] TCP: cubic registered
+01-03 05:11:07.201262     0     0 I KERNEL  : [    6.174337] Initializing XFRM netlink socket
+01-03 05:11:07.204539     0     0 I KERNEL  : [    6.177614] NET: Registered protocol family 10
+01-03 05:11:07.208261     0     0 I KERNEL  : [    6.181336] mip6: Mobile IPv6
+01-03 05:11:07.208320     0     0 I KERNEL  : [    6.181395] ip6_tables: (C) 2000-2006 Netfilter Core Team
+01-03 05:11:07.209295     0     0 I KERNEL  : [    6.182370] sit: IPv6 over IPv4 tunneling driver
+01-03 05:11:07.210739     0     0 I KERNEL  : [    6.183814] NET: Registered protocol family 17
+01-03 05:11:07.210794     0     0 I KERNEL  : [    6.183869] NET: Registered protocol family 15
+01-03 05:11:07.211306     0     0 I KERNEL  : [    6.184381] bridge: automatic filtering via arp/ip/ip6tables has been deprecated. Update your scripts to load br_netfilter if you need this.
+01-03 05:11:07.211321     0     0 I KERNEL  : [    6.184396] Ebtables v2.0 registered
+01-03 05:11:07.211660     0     0 I KERNEL  : [    6.184735] Bluetooth: ffffffc07eebbcd8
+01-03 05:11:07.211705     0     0 I KERNEL  : [    6.184780] Bluetooth: ffffffc07eebbcc8
+01-03 05:11:07.211739     0     0 I KERNEL  : [    6.184814] Bluetooth: ffffffc07eebbd08
+01-03 05:11:07.211741     0     0 I KERNEL  : [    6.184816] Bluetooth: ffffffc07eebbce8
+01-03 05:11:07.211758     0     0 I KERNEL  : [    6.184833] Bluetooth: ffffffc07eebbce8
+01-03 05:11:07.211768     0     0 I KERNEL  : [    6.184843] Bluetooth: ffffffc07eebbcb8
+01-03 05:11:07.211784     0     0 I KERNEL  : [    6.184859] Bluetooth: ffffffc07eebbd38
+01-03 05:11:07.211867     0     0 I KERNEL  : [    6.184942] Bluetooth: ffffffc07eebbd08
+01-03 05:11:07.211867     0     0 I KERNEL  : [    6.184942] l2tp_core: L2TP core driver, V2.0
+01-03 05:11:07.211895     0     0 I KERNEL  : [    6.184970] l2tp_ppp: PPPoL2TP kernel driver, V2.0
+01-03 05:11:07.211905     0     0 I KERNEL  : [    6.184980] l2tp_ip: L2TP IP encapsulation support (L2TPv3)
+01-03 05:11:07.212412     0     0 I KERNEL  : [    6.185487] l2tp_netlink: L2TP netlink interface
+01-03 05:11:07.212472     0     0 I KERNEL  : [    6.185547] l2tp_eth: L2TP ethernet pseudowire support (L2TPv3)
+01-03 05:11:07.212528     0     0 I KERNEL  : [    6.185603] l2tp_debugfs: L2TP debugfs support
+01-03 05:11:07.212537     0     0 I KERNEL  : [    6.185612] l2tp_ip6: L2TP IP encapsulation support for IPv6 (L2TPv3)
+01-03 05:11:07.214565     0     0 I KERNEL  : [    6.187640] NET: Registered protocol family 27
+01-03 05:11:07.225443     0     0 I KERNEL  : [    6.198518] subsys-pil-tz a21b000.qcom,pronto: for wcnss segments only will be dumped.
+01-03 05:11:07.230364     0     0 I KERNEL  : [    6.203439] pil-q6v5-mss 4080000.qcom,mss: for modem segments only will be dumped.
+01-03 05:11:07.231042     0     0 E KERNEL  : [    6.204117] fusb301 6-0025: USB supply not found, deferring probe
+01-03 05:11:07.242256     0     0 I KERNEL  : [    6.215331] sps:BBAM 0x0000000007104000 is registered.
+01-03 05:11:07.242256     0     0 E KERNEL  : [    6.215331] qpnp-smbcharger qpnp-smbcharger-19: node /soc/qcom,spmi@200f000/qcom,pmi8950@2/qcom,qpnp-smbcharger IO resource absent!
+01-03 05:11:07.242288     0     0 I KERNEL  : [    6.215363] SMBCHG: smbchg_check_chg_version: pmic=PMI8950, wa_flags=0x4e, hvdcp_supported=true
+01-03 05:11:07.242309     0     0 I KERNEL  : [    6.215384] SMBCHG: smb_parse_dt: parallel usb thr: 1000, 9v thr: 900
+01-03 05:11:07.242778     0     0 I KERNEL  : [    6.215853] smbcharger_charger_otg: no parameters
+01-03 05:11:07.243091     0     0 I KERNEL  : [    6.216166] SMBCHG: smbchg_hw_init: Charger Revision DIG: 0.0; ANA: 0.1
+01-03 05:11:07.243138     0     0 I KERNEL  : [    6.216213] SMBCHG: smbchg_set_aicl_rerun_period_s: aicl rerun period set to 180s
+01-03 05:11:07.243511     0     0 I KERNEL  : [    6.216586] SMBCHG: smbchg_hw_init: set vfloat to 4400
+01-03 05:11:07.243553     0     0 I KERNEL  : [    6.216628] SMBCHG: smbchg_iterm_set: set tcc (100) to 0x02
+01-03 05:11:07.243647     0     0 I KERNEL  : [    6.216722] SMBCHG: smbchg_vfloat_adjust_check: Starting vfloat adjustments
+01-03 05:11:07.243685     0     0 I KERNEL  : [    6.216760] SMBCHG: smbchg_vfloat_adjust_work: Stopping vfloat adj taper=0 parallel_ma = 0
+01-03 05:11:07.244125     0     0 I KERNEL  : [    6.217200] SMBCHG: smbchg_set_fastchg_current_raw: fastcharge current requested 4000, set to 3000
+01-03 05:11:07.244367     0     0 I KERNEL  : [    6.217442] SMBCHG: batt_pres_handler: triggered: 0x00
+01-03 05:11:07.244370     0     0 I KERNEL  : [    6.217445] SMBCHG: smbchg_vfloat_adjust_check: Starting vfloat adjustments
+01-03 05:11:07.244399     0     0 I KERNEL  : [    6.217474] SMBCHG: smbchg_vfloat_adjust_work: Stopping vfloat adj taper=0 parallel_ma = 0
+01-03 05:11:07.244465     0     0 I KERNEL  : [    6.217540] SMBCHG: batt_hot_handler: triggered: 0x00
+01-03 05:11:07.244468     0     0 I KERNEL  : [    6.217543] SMBCHG: smbchg_vfloat_adjust_check: Starting vfloat adjustments
+01-03 05:11:07.244497     0     0 I KERNEL  : [    6.217572] SMBCHG: smbchg_vfloat_adjust_work: Stopping vfloat adj taper=0 parallel_ma = 0
+01-03 05:11:07.244560     0     0 I KERNEL  : [    6.217635] SMBCHG: batt_warm_handler: triggered: 0x00
+01-03 05:11:07.244584     0     0 I KERNEL  : [    6.217659] SMBCHG: batt_cool_handler: triggered: 0x00
+01-03 05:11:07.244609     0     0 I KERNEL  : [    6.217684] SMBCHG: batt_cold_handler: triggered: 0x00
+01-03 05:11:07.244612     0     0 I KERNEL  : [    6.217687] SMBCHG: smbchg_vfloat_adjust_check: Starting vfloat adjustments
+01-03 05:11:07.244640     0     0 I KERNEL  : [    6.217715] SMBCHG: smbchg_vfloat_adjust_work: Stopping vfloat adj taper=0 parallel_ma = 0
+01-03 05:11:07.244686     0     0 I KERNEL  : [    6.217761] SMBCHG: usbid_change_handler: triggered
+01-03 05:11:07.244707     0     0 I KERNEL  : [    6.217782] SMBCHG: usbid_change_handler: setting usb psy OTG = 0
+01-03 05:11:07.244910     0     0 I KERNEL  : [    6.217985] SMBCHG: handle_usb_removal: triggered
+01-03 05:11:07.244934     0     0 I KERNEL  : [    6.218009] SMBCHG: smbchg_change_usb_supply_type: Type 0: setting mA = 1800
+01-03 05:11:07.244937     0     0 I KERNEL  : [    6.218012] SMBCHG: smbchg_set_usb_current_max: USB current_ma = 1800
+01-03 05:11:07.245001     0     0 I KERNEL  : [    6.218076] SMBCHG: smbchg_set_usb_current_max: usb type = 0 current set to 1800 mA
+01-03 05:11:07.245015     0     0 I KERNEL  : [    6.218090] SMBCHG: smbchg_rerun_aicl: Rerunning AICL...
+01-03 05:11:07.305194     0     0 I KERNEL  : [    6.278269] SMBCHG: handle_usb_removal: setting usb psy present = 0
+01-03 05:11:07.305316     0     0 I KERNEL  : [    6.278391] SMBCHG: set_usb_psy_dp_dm: setting usb psy dp dm = 9
+01-03 05:11:07.305321     0     0 I KERNEL  : [    6.278396] SMBCHG: handle_usb_removal: setting usb psy health UNKNOWN
+01-03 05:11:07.305593     0     0 I KERNEL  : [    6.278668] SMBCHG: smbchg_usb_update_online_work: setting usb psy online = 0
+01-03 05:11:07.305863     0     0 I KERNEL  : [    6.278938] SMBCHG: is_hvdcp_present: HVDCP_STS = 0x00
+01-03 05:11:07.305865     0     0 I KERNEL  : [    6.278940] SMBCHG: restore_from_hvdcp_detection: Retracting HVDCP vote for ICL
+01-03 05:11:07.306791     0     0 I KERNEL  : [    6.279866] SMBCHG: smbchg_calc_max_flash_current: avail_iflash=2095967, ocv=3844734, ibat=303072, rbatt=202172
+01-03 05:11:07.308100     0     0 I KERNEL  : [    6.281175] SMBCHG: smbchg_chg_led_brightness_get: chg_led_sts = 01
+01-03 05:11:07.308368     0     0 I KERNEL  : [    6.281443] SMBCHG: smbchg_calc_max_flash_current: avail_iflash=2095967, ocv=3844734, ibat=303072, rbatt=202172
+01-03 05:11:07.314256     0     0 E KERNEL  : [    6.287331] qpnp-smbcharger qpnp-smbcharger-19: node /soc/qcom,spmi@200f000/qcom,pmi8950@2/qcom,qpnp-smbcharger IO resource absent!
+01-03 05:11:07.314258     0     0 I KERNEL  : [    6.287333] SMBCHG: smbchg_probe: setting usb psy present = 0
+01-03 05:11:07.348729     0     0 I KERNEL  : [    6.321804] msm-dwc3 7000000.ssusb: DWC3 in low power mode
+01-03 05:11:07.349029     0     0 I KERNEL  : [    6.322104] SMBCHG: smbchg_config_chg_battery_type: Battery-type not identified
+01-03 05:11:07.349042     0     0 I KERNEL  : [    6.322117] SMBCHG: read_usb_type: src det low
+01-03 05:11:07.349082     0     0 I KERNEL  : [    6.322157] SMBCHG: smbchg_vfloat_adjust_check: Starting vfloat adjustments
+01-03 05:11:07.349240     0     0 I KERNEL  : [    6.322315] SMBCHG: smbchg_vfloat_adjust_work: Stopping vfloat adj taper=0 parallel_ma = 0
+01-03 05:11:07.349562     0     0 I KERNEL  : [    6.322637] SMBCHG: smbchg_calc_max_flash_current: avail_iflash=2095967, ocv=3844734, ibat=303072, rbatt=202172
+01-03 05:11:07.349960     0     0 I KERNEL  : [    6.323035] SMBCHG: read_usb_type: src det low
+01-03 05:11:07.351259     0     0 I KERNEL  : [    6.324334] qpnp-smbcharger qpnp-smbcharger-19: SMBCHG successfully probe Charger version=SCHG_LITE Revision DIG:0.0 ANA:0.1 batt=1 dc=0 usb=0
+01-03 05:11:07.353335     0     0 E KERNEL  : [    6.326410] i2c-msm-v2 7af6000.i2c: msm_bus_scale_register_client(mstr-id:84):0x1d (ok)
+01-03 05:11:07.353602     0     0 I KERNEL  : [    6.326677] fusb301 6-0025: device id: 0x12
+01-03 05:11:07.353619     0     0 E KERNEL  : [    6.326694] fusb301 6-0025: drp time is not available and set default
+01-03 05:11:07.353621     0     0 W KERNEL  : [    6.326696] ------------[ cut here ]------------
+01-03 05:11:07.353634     0     0 W KERNEL  : [    6.326709] WARNING: CPU: 0 PID: 89 at /home/smartcm/jenkins/Daily/kernel/include/linux/of.h:770 fusb301_probe+0x608/0xa68()
+01-03 05:11:07.353637     0     0 W KERNEL  : [    6.326712] Modules linked in:
+01-03 05:11:07.353642     0     0 W KERNEL  : [    6.326717] CPU: 0 PID: 89 Comm: kworker/u16:2 Tainted: G        W      3.18.31-g605cf79 #1
+01-03 05:11:07.353644     0     0 W KERNEL  : [    6.326719] Hardware name: Qualcomm Technologies, Inc. MSM8953 ODIN (DT)
+01-03 05:11:07.353652     0     0 W KERNEL  : [    6.326727] Workqueue: deferwq deferred_probe_work_func
+01-03 05:11:07.353654     0     0 F KERNEL  : [    6.326729] Call trace:
+01-03 05:11:07.353660     0     0 W KERNEL  : [    6.326735] [<ffffffc000089b14>] dump_backtrace+0x0/0x270
+01-03 05:11:07.353663     0     0 W KERNEL  : [    6.326738] [<ffffffc000089d98>] show_stack+0x14/0x1c
+01-03 05:11:07.353669     0     0 W KERNEL  : [    6.326744] [<ffffffc000e9791c>] dump_stack+0x80/0xa4
+01-03 05:11:07.353673     0     0 W KERNEL  : [    6.326748] [<ffffffc0000a3280>] warn_slowpath_common+0x8c/0xb0
+01-03 05:11:07.353676     0     0 W KERNEL  : [    6.326751] [<ffffffc0000a33bc>] warn_slowpath_null+0x18/0x20
+01-03 05:11:07.353680     0     0 W KERNEL  : [    6.326755] [<ffffffc0005fb0a4>] fusb301_probe+0x608/0xa68
+01-03 05:11:07.353685     0     0 W KERNEL  : [    6.326760] [<ffffffc0007cf1b8>] i2c_device_probe+0xdc/0x110
+01-03 05:11:07.353688     0     0 W KERNEL  : [    6.326763] [<ffffffc0005a805c>] driver_probe_device+0x164/0x370
+01-03 05:11:07.353691     0     0 W KERNEL  : [    6.326766] [<ffffffc0005a8294>] __device_attach+0x2c/0x4c
+01-03 05:11:07.353693     0     0 W KERNEL  : [    6.326768] [<ffffffc0005a6248>] bus_for_each_drv+0x7c/0xac
+01-03 05:11:07.353696     0     0 W KERNEL  : [    6.326771] [<ffffffc0005a7e70>] device_attach+0x70/0x9c
+01-03 05:11:07.353698     0     0 W KERNEL  : [    6.326773] [<ffffffc0005a7338>] bus_probe_device+0x2c/0xa0
+01-03 05:11:07.353701     0     0 W KERNEL  : [    6.326776] [<ffffffc0005a7864>] deferred_probe_work_func+0x98/0xc8
+01-03 05:11:07.353706     0     0 W KERNEL  : [    6.326781] [<ffffffc0000ba02c>] process_one_work+0x254/0x444
+01-03 05:11:07.353709     0     0 W KERNEL  : [    6.326784] [<ffffffc0000ba7e4>] worker_thread+0x2fc/0x418
+01-03 05:11:07.353712     0     0 W KERNEL  : [    6.326787] [<ffffffc0000bea34>] kthread+0xf0/0xf8
+01-03 05:11:07.353715     0     0 W KERNEL  : [    6.326790] ---[ end trace ecaa5c7d349af7b4 ]---
+01-03 05:11:07.353718     0     0 E KERNEL  : [    6.326793] fusb301 6-0025: default ttry timeout
+01-03 05:11:07.353721     0     0 E KERNEL  : [    6.326796] fusb301 6-0025: default ccdebounce timeout
+01-03 05:11:07.353724     0     0 I KERNEL  : [    6.326799] fusb301 6-0025: ttry-timeout:600 ccdebounce-timeout:200
+01-03 05:11:07.354652     0     0 E KERNEL  : [    6.327727] dual_role_usb otg_default: driver failed to report `mode' property: -22
+01-03 05:11:07.354700     0     0 E KERNEL  : [    6.327775] dual_role_usb otg_default: driver failed to report `mode' property: -22
+01-03 05:11:07.375686     0     0 I KERNEL  : [    6.348761] fusb301 6-0025: fusb301_detach: FUSB_STATE_ERROR_RECOVERY
+01-03 05:11:07.376060     0     0 I KERNEL  : [    6.349135] fusb301 6-0025: mode[0x20], host_cur[0x02], dttime[0x00]
+01-03 05:11:07.379554     0     0 I KERNEL  : [    6.352629] EDAC DEVICE0: Giving out device to module soc:arm64-cpu-erp controller cache: DEV soc:arm64-cpu-erp (INTERRUPT)
+01-03 05:11:07.380668     0     0 E KERNEL  : [    6.353743] ARM64 CPU ERP: Could not find <cci-irq> IRQ property. Proceeding anyway.
+01-03 05:11:07.380669     0     0 E KERNEL  : [    6.353744] ARM64 CPU ERP: SBE detection is disabled.
+01-03 05:11:07.385462     0     0 I KERNEL  : [    6.358537] Registered cp15_barrier emulation handler
+01-03 05:11:07.390756     0     0 I KERNEL  : [    6.363831] Registered setend emulation handler
+01-03 05:11:07.391915     0     0 I KERNEL  : [    6.364990] Loading compiled-in X.509 certificates
+01-03 05:11:07.393771     0     0 I KERNEL  : [    6.366846] Loaded X.509 cert 'Magrathea: Glacier signing key: 7950efdd338382398427289f6a4b485a523b581d'
+01-03 05:11:07.489897     0     0 I KERNEL  : [    6.462972] fastrpc soc:qqcom,adsprpc-mem: for adsp_rh segments only will be dumped.
+01-03 05:11:07.495191     0     0 I KERNEL  : [    6.468266] RNDIS_IPA module is loaded.
+01-03 05:11:07.495191     0     0 I KERNEL  : [    6.468266] file system registered
+01-03 05:11:07.495426     0     0 I KERNEL  : [    6.468501] mbim_init: initialize 1 instances
+01-03 05:11:07.495670     0     0 I KERNEL  : [    6.468745] mbim_init: Initialized 1 ports
+01-03 05:11:07.501251     0     0 I KERNEL  : [    6.474326] rndis_qc_init: initialize rndis QC instance
+01-03 05:11:07.502302     0     0 I KERNEL  : [    6.475377] Number of LUNs=8
+01-03 05:11:07.502337     0     0 I KERNEL  : [    6.475412] Mass Storage Function, version: 2009/09/11
+01-03 05:11:07.502349     0     0 I KERNEL  : [    6.475424] LUN: removable file: (no medium)
+01-03 05:11:07.502410     0     0 I KERNEL  : [    6.475485] Number of LUNs=1
+01-03 05:11:07.502613     0     0 I KERNEL  : [    6.475688] LUN: removable read only CD-ROM file: (no medium)
+01-03 05:11:07.502618     0     0 I KERNEL  : [    6.475693] Number of LUNs=1
+01-03 05:11:07.503848     0     0 I KERNEL  : [    6.476923] android_usb gadget: android_usb ready
+01-03 05:11:07.507327     0     0 I KERNEL  : [    6.480402] input: gpio-keys as /devices/soc/soc:gpio_keys/input/input4
+01-03 05:11:07.513073     0     0 I KERNEL  : [    6.486148] qcom,qpnp-rtc qpnp-rtc-9: setting system clock to 1970-01-02 21:11:07 UTC (162667)
+01-03 05:11:07.518030     0     0 I KERNEL  : [    6.491105] msm-core initialized without polling period
+01-03 05:11:07.521217     0     0 I KERNEL  : [    6.494292] power_debug init Ok
+01-03 05:11:07.524056     0     0 E KERNEL  : [    6.497131] parse_cpu_levels: idx 1 276
+01-03 05:11:07.524073     0     0 W KERNEL  : [    6.497148] ------------[ cut here ]------------
+01-03 05:11:07.524082     0     0 W KERNEL  : [    6.497157] WARNING: CPU: 6 PID: 1 at /home/smartcm/jenkins/Daily/kernel/drivers/cpuidle/lpm-levels-of.c:724 parse_cluster+0x790/0x928()
+01-03 05:11:07.524083     0     0 W KERNEL  : [    6.497158] calculate_residency: Incorrect power attributes for LPM
+01-03 05:11:07.524086     0     0 W KERNEL  : [    6.497161] Modules linked in:
+01-03 05:11:07.524092     0     0 W KERNEL  : [    6.497167] CPU: 6 PID: 1 Comm: swapper/0 Tainted: G        W      3.18.31-g605cf79 #1
+01-03 05:11:07.524093     0     0 W KERNEL  : [    6.497168] Hardware name: Qualcomm Technologies, Inc. MSM8953 ODIN (DT)
+01-03 05:11:07.524095     0     0 F KERNEL  : [    6.497170] Call trace:
+01-03 05:11:07.524102     0     0 W KERNEL  : [    6.497177] [<ffffffc000089b14>] dump_backtrace+0x0/0x270
+01-03 05:11:07.524105     0     0 W KERNEL  : [    6.497180] [<ffffffc000089d98>] show_stack+0x14/0x1c
+01-03 05:11:07.524110     0     0 W KERNEL  : [    6.497185] [<ffffffc000e9791c>] dump_stack+0x80/0xa4
+01-03 05:11:07.524115     0     0 W KERNEL  : [    6.497190] [<ffffffc0000a3280>] warn_slowpath_common+0x8c/0xb0
+01-03 05:11:07.524118     0     0 W KERNEL  : [    6.497193] [<ffffffc0000a3304>] warn_slowpath_fmt+0x60/0x80
+01-03 05:11:07.524121     0     0 W KERNEL  : [    6.497196] [<ffffffc00096c5f4>] parse_cluster+0x790/0x928
+01-03 05:11:07.524124     0     0 W KERNEL  : [    6.497199] [<ffffffc00096c324>] parse_cluster+0x4c0/0x928
+01-03 05:11:07.524128     0     0 W KERNEL  : [    6.497203] [<ffffffc00096c80c>] lpm_of_parse_cluster+0x80/0xa8
+01-03 05:11:07.524131     0     0 W KERNEL  : [    6.497206] [<ffffffc000968e78>] lpm_probe+0x40/0x3a4
+01-03 05:11:07.524136     0     0 W KERNEL  : [    6.497211] [<ffffffc0005a9db0>] platform_drv_probe+0x38/0x84
+01-03 05:11:07.524139     0     0 W KERNEL  : [    6.497214] [<ffffffc0005a805c>] driver_probe_device+0x164/0x370
+01-03 05:11:07.524141     0     0 W KERNEL  : [    6.497216] [<ffffffc0005a8318>] __driver_attach+0x64/0x90
+01-03 05:11:07.524144     0     0 W KERNEL  : [    6.497219] [<ffffffc0005a6f04>] bus_for_each_dev+0x80/0xb0
+01-03 05:11:07.524147     0     0 W KERNEL  : [    6.497222] [<ffffffc0005a79e8>] driver_attach+0x20/0x28
+01-03 05:11:07.524150     0     0 W KERNEL  : [    6.497225] [<ffffffc0005a762c>] bus_add_driver+0x128/0x200
+01-03 05:11:07.524152     0     0 W KERNEL  : [    6.497227] [<ffffffc0005a8cc0>] driver_register+0x94/0xe0
+01-03 05:11:07.524155     0     0 W KERNEL  : [    6.497230] [<ffffffc0005a9cf8>] __platform_driver_register+0x60/0x68
+01-03 05:11:07.524159     0     0 W KERNEL  : [    6.497234] [<ffffffc001688cf4>] lpm_levels_module_init+0x24/0x4c
+01-03 05:11:07.524162     0     0 W KERNEL  : [    6.497237] [<ffffffc000082b38>] do_one_initcall+0x1a0/0x1bc
+01-03 05:11:07.524167     0     0 W KERNEL  : [    6.497242] [<ffffffc001641b38>] kernel_init_freeable+0x14c/0x1e8
+01-03 05:11:07.524171     0     0 W KERNEL  : [    6.497246] [<ffffffc000e90a58>] kernel_init+0x14/0xd8
+01-03 05:11:07.524173     0     0 W KERNEL  : [    6.497248] ---[ end trace ecaa5c7d349af7b6 ]---
+01-03 05:11:07.524341     0     0 E KERNEL  : [    6.497416] parse_cpu_levels: idx 1 286
+01-03 05:11:07.524353     0     0 W KERNEL  : [    6.497428] ------------[ cut here ]------------
+01-03 05:11:07.524358     0     0 W KERNEL  : [    6.497433] WARNING: CPU: 6 PID: 1 at /home/smartcm/jenkins/Daily/kernel/drivers/cpuidle/lpm-levels-of.c:724 parse_cluster+0x790/0x928()
+01-03 05:11:07.524359     0     0 W KERNEL  : [    6.497434] calculate_residency: Incorrect power attributes for LPM
+01-03 05:11:07.524361     0     0 W KERNEL  : [    6.497436] Modules linked in:
+01-03 05:11:07.524364     0     0 W KERNEL  : [    6.497439] CPU: 6 PID: 1 Comm: swapper/0 Tainted: G        W      3.18.31-g605cf79 #1
+01-03 05:11:07.524366     0     0 W KERNEL  : [    6.497441] Hardware name: Qualcomm Technologies, Inc. MSM8953 ODIN (DT)
+01-03 05:11:07.524367     0     0 F KERNEL  : [    6.497442] Call trace:
+01-03 05:11:07.524370     0     0 W KERNEL  : [    6.497445] [<ffffffc000089b14>] dump_backtrace+0x0/0x270
+01-03 05:11:07.524373     0     0 W KERNEL  : [    6.497448] [<ffffffc000089d98>] show_stack+0x14/0x1c
+01-03 05:11:07.524376     0     0 W KERNEL  : [    6.497451] [<ffffffc000e9791c>] dump_stack+0x80/0xa4
+01-03 05:11:07.524379     0     0 W KERNEL  : [    6.497454] [<ffffffc0000a3280>] warn_slowpath_common+0x8c/0xb0
+01-03 05:11:07.524383     0     0 W KERNEL  : [    6.497458] [<ffffffc0000a3304>] warn_slowpath_fmt+0x60/0x80
+01-03 05:11:07.524386     0     0 W KERNEL  : [    6.497461] [<ffffffc00096c5f4>] parse_cluster+0x790/0x928
+01-03 05:11:07.524389     0     0 W KERNEL  : [    6.497464] [<ffffffc00096c324>] parse_cluster+0x4c0/0x928
+01-03 05:11:07.524393     0     0 W KERNEL  : [    6.497468] [<ffffffc00096c80c>] lpm_of_parse_cluster+0x80/0xa8
+01-03 05:11:07.524396     0     0 W KERNEL  : [    6.497471] [<ffffffc000968e78>] lpm_probe+0x40/0x3a4
+01-03 05:11:07.524399     0     0 W KERNEL  : [    6.497474] [<ffffffc0005a9db0>] platform_drv_probe+0x38/0x84
+01-03 05:11:07.524402     0     0 W KERNEL  : [    6.497477] [<ffffffc0005a805c>] driver_probe_device+0x164/0x370
+01-03 05:11:07.524404     0     0 W KERNEL  : [    6.497479] [<ffffffc0005a8318>] __driver_attach+0x64/0x90
+01-03 05:11:07.524407     0     0 W KERNEL  : [    6.497482] [<ffffffc0005a6f04>] bus_for_each_dev+0x80/0xb0
+01-03 05:11:07.524409     0     0 W KERNEL  : [    6.497484] [<ffffffc0005a79e8>] driver_attach+0x20/0x28
+01-03 05:11:07.524412     0     0 W KERNEL  : [    6.497487] [<ffffffc0005a762c>] bus_add_driver+0x128/0x200
+01-03 05:11:07.524414     0     0 W KERNEL  : [    6.497489] [<ffffffc0005a8cc0>] driver_register+0x94/0xe0
+01-03 05:11:07.524417     0     0 W KERNEL  : [    6.497492] [<ffffffc0005a9cf8>] __platform_driver_register+0x60/0x68
+01-03 05:11:07.524421     0     0 W KERNEL  : [    6.497496] [<ffffffc001688cf4>] lpm_levels_module_init+0x24/0x4c
+01-03 05:11:07.524424     0     0 W KERNEL  : [    6.497499] [<ffffffc000082b38>] do_one_initcall+0x1a0/0x1bc
+01-03 05:11:07.524427     0     0 W KERNEL  : [    6.497502] [<ffffffc001641b38>] kernel_init_freeable+0x14c/0x1e8
+01-03 05:11:07.524430     0     0 W KERNEL  : [    6.497505] [<ffffffc000e90a58>] kernel_init+0x14/0xd8
+01-03 05:11:07.524432     0     0 W KERNEL  : [    6.497507] ---[ end trace ecaa5c7d349af7b7 ]---
+01-03 05:11:07.542170     0     0 E KERNEL  : [    6.515245] qcom,qpnp-flash-led qpnp-flash-led-25: Unable to acquire pinctrl
+01-03 05:11:07.546012     0     0 I KERNEL  : [    6.519087] rmnet_ipa started initialization
+01-03 05:11:07.546015     0     0 I KERNEL  : [    6.519090] IPA SSR support = True
+01-03 05:11:07.546017     0     0 I KERNEL  : [    6.519092] IPA ipa-loaduC = True
+01-03 05:11:07.546018     0     0 I KERNEL  : [    6.519093] IPA SG support = True
+01-03 05:11:07.551237     0     0 E KERNEL  : [    6.524312] ipa ipa_sps_irq_control_all:9938 EP (5) not allocated.
+01-03 05:11:07.551239     0     0 E KERNEL  : [    6.524314] ipa2_uc_state_check:3301 uC is not loaded
+01-03 05:11:07.552288     0     0 I KERNEL  : [    6.525363] rmnet_ipa completed initialization
+01-03 05:11:07.561293     0     0 I KERNEL  : [    6.534368] qcom,cc-debug-8953 1874000.qcom,cc-debug: Registered Debug Mux successfully
+01-03 05:11:07.580263     0     0 I KERNEL  : [    6.553338] msm8952-asoc-wcd c051000.sound: default codec configured
+01-03 05:11:07.584169     0     0 E KERNEL  : [    6.557244] msm8952-asoc-wcd c051000.sound: ASoC: platform (null) not registered
+01-03 05:11:07.584218     0     0 E KERNEL  : [    6.557293] msm8952-asoc-wcd c051000.sound: snd_soc_register_card failed (-517)
+01-03 05:11:07.587570     0     0 I KERNEL  : [    6.560645] vdd_vreg: disabling
+01-03 05:11:07.587573     0     0 I KERNEL  : [    6.560648] adv_vreg: disabling
+01-03 05:11:07.587613     0     0 I KERNEL  : [    6.560688] gfx_mem_acc_corner: disabling
+01-03 05:11:07.587617     0     0 I KERNEL  : [    6.560692] apc_mem_acc_corner: disabling
+01-03 05:11:07.587635     0     0 I KERNEL  : [    6.560710] clock_late_init: Removing enables held for handed-off clocks
+01-03 05:11:07.593761     0     0 F KERNEL  : [    6.566836] hwinfo_value=0x00151d01, lpddr_mid=0x1 emmc_cap=0x1d emmc_mid=0x15
+01-03 05:11:07.593778     0     0 I KERNEL  : [    6.566853] ALSA device list:
+01-03 05:11:07.593780     0     0 I KERNEL  : [    6.566855] No soundcards found.
+01-03 05:11:09.317266     0     0 I KERNEL  : [    8.290341] Freeing unused kernel memory: 1180K (ffffffc001641000 - ffffffc001768000)
+01-03 05:11:09.324124     0     0 I KERNEL  : [    8.297199] Freeing alternatives memory: 84K (ffffffc001768000 - ffffffc00177d000)
