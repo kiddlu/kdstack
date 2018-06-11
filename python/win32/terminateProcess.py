@@ -1,4 +1,4 @@
-#!/usr/bin/env winpy2.bat
+#!/usr/bin/python3
 
 from win32process import *
 from win32con import *
