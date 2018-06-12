@@ -1,8 +1,8 @@
-#!/bin/bash
+#!/usr/bin/python3
+import os
 
 #use ctype, which is like jni
-
-cat <<EOF > pycall.c
+src_code='''
 /* gcc -o libpycall.so -shared -fPIC pycall.c */
 #include <stdio.h>
 #include <stdlib.h>
@@ -16,7 +16,7 @@ struct cstruct
 
 int add(int a, int b)
 {
-    //printf("you input %d and %d\n", a, b);
+    //printf("you input %d and %d\\n", a, b);
     return a+b;
 }
 
@@ -50,11 +50,15 @@ void final(struct cstruct *p)
     free(p);
     return;
 }
-EOF
+'''
+txt = open("pycall.c", "w")
+txt.write(src_code)
+txt.close()
+os.system("gcc -o libpycall.so -shared -fPIC pycall.c")
 
-gcc -o libpycall.so -shared -fPIC pycall.c
 
-cat <<EOF > pycall.py
+##main
+import _ctypes
 from ctypes import *
 
 class Cstruct(Structure):
@@ -85,14 +89,7 @@ print(cs_self.contents.i, cs_self.contents.d, cs_self.contents.self)
 lib.change(cs)
 print(cs.contents.i, cs.contents.d, cs.contents.self)
 
-if cs.contents.self == (POINTER(c_int)()):
-    print("self is NULL")
-else:
-    print("self is NOT null")
-
-
 lib.final(cs)
-EOF
 
-python3 pycall.py
-rm pycall.py pycall.c libpycall.so
+_ctypes.FreeLibrary(lib._handle)
+os.system("rm pycall.c libpycall.so")
