@@ -74,15 +74,21 @@ include $(BUILD_STATIC_LIBRARY)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := pk_sign
-LOCAL_C_INCLUDES := $(LOCAL_PATH)/../include
+LOCAL_C_INCLUDES := $(LOCAL_PATH)/../mbedtls/include
 LOCAL_SRC_FILES := $(LOCAL_PATH)/../mbedtls/programs/pkey/pk_sign.c
 LOCAL_STATIC_LIBRARIES := libmbedcrypto
 include $(BUILD_EXECUTABLE)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := pk_verify
-LOCAL_C_INCLUDES := $(LOCAL_PATH)/../include
+LOCAL_C_INCLUDES := $(LOCAL_PATH)/../mbedtls/include
 LOCAL_SRC_FILES := $(LOCAL_PATH)/../mbedtls/programs/pkey/pk_verify.c
 LOCAL_STATIC_LIBRARIES := libmbedcrypto
 include $(BUILD_EXECUTABLE)
 
+#include $(CLEAR_VARS)
+#LOCAL_MODULE := pk_sign_mem
+#LOCAL_C_INCLUDES := $(LOCAL_PATH)/../mbedtls/include
+#LOCAL_SRC_FILES := $(LOCAL_PATH)/../mbedtls/programs/pkey/pk_sign_mem.c
+#LOCAL_STATIC_LIBRARIES := libmbedcrypto
+#include $(BUILD_EXECUTABLE)
