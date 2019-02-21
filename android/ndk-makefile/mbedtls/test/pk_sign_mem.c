@@ -1,9 +1,5 @@
-/**
- * \file mbedtls_md.c
- *
- * \brief Generic message digest wrapper for mbed TLS
- *
- * \author Adriaan de Jong <dejong@fox-it.com>
+/*
+ *  Public key-based signature creation program
  *
  *  Copyright (C) 2006-2015, ARM Limited, All Rights Reserved
  *  SPDX-License-Identifier: Apache-2.0
@@ -29,489 +25,192 @@
 #include MBEDTLS_CONFIG_FILE
 #endif
 
-#if defined(MBEDTLS_MD_C)
-
-#include "mbedtls/md.h"
-#include "mbedtls/md_internal.h"
-#include "mbedtls/platform_util.h"
-
 #if defined(MBEDTLS_PLATFORM_C)
 #include "mbedtls/platform.h"
 #else
+#include <stdio.h>
 #include <stdlib.h>
-#define mbedtls_calloc    calloc
-#define mbedtls_free       free
-#endif
+#define mbedtls_snprintf        snprintf
+#define mbedtls_printf          printf
+#define mbedtls_exit            exit
+#define MBEDTLS_EXIT_SUCCESS    EXIT_SUCCESS
+#define MBEDTLS_EXIT_FAILURE    EXIT_FAILURE
+#endif /* MBEDTLS_PLATFORM_C */
 
+#if !defined(MBEDTLS_BIGNUM_C) || !defined(MBEDTLS_ENTROPY_C) ||  \
+    !defined(MBEDTLS_SHA256_C) || !defined(MBEDTLS_MD_C) || \
+    !defined(MBEDTLS_PK_PARSE_C) || !defined(MBEDTLS_FS_IO) ||    \
+    !defined(MBEDTLS_CTR_DRBG_C)
+int main( void )
+{
+    mbedtls_printf("MBEDTLS_BIGNUM_C and/or MBEDTLS_ENTROPY_C and/or "
+           "MBEDTLS_SHA256_C and/or MBEDTLS_MD_C and/or "
+           "MBEDTLS_PK_PARSE_C and/or MBEDTLS_FS_IO and/or "
+           "MBEDTLS_CTR_DRBG_C not defined.\n");
+    return( 0 );
+}
+#else
+
+#include "mbedtls/error.h"
+#include "mbedtls/entropy.h"
+#include "mbedtls/ctr_drbg.h"
+#include "mbedtls/md.h"
+#include "mbedtls/pk.h"
+
+#include <stdio.h>
 #include <string.h>
 
-#if defined(MBEDTLS_FS_IO)
-#include <stdio.h>
-#endif
-
-/*
- * Reminder: update profiles in x509_crt.c when adding a new hash!
- */
-static const int supported_digests[] = {
-
-#if defined(MBEDTLS_SHA512_C)
-        MBEDTLS_MD_SHA512,
-        MBEDTLS_MD_SHA384,
-#endif
-
-#if defined(MBEDTLS_SHA256_C)
-        MBEDTLS_MD_SHA256,
-        MBEDTLS_MD_SHA224,
-#endif
-
-#if defined(MBEDTLS_SHA1_C)
-        MBEDTLS_MD_SHA1,
-#endif
-
-#if defined(MBEDTLS_RIPEMD160_C)
-        MBEDTLS_MD_RIPEMD160,
-#endif
-
-#if defined(MBEDTLS_MD5_C)
-        MBEDTLS_MD_MD5,
-#endif
-
-#if defined(MBEDTLS_MD4_C)
-        MBEDTLS_MD_MD4,
-#endif
-
-#if defined(MBEDTLS_MD2_C)
-        MBEDTLS_MD_MD2,
-#endif
-
-        MBEDTLS_MD_NONE
-};
-
-const int *mbedtls_md_list( void )
+#if defined(MBEDTLS_CHECK_PARAMS)
+#include "mbedtls/platform_util.h"
+void mbedtls_param_failed( const char *failure_condition,
+                           const char *file,
+                           int line )
 {
-    return( supported_digests );
-}
-
-const mbedtls_md_info_t *mbedtls_md_info_from_string( const char *md_name )
-{
-    if( NULL == md_name )
-        return( NULL );
-
-    /* Get the appropriate digest information */
-#if defined(MBEDTLS_MD2_C)
-    if( !strcmp( "MD2", md_name ) )
-        return mbedtls_md_info_from_type( MBEDTLS_MD_MD2 );
-#endif
-#if defined(MBEDTLS_MD4_C)
-    if( !strcmp( "MD4", md_name ) )
-        return mbedtls_md_info_from_type( MBEDTLS_MD_MD4 );
-#endif
-#if defined(MBEDTLS_MD5_C)
-    if( !strcmp( "MD5", md_name ) )
-        return mbedtls_md_info_from_type( MBEDTLS_MD_MD5 );
-#endif
-#if defined(MBEDTLS_RIPEMD160_C)
-    if( !strcmp( "RIPEMD160", md_name ) )
-        return mbedtls_md_info_from_type( MBEDTLS_MD_RIPEMD160 );
-#endif
-#if defined(MBEDTLS_SHA1_C)
-    if( !strcmp( "SHA1", md_name ) || !strcmp( "SHA", md_name ) )
-        return mbedtls_md_info_from_type( MBEDTLS_MD_SHA1 );
-#endif
-#if defined(MBEDTLS_SHA256_C)
-    if( !strcmp( "SHA224", md_name ) )
-        return mbedtls_md_info_from_type( MBEDTLS_MD_SHA224 );
-    if( !strcmp( "SHA256", md_name ) )
-        return mbedtls_md_info_from_type( MBEDTLS_MD_SHA256 );
-#endif
-#if defined(MBEDTLS_SHA512_C)
-    if( !strcmp( "SHA384", md_name ) )
-        return mbedtls_md_info_from_type( MBEDTLS_MD_SHA384 );
-    if( !strcmp( "SHA512", md_name ) )
-        return mbedtls_md_info_from_type( MBEDTLS_MD_SHA512 );
-#endif
-    return( NULL );
-}
-
-const mbedtls_md_info_t *mbedtls_md_info_from_type( mbedtls_md_type_t md_type )
-{
-    switch( md_type )
-    {
-#if defined(MBEDTLS_MD2_C)
-        case MBEDTLS_MD_MD2:
-            return( &mbedtls_md2_info );
-#endif
-#if defined(MBEDTLS_MD4_C)
-        case MBEDTLS_MD_MD4:
-            return( &mbedtls_md4_info );
-#endif
-#if defined(MBEDTLS_MD5_C)
-        case MBEDTLS_MD_MD5:
-            return( &mbedtls_md5_info );
-#endif
-#if defined(MBEDTLS_RIPEMD160_C)
-        case MBEDTLS_MD_RIPEMD160:
-            return( &mbedtls_ripemd160_info );
-#endif
-#if defined(MBEDTLS_SHA1_C)
-        case MBEDTLS_MD_SHA1:
-            return( &mbedtls_sha1_info );
-#endif
-#if defined(MBEDTLS_SHA256_C)
-        case MBEDTLS_MD_SHA224:
-            return( &mbedtls_sha224_info );
-        case MBEDTLS_MD_SHA256:
-            return( &mbedtls_sha256_info );
-#endif
-#if defined(MBEDTLS_SHA512_C)
-        case MBEDTLS_MD_SHA384:
-            return( &mbedtls_sha384_info );
-        case MBEDTLS_MD_SHA512:
-            return( &mbedtls_sha512_info );
-#endif
-        default:
-            return( NULL );
-    }
-}
-
-void mbedtls_md_init( mbedtls_md_context_t *ctx )
-{
-    memset( ctx, 0, sizeof( mbedtls_md_context_t ) );
-}
-
-void mbedtls_md_free( mbedtls_md_context_t *ctx )
-{
-    if( ctx == NULL || ctx->md_info == NULL )
-        return;
-
-    if( ctx->md_ctx != NULL )
-        ctx->md_info->ctx_free_func( ctx->md_ctx );
-
-    if( ctx->hmac_ctx != NULL )
-    {
-        mbedtls_platform_zeroize( ctx->hmac_ctx,
-                                  2 * ctx->md_info->block_size );
-        mbedtls_free( ctx->hmac_ctx );
-    }
-
-    mbedtls_platform_zeroize( ctx, sizeof( mbedtls_md_context_t ) );
-}
-
-int mbedtls_md_clone( mbedtls_md_context_t *dst,
-                      const mbedtls_md_context_t *src )
-{
-    if( dst == NULL || dst->md_info == NULL ||
-        src == NULL || src->md_info == NULL ||
-        dst->md_info != src->md_info )
-    {
-        return( MBEDTLS_ERR_MD_BAD_INPUT_DATA );
-    }
-
-    dst->md_info->clone_func( dst->md_ctx, src->md_ctx );
-
-    return( 0 );
-}
-
-#if ! defined(MBEDTLS_DEPRECATED_REMOVED)
-int mbedtls_md_init_ctx( mbedtls_md_context_t *ctx, const mbedtls_md_info_t *md_info )
-{
-    return mbedtls_md_setup( ctx, md_info, 1 );
+    mbedtls_printf( "%s:%i: Input param failed - %s\n",
+                    file, line, failure_condition );
+    mbedtls_exit( MBEDTLS_EXIT_FAILURE );
 }
 #endif
 
-int mbedtls_md_setup( mbedtls_md_context_t *ctx, const mbedtls_md_info_t *md_info, int hmac )
+unsigned int get_file_size(FILE *fp)
 {
-    if( md_info == NULL || ctx == NULL )
-        return( MBEDTLS_ERR_MD_BAD_INPUT_DATA );
+	unsigned int length;
 
-    if( ( ctx->md_ctx = md_info->ctx_alloc_func() ) == NULL )
-        return( MBEDTLS_ERR_MD_ALLOC_FAILED );
+	fseek(fp, 0L, SEEK_END);
+	length = ftell(fp);
+	fseek(fp, 0L, SEEK_SET);
 
-    if( hmac != 0 )
-    {
-        ctx->hmac_ctx = mbedtls_calloc( 2, md_info->block_size );
-        if( ctx->hmac_ctx == NULL )
-        {
-            md_info->ctx_free_func( ctx->md_ctx );
-            return( MBEDTLS_ERR_MD_ALLOC_FAILED );
-        }
-    }
-
-    ctx->md_info = md_info;
-
-    return( 0 );
+    return length;
 }
 
-int mbedtls_md_starts( mbedtls_md_context_t *ctx )
+
+int main( int argc, char *argv[] )
 {
-    if( ctx == NULL || ctx->md_info == NULL )
-        return( MBEDTLS_ERR_MD_BAD_INPUT_DATA );
-
-    return( ctx->md_info->starts_func( ctx->md_ctx ) );
-}
-
-int mbedtls_md_update( mbedtls_md_context_t *ctx, const unsigned char *input, size_t ilen )
-{
-    if( ctx == NULL || ctx->md_info == NULL )
-        return( MBEDTLS_ERR_MD_BAD_INPUT_DATA );
-
-    return( ctx->md_info->update_func( ctx->md_ctx, input, ilen ) );
-}
-
-int mbedtls_md_finish( mbedtls_md_context_t *ctx, unsigned char *output )
-{
-    if( ctx == NULL || ctx->md_info == NULL )
-        return( MBEDTLS_ERR_MD_BAD_INPUT_DATA );
-
-    return( ctx->md_info->finish_func( ctx->md_ctx, output ) );
-}
-
-int mbedtls_md( const mbedtls_md_info_t *md_info, const unsigned char *input, size_t ilen,
-            unsigned char *output )
-{
-    if( md_info == NULL )
-        return( MBEDTLS_ERR_MD_BAD_INPUT_DATA );
-
-    return( md_info->digest_func( input, ilen, output ) );
-}
-
-#if defined(MBEDTLS_FS_IO)
-int mbedtls_md_file( const mbedtls_md_info_t *md_info, const char *path, unsigned char *output )
-{
-    int ret;
     FILE *f;
-    size_t n;
-    mbedtls_md_context_t ctx;
-    unsigned char buf[1024];
+    int ret = 1;
+    int exit_code = MBEDTLS_EXIT_FAILURE;
+    mbedtls_pk_context pk;
+    mbedtls_entropy_context entropy;
+    mbedtls_ctr_drbg_context ctr_drbg;
+    unsigned char hash[32];
+    unsigned char buf[MBEDTLS_MPI_MAX_SIZE];
+    char filename[512];
+    const char *pers = "mbedtls_pk_sign";
+	unsigned char *ibuf;
+	size_t ilen = 0;
+    size_t olen = 0;
 
-    if( md_info == NULL )
-        return( MBEDTLS_ERR_MD_BAD_INPUT_DATA );
+    mbedtls_entropy_init( &entropy );
+    mbedtls_ctr_drbg_init( &ctr_drbg );
+    mbedtls_pk_init( &pk );
 
-    if( ( f = fopen( path, "rb" ) ) == NULL )
-        return( MBEDTLS_ERR_MD_FILE_IO_ERROR );
+    if( argc != 3 )
+    {
+        mbedtls_printf( "usage: mbedtls_pk_sign <key_file> <filename>\n" );
 
-    mbedtls_md_init( &ctx );
+#if defined(_WIN32)
+        mbedtls_printf( "\n" );
+#endif
 
-    if( ( ret = mbedtls_md_setup( &ctx, md_info, 0 ) ) != 0 )
-        goto cleanup;
+        goto exit;
+    }
+	
 
-    if( ( ret = md_info->starts_func( ctx.md_ctx ) ) != 0 )
-        goto cleanup;
+    mbedtls_printf( "\n  . Seeding the random number generator..." );
+    fflush( stdout );
 
-    while( ( n = fread( buf, 1, sizeof( buf ), f ) ) > 0 )
-        if( ( ret = md_info->update_func( ctx.md_ctx, buf, n ) ) != 0 )
-            goto cleanup;
+    if( ( ret = mbedtls_ctr_drbg_seed( &ctr_drbg, mbedtls_entropy_func, &entropy,
+                               (const unsigned char *) pers,
+                               strlen( pers ) ) ) != 0 )
+    {
+        mbedtls_printf( " failed\n  ! mbedtls_ctr_drbg_seed returned -0x%04x\n", -ret );
+        goto exit;
+    }
 
-    if( ferror( f ) != 0 )
-        ret = MBEDTLS_ERR_MD_FILE_IO_ERROR;
-    else
-        ret = md_info->finish_func( ctx.md_ctx, output );
+    mbedtls_printf( "\n  . Reading private key from '%s'", argv[1] );
+    fflush( stdout );
 
-cleanup:
-    mbedtls_platform_zeroize( buf, sizeof( buf ) );
+    if( ( ret = mbedtls_pk_parse_keyfile( &pk, argv[1], "" ) ) != 0 )
+    {
+        mbedtls_printf( " failed\n  ! Could not parse '%s'\n", argv[1] );
+        goto exit;
+    }
+
+    /*
+     * Compute the SHA-256 hash of the input file,
+     * then calculate the signature of the hash.
+     */
+    mbedtls_printf( "\n  . Generating the SHA-256 signature" );
+    fflush( stdout );
+
+	f = fopen(argv[2], "rb");
+	ilen = get_file_size(f);
+	ibuf = malloc(ilen);
+	memset(ibuf, 0x0, ilen);
+    fread(ibuf, ilen, 1, f);
+    fclose(f);
+
+    if( ( ret = mbedtls_md_mem(
+                    mbedtls_md_info_from_type( MBEDTLS_MD_SHA256 ),
+                    ibuf, ilen, hash ) ) != 0 )
+    {
+        mbedtls_printf( " failed\n  ! Could not open or read \n\n");
+        goto exit;
+    }
+
+	free(ibuf);
+
+    if( ( ret = mbedtls_pk_sign( &pk, MBEDTLS_MD_SHA256, hash, 0, buf, &olen,
+                         mbedtls_ctr_drbg_random, &ctr_drbg ) ) != 0 )
+    {
+        mbedtls_printf( " failed\n  ! mbedtls_pk_sign returned -0x%04x\n", -ret );
+        goto exit;
+    }
+
+    /*
+     * Write the signature into <filename>.sig
+     */
+    mbedtls_snprintf( filename, sizeof(filename), "%s.sig", argv[2] );
+
+    if( ( f = fopen( filename, "wb+" ) ) == NULL )
+    {
+        mbedtls_printf( " failed\n  ! Could not create %s\n\n", filename );
+        goto exit;
+    }
+
+    if( fwrite( buf, 1, olen, f ) != olen )
+    {
+        mbedtls_printf( "failed\n  ! fwrite failed\n\n" );
+        fclose( f );
+        goto exit;
+    }
+
     fclose( f );
-    mbedtls_md_free( &ctx );
 
-    return( ret );
-}
-#endif /* MBEDTLS_FS_IO */
+    mbedtls_printf( "\n  . Done (created \"%s\")\n\n", filename );
 
-int mbedtls_md_mem( const mbedtls_md_info_t *md_info, const unsigned char *ibuf, size_t ilen, unsigned char *output)
-{
-    int ret;
-    FILE *f;
-    size_t n;
-    mbedtls_md_context_t ctx;
-    unsigned char buf[1024];
+    exit_code = MBEDTLS_EXIT_SUCCESS;
 
-	unsigned int loop = ilen / sizeof(buf);
-	unsigned int ext = ilen % sizeof(buf);
-	unsigned int i;
+exit:
+    mbedtls_pk_free( &pk );
+    mbedtls_ctr_drbg_free( &ctr_drbg );
+    mbedtls_entropy_free( &entropy );
 
-    if( md_info == NULL )
-        return( MBEDTLS_ERR_MD_BAD_INPUT_DATA );
-
-    mbedtls_md_init( &ctx );
-
-    if( ( ret = mbedtls_md_setup( &ctx, md_info, 0 ) ) != 0 )
-        goto cleanup;
-
-    if( ( ret = md_info->starts_func( ctx.md_ctx ) ) != 0 )
-        goto cleanup;
-
-	for(i=0; i<loop; i++){
-		memcpy(buf, ibuf + i*sizeof(buf), sizeof(buf));
-		if( ( ret = md_info->update_func( ctx.md_ctx, buf, sizeof(buf))) != 0 )
-            goto cleanup;
-	}
-
-	memcpy(buf, ibuf + i*sizeof(buf), ext);
-	if(( ret = md_info->update_func( ctx.md_ctx, buf, ext)) != 0 )
-        goto cleanup;
-
-    ret = md_info->finish_func( ctx.md_ctx, output );
-
-cleanup:
-    mbedtls_platform_zeroize( buf, sizeof( buf ) );
-    mbedtls_md_free( &ctx );
-
-    return( ret );
-}
-
-int mbedtls_md_hmac_starts( mbedtls_md_context_t *ctx, const unsigned char *key, size_t keylen )
-{
-    int ret;
-    unsigned char sum[MBEDTLS_MD_MAX_SIZE];
-    unsigned char *ipad, *opad;
-    size_t i;
-
-    if( ctx == NULL || ctx->md_info == NULL || ctx->hmac_ctx == NULL )
-        return( MBEDTLS_ERR_MD_BAD_INPUT_DATA );
-
-    if( keylen > (size_t) ctx->md_info->block_size )
+#if defined(MBEDTLS_ERROR_C)
+    if( exit_code != MBEDTLS_EXIT_SUCCESS )
     {
-        if( ( ret = ctx->md_info->starts_func( ctx->md_ctx ) ) != 0 )
-            goto cleanup;
-        if( ( ret = ctx->md_info->update_func( ctx->md_ctx, key, keylen ) ) != 0 )
-            goto cleanup;
-        if( ( ret = ctx->md_info->finish_func( ctx->md_ctx, sum ) ) != 0 )
-            goto cleanup;
-
-        keylen = ctx->md_info->size;
-        key = sum;
+        mbedtls_strerror( ret, (char *) buf, sizeof(buf) );
+        mbedtls_printf( "  !  Last error was: %s\n", buf );
     }
+#endif
 
-    ipad = (unsigned char *) ctx->hmac_ctx;
-    opad = (unsigned char *) ctx->hmac_ctx + ctx->md_info->block_size;
+#if defined(_WIN32)
+    mbedtls_printf( "  + Press Enter to exit this program.\n" );
+    fflush( stdout ); getchar();
+#endif
 
-    memset( ipad, 0x36, ctx->md_info->block_size );
-    memset( opad, 0x5C, ctx->md_info->block_size );
-
-    for( i = 0; i < keylen; i++ )
-    {
-        ipad[i] = (unsigned char)( ipad[i] ^ key[i] );
-        opad[i] = (unsigned char)( opad[i] ^ key[i] );
-    }
-
-    if( ( ret = ctx->md_info->starts_func( ctx->md_ctx ) ) != 0 )
-        goto cleanup;
-    if( ( ret = ctx->md_info->update_func( ctx->md_ctx, ipad,
-                                           ctx->md_info->block_size ) ) != 0 )
-        goto cleanup;
-
-cleanup:
-    mbedtls_platform_zeroize( sum, sizeof( sum ) );
-
-    return( ret );
+    return( exit_code );
 }
-
-int mbedtls_md_hmac_update( mbedtls_md_context_t *ctx, const unsigned char *input, size_t ilen )
-{
-    if( ctx == NULL || ctx->md_info == NULL || ctx->hmac_ctx == NULL )
-        return( MBEDTLS_ERR_MD_BAD_INPUT_DATA );
-
-    return( ctx->md_info->update_func( ctx->md_ctx, input, ilen ) );
-}
-
-int mbedtls_md_hmac_finish( mbedtls_md_context_t *ctx, unsigned char *output )
-{
-    int ret;
-    unsigned char tmp[MBEDTLS_MD_MAX_SIZE];
-    unsigned char *opad;
-
-    if( ctx == NULL || ctx->md_info == NULL || ctx->hmac_ctx == NULL )
-        return( MBEDTLS_ERR_MD_BAD_INPUT_DATA );
-
-    opad = (unsigned char *) ctx->hmac_ctx + ctx->md_info->block_size;
-
-    if( ( ret = ctx->md_info->finish_func( ctx->md_ctx, tmp ) ) != 0 )
-        return( ret );
-    if( ( ret = ctx->md_info->starts_func( ctx->md_ctx ) ) != 0 )
-        return( ret );
-    if( ( ret = ctx->md_info->update_func( ctx->md_ctx, opad,
-                                           ctx->md_info->block_size ) ) != 0 )
-        return( ret );
-    if( ( ret = ctx->md_info->update_func( ctx->md_ctx, tmp,
-                                           ctx->md_info->size ) ) != 0 )
-        return( ret );
-    return( ctx->md_info->finish_func( ctx->md_ctx, output ) );
-}
-
-int mbedtls_md_hmac_reset( mbedtls_md_context_t *ctx )
-{
-    int ret;
-    unsigned char *ipad;
-
-    if( ctx == NULL || ctx->md_info == NULL || ctx->hmac_ctx == NULL )
-        return( MBEDTLS_ERR_MD_BAD_INPUT_DATA );
-
-    ipad = (unsigned char *) ctx->hmac_ctx;
-
-    if( ( ret = ctx->md_info->starts_func( ctx->md_ctx ) ) != 0 )
-        return( ret );
-    return( ctx->md_info->update_func( ctx->md_ctx, ipad,
-                                       ctx->md_info->block_size ) );
-}
-
-int mbedtls_md_hmac( const mbedtls_md_info_t *md_info,
-                     const unsigned char *key, size_t keylen,
-                     const unsigned char *input, size_t ilen,
-                     unsigned char *output )
-{
-    mbedtls_md_context_t ctx;
-    int ret;
-
-    if( md_info == NULL )
-        return( MBEDTLS_ERR_MD_BAD_INPUT_DATA );
-
-    mbedtls_md_init( &ctx );
-
-    if( ( ret = mbedtls_md_setup( &ctx, md_info, 1 ) ) != 0 )
-        goto cleanup;
-
-    if( ( ret = mbedtls_md_hmac_starts( &ctx, key, keylen ) ) != 0 )
-        goto cleanup;
-    if( ( ret = mbedtls_md_hmac_update( &ctx, input, ilen ) ) != 0 )
-        goto cleanup;
-    if( ( ret = mbedtls_md_hmac_finish( &ctx, output ) ) != 0 )
-        goto cleanup;
-
-cleanup:
-    mbedtls_md_free( &ctx );
-
-    return( ret );
-}
-
-int mbedtls_md_process( mbedtls_md_context_t *ctx, const unsigned char *data )
-{
-    if( ctx == NULL || ctx->md_info == NULL )
-        return( MBEDTLS_ERR_MD_BAD_INPUT_DATA );
-
-    return( ctx->md_info->process_func( ctx->md_ctx, data ) );
-}
-
-unsigned char mbedtls_md_get_size( const mbedtls_md_info_t *md_info )
-{
-    if( md_info == NULL )
-        return( 0 );
-
-    return md_info->size;
-}
-
-mbedtls_md_type_t mbedtls_md_get_type( const mbedtls_md_info_t *md_info )
-{
-    if( md_info == NULL )
-        return( MBEDTLS_MD_NONE );
-
-    return md_info->type;
-}
-
-const char *mbedtls_md_get_name( const mbedtls_md_info_t *md_info )
-{
-    if( md_info == NULL )
-        return( NULL );
-
-    return md_info->name;
-}
-
-#endif /* MBEDTLS_MD_C */
+#endif /* MBEDTLS_BIGNUM_C && MBEDTLS_ENTROPY_C &&
+          MBEDTLS_SHA256_C && MBEDTLS_PK_PARSE_C && MBEDTLS_FS_IO &&
+          MBEDTLS_CTR_DRBG_C */
