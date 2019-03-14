@@ -1,4 +1,3 @@
-// autolink.cpp : ¶¨Òå¿ØÖÆÌ¨Ó¦ÓÃ³ÌÐòµÄÈë¿Úµã¡£
 
 #include "stdafx.h"
 #include "wlanapi.h"
@@ -8,8 +7,8 @@ using namespace std;
 
 //#define WIN7_ONLY
 
-#define STR_MUTE_AUTOLINK		_T("TP-LINK-NIC-AUTOLINK")
-#define STR_MUTE_UTILITY		_T("TP-LINK-NIC-UTILITY")
+#define STR_MUTE_AUTOLINK		_T("AUTOLINK")
+#define STR_MUTE_UTILITY		_T("UTILITY")
 
 HANDLE hClientHandle = NULL;
 DWORD dwError = ERROR_SUCCESS;
@@ -343,16 +342,16 @@ int _tmain(int argc, TCHAR* argv[], TCHAR* envp[])
 
 	DWORD  index;
 	DWORD  curSignalQuality, curIndex;
-	// ³õÊ¼»¯ MFC ²¢ÔÚÊ§°ÜÊ±ÏÔÊ¾´íÎó
+	// ??Ê¼?? MFC ????Ê§??Ê±??Ê¾????
 	if (!AfxWinInit(::GetModuleHandle(NULL), NULL, ::GetCommandLine(), 0))
 	{
-		// TODO: ¸ü¸Ä´íÎó´úÂëÒÔ·ûºÏÄúµÄÐèÒª
-		_tprintf(_T("´íÎó: MFC ³õÊ¼»¯Ê§°Ü\n"));
+		// TODO: ???Ä´????????Ô·?????????Òª
+		_tprintf(_T("????: MFC ??Ê¼??Ê§??\n"));
 		return 1;
 	}
 	else
 	{
-		// TODO: ÔÚ´Ë´¦ÎªÓ¦ÓÃ³ÌÐòµÄÐÐÎª±àÐ´´úÂë¡£Ê²Ã´¶¼²»×ö¡£
+		// TODO: ?Ú´Ë´?ÎªÓ¦?Ã³???????Îª??Ð´???ë¡£Ê²Ã´????????
 	}
 
 	hClientHandle = CreateMutex(NULL, TRUE, STR_MUTE_AUTOLINK);
@@ -367,7 +366,7 @@ int _tmain(int argc, TCHAR* argv[], TCHAR* envp[])
 
 	if ( GetLastError() == ERROR_ALREADY_EXISTS)
 	{
-		printf("Shut down TP-LINK utility please.\r\n"); 
+		printf("Shut down please.\r\n"); 
 		return -1;
 	}
 
@@ -394,10 +393,10 @@ int _tmain(int argc, TCHAR* argv[], TCHAR* envp[])
 		return -1;
 	}
 
-	/* ³ÌÐòÖ÷Ñ­»· */
+	/* ??????Ñ­?? */
 	while(TRUE)
 	{
-		/* Ã¶¾ÙÎÞÏßÍø¿¨ */
+		/* Ã¶?????????? */
 		dwError = WlanEnumInterfaces(hClientHandle, NULL, &pInterfaceList);
 		if(dwError != ERROR_SUCCESS)
 		{
@@ -462,7 +461,7 @@ int _tmain(int argc, TCHAR* argv[], TCHAR* envp[])
 			index < pAvailableNetworkList->dwNumberOfItems;
 			index++)
 		{
-			//Èç¹ûÐèÒª»ñµÃÐÅµÀºÅ, ÇëÊ¹ÓÃWlanGetNetworkBssList()
+			//??????Òª?????ÅµÀº?, ??Ê¹??WlanGetNetworkBssList()
 			pBssEntry = (WLAN_AVAILABLE_NETWORK *)&pAvailableNetworkList->Network[index];
 			printf(" %-35s\t  %d\t  %d",
 					pBssEntry->dot11Ssid.ucSSID,
@@ -513,7 +512,7 @@ int _tmain(int argc, TCHAR* argv[], TCHAR* envp[])
 				curSignalQuality = pBssEntry->wlanSignalQuality;
 				curIndex = index;
 			}
-		}/* Ñ­»·½áÊø, ÕÒµ½ºÏÊÊµÄSSID»òÕß·µ»Ø */
+		}/* Ñ­??????, ?Òµ????Êµ?SSID???ß·??? */
 		
 		if(curIndex == -1)
 		{
@@ -549,7 +548,7 @@ int _tmain(int argc, TCHAR* argv[], TCHAR* envp[])
         szProfileXML += _T("<?xml version=\"1.0\"?>");
         szProfileXML += _T("<WLANProfile xmlns=\"http://www.microsoft.com/networking/WLAN/profile/v1\">");
 
-		/*name£¬ÓëSSIDÏàÍ¬*/
+		/*name????SSID??Í¬*/
 		szProfileXML += _T("<name>"); 
         szProfileXML += _T((char*)pBssEntry->dot11Ssid.ucSSID);
 		szProfileXML += _T("</name>");
