@@ -1,1 +1,0 @@
-Dim shlApp :Set shlApp = Wscript.CreateObject("Shell.Application") : shlApp.MinimizeAll
